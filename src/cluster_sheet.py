@@ -70,6 +70,8 @@ def note_sheet(ws, df, colors):
         fill = PatternFill("solid", fgColor=tint(colors[row["cluster"]]))
         for k, value in enumerate(values, 1):
             cell = ws.cell(row=r, column=k, value=value)
+            if cell.data_type == "f":  # a note starting with "=" (e.g. "=> Always ...") is text, not a formula
+                cell.data_type = "s"
             cell.fill, cell.alignment, cell.border = fill, WRAP, Border(bottom=THIN)
         # a solid color chip in the cluster column, like the dot in the plot
         chip = ws.cell(row=r, column=1)
