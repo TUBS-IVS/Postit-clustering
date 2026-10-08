@@ -28,9 +28,9 @@
     "id": "2",
     "bild": "Worshop scan/20261007_095119.jpg",
     "adresse": "MA22",
-    "text_clean": "for grocery shopping",
-    "note": "for grocery shopping",
-    "text_tokens": "for grocery shopping"
+    "text_clean": "for grocery shopping (e.g. family)",
+    "note": "for grocery shopping (e.g. family)",
+    "text_tokens": "for grocery shopping family"
   },
   {
     "row": 3,
@@ -39,9 +39,9 @@
     "id": "3",
     "bild": "Worshop scan/20261007_095127.jpg",
     "adresse": "UC51",
-    "text_clean": "better and cheap public transport connection",
-    "note": "better and cheap public transport connection",
-    "text_tokens": "better and cheap public transport connection"
+    "text_clean": "better public transport connection, cheap",
+    "note": "better public transport connection, cheap",
+    "text_tokens": "better public transport connection cheap"
   },
   {
     "row": 4,
@@ -72,9 +72,9 @@
     "id": "6",
     "bild": "Worshop scan/20261007_095149.jpg",
     "adresse": "MC21",
-    "text_clean": "lower cost to buy a car e.g. Chines vehicles",
-    "note": "lower cost to buy a car e.g. Chines vehicles",
-    "text_tokens": "lower cost buy a car chines vehicles"
+    "text_clean": "lower cost to buy a car (Chinese vehicles?!)",
+    "note": "lower cost to buy a car (Chinese vehicles?!)",
+    "text_tokens": "lower cost buy a car chinese vehicles"
   },
   {
     "row": 7,
@@ -94,8 +94,8 @@
     "id": "8",
     "bild": "Worshop scan/20261007_095203.jpg",
     "adresse": "MB22",
-    "text_clean": "cheaper house in some region and expensive elsewhere",
-    "note": "cheaper house in some region and expensive elsewhere",
+    "text_clean": "cheaper house In some region and expensive elsewhere",
+    "note": "cheaper house In some region and expensive elsewhere",
     "text_tokens": "cheaper house in some region and expensive elsewhere"
   },
   {
@@ -105,9 +105,9 @@
     "id": "9",
     "bild": "Worshop scan/20261007_095208.jpg",
     "adresse": "SC12",
-    "text_clean": "Energy expensive leads to running and providing service is expensive therefore e.g. AI subscriptions",
-    "note": "Energy expensive leads to running and providing service is expensive therefore e.g. AI subscriptions",
-    "text_tokens": "energy expensive running and providing service is expensive therefore ai subscriptions"
+    "text_clean": "Energy expensive leads to running and providing service is expensive therefore. Eg AI subscriptions",
+    "note": "Energy expensive leads to running and providing service is expensive therefore. Eg AI subscriptions",
+    "text_tokens": "energy expensive running and providing service is expensive therefore eg ai subscriptions"
   },
   {
     "row": 10,
@@ -127,9 +127,9 @@
     "id": "11",
     "bild": "Worshop scan/20261007_095223.jpg",
     "adresse": "MF11",
-    "text_clean": "Life Online leads to Virtual Reality leads to Living in Simulation",
-    "note": "Life Online leads to Virtual Reality leads to Living in Simulation",
-    "text_tokens": "life online virtual reality living in simulation"
+    "text_clean": "Life Online leads to VR leads to Living in Simulation (Matrix)",
+    "note": "Life Online leads to VR leads to Living in Simulation (Matrix)",
+    "text_tokens": "life online vr living in simulation matrix"
   },
   {
     "row": 12,
@@ -139,7 +139,7 @@
     "bild": "Worshop scan/20261007_095230.jpg",
     "adresse": "MD42",
     "text_clean": "Cycling is cheap compared to riding a car",
-    "note": "Cycling is cheap compared to riding a car ; social view status symbol",
+    "note": "Cycling is cheap compared to riding a car (social view status symbol)",
     "text_tokens": "cycling is cheap compared riding a car"
   },
   {
@@ -150,7 +150,7 @@
     "bild": "Worshop scan/20261007_095230.jpg",
     "adresse": "MD42",
     "text_clean": "social view status symbol",
-    "note": "Cycling is cheap compared to riding a car ; social view status symbol",
+    "note": "Cycling is cheap compared to riding a car (social view status symbol)",
     "text_tokens": "social view status symbol"
   },
   {
@@ -227,7 +227,7 @@
     "bild": "Worshop scan/20261007_095314.jpg",
     "adresse": "UE41",
     "text_clean": "Skilled labor shortage",
-    "note": "Skilled labor shortage ; Demographics",
+    "note": "Skilled labor shortage or Demographics",
     "text_tokens": "skilled labor shortage"
   },
   {
@@ -238,7 +238,7 @@
     "bild": "Worshop scan/20261007_095314.jpg",
     "adresse": "UE41",
     "text_clean": "Demographics",
-    "note": "Skilled labor shortage ; Demographics",
+    "note": "Skilled labor shortage or Demographics",
     "text_tokens": "demographics"
   },
   {
@@ -248,9 +248,9 @@
     "id": "20",
     "bild": "Worshop scan/20261007_095326.jpg",
     "adresse": "UC22",
-    "text_clean": "Entry prices for parcs",
-    "note": "Entry prices for parcs",
-    "text_tokens": "entry prices for parcs"
+    "text_clean": "Entry prices for Parks",
+    "note": "Entry prices for Parks",
+    "text_tokens": "entry prices for parks"
   },
   {
     "row": 21,
@@ -259,9 +259,9 @@
     "id": "21",
     "bild": "Worshop scan/20261007_095334.jpg",
     "adresse": "UB22",
-    "text_clean": "Urban densification leads to Urban space must be used for housing leads to Public space must be limited",
-    "note": "Urban densification leads to Urban space must be used for housing leads to Public space must be limited",
-    "text_tokens": "urban densification urban space must be used for housing public space must be limited"
+    "text_clean": "Urban densification leads to Urban space must be used for housing (e.g., due to overpopulation) leads to Public space must be limited",
+    "note": "Urban densification leads to Urban space must be used for housing (e.g., due to overpopulation) leads to Public space must be limited",
+    "text_tokens": "urban densification urban space must be used for housing due overpopulation public space must be limited"
   },
   {
     "row": 22,
@@ -270,9 +270,9 @@
     "id": "22",
     "bild": "Worshop scan/20261007_095344.jpg",
     "adresse": "SC22",
-    "text_clean": "low traffic volume leads to no management necessity",
-    "note": "low traffic volume leads to no management necessity",
-    "text_tokens": "low traffic volume no management necessity"
+    "text_clean": "low traffic volume, without management necessity",
+    "note": "low traffic volume, without management necessity",
+    "text_tokens": "low traffic volume without management necessity"
   },
   {
     "row": 23,
@@ -281,9 +281,9 @@
     "id": "23",
     "bild": "Worshop scan/20261007_095350.jpg",
     "adresse": "UA12",
-    "text_clean": "Livestyle more remote e.g. Working from home, Delivery services, Online shopping",
-    "note": "Livestyle more remote e.g. Working from home, Delivery services, Online shopping",
-    "text_tokens": "livestyle more remote working from home delivery services online shopping"
+    "text_clean": "Live more remote Working from home, Delivery services, Online shopping",
+    "note": "Live more remote Working from home, Delivery services, Online shopping",
+    "text_tokens": "live more remote working from home delivery services online shopping"
   },
   {
     "row": 24,
@@ -292,8 +292,8 @@
     "id": "24",
     "bild": "Worshop scan/20261007_095358.jpg",
     "adresse": "MD21",
-    "text_clean": "Car still as a status symbol Lifestyle",
-    "note": "Car still as a status symbol Lifestyle",
+    "text_clean": "Car still as a status symbol (Lifestyle)",
+    "note": "Car still as a status symbol (Lifestyle)",
     "text_tokens": "car still as a status symbol lifestyle"
   },
   {
@@ -358,9 +358,9 @@
     "id": "28",
     "bild": "Worshop scan/20261007_095423.jpg",
     "adresse": "UA11",
-    "text_clean": "more public spacing leads to more interaction and more activities social",
-    "note": "more public spacing leads to more interaction and more activities social",
-    "text_tokens": "more public spacing more interaction and more activities social"
+    "text_clean": "more public spacing, more interaction more activities social",
+    "note": "more public spacing, more interaction more activities social",
+    "text_tokens": "more public spacing more interaction more activities social"
   },
   {
     "row": 29,
@@ -391,9 +391,9 @@
     "id": "31",
     "bild": "Worshop scan/20261007_095448.jpg",
     "adresse": "UA31",
-    "text_clean": "Live more Remote like Working from home",
-    "note": "Live more Remote like Working from home",
-    "text_tokens": "live more remote like working from home"
+    "text_clean": "Live more Remote Working from home",
+    "note": "Live more Remote Working from home",
+    "text_tokens": "live more remote working from home"
   },
   {
     "row": 32,
@@ -435,9 +435,9 @@
     "id": "35",
     "bild": "Worshop scan/20261007_095517.jpg",
     "adresse": "MB11",
-    "text_clean": "Demand-responsive transport",
-    "note": "Demand-responsive transport",
-    "text_tokens": "demand-responsive transport"
+    "text_clean": "DRT (demand-responsive transport)",
+    "note": "DRT (demand-responsive transport)",
+    "text_tokens": "drt demand-responsive transport"
   },
   {
     "row": 36,
@@ -446,8 +446,8 @@
     "id": "36",
     "bild": "Worshop scan/20261007_095525.jpg",
     "adresse": "UC42",
-    "text_clean": "Privatization leads to Costs e.g. no insurance",
-    "note": "Privatization leads to Costs e.g. no insurance",
+    "text_clean": "Privatization leads to Costs e.g., no insurance",
+    "note": "Privatization leads to Costs e.g., no insurance",
     "text_tokens": "privatization costs no insurance"
   },
   {
@@ -468,9 +468,9 @@
     "id": "38",
     "bild": "Worshop scan/20261007_095537.jpg",
     "adresse": "MA22",
-    "text_clean": "long journeys",
-    "note": "long journeys",
-    "text_tokens": "long journeys"
+    "text_clean": "long journeys (like MA31)",
+    "note": "long journeys (like MA31)",
+    "text_tokens": "long journeys like ma31"
   },
   {
     "row": 39,
@@ -523,9 +523,9 @@
     "id": "43",
     "bild": "Worshop scan/20261007_095615.jpg",
     "adresse": "UA31",
-    "text_clean": "Virtual Reallity leads to surrogates e.g. Androids",
-    "note": "Virtual Reallity leads to surrogates e.g. Androids",
-    "text_tokens": "virtual reallity surrogates androids"
+    "text_clean": "VR leads to surrogates (Androids)",
+    "note": "VR leads to surrogates (Androids)",
+    "text_tokens": "vr surrogates androids"
   },
   {
     "row": 44,
@@ -557,7 +557,7 @@
     "bild": "Worshop scan/20261007_095633.jpg",
     "adresse": "UA41",
     "text_clean": "no illnesses anymore",
-    "note": "no illnesses anymore; AI can detect illnesses",
+    "note": "no illnesses anymore, AI can detect illnesses",
     "text_tokens": "no illnesses anymore"
   },
   {
@@ -568,7 +568,7 @@
     "bild": "Worshop scan/20261007_095633.jpg",
     "adresse": "UA41",
     "text_clean": "AI can detect illnesses",
-    "note": "no illnesses anymore; AI can detect illnesses",
+    "note": "no illnesses anymore, AI can detect illnesses",
     "text_tokens": "ai can detect illnesses"
   },
   {
@@ -578,8 +578,8 @@
     "id": "47",
     "bild": "Worshop scan/20261007_095640.jpg",
     "adresse": "MA12",
-    "text_clean": "city toll",
-    "note": "city toll",
+    "text_clean": "city: toll",
+    "note": "city: toll",
     "text_tokens": "city toll"
   },
   {
@@ -600,8 +600,8 @@
     "id": "49",
     "bild": "Worshop scan/20261007_095653.jpg",
     "adresse": "SF12",
-    "text_clean": "Technological progress e.g. Solar, geothermal power plants, tidal power plants",
-    "note": "Technological progress e.g. Solar, geothermal power plants, tidal power plants",
+    "text_clean": "Technological progress: Solar, geothermal power plants, tidal power plants",
+    "note": "Technological progress: Solar, geothermal power plants, tidal power plants",
     "text_tokens": "technological progress solar geothermal power plants tidal power plants"
   },
   {
@@ -611,9 +611,9 @@
     "id": "50",
     "bild": "Worshop scan/20261007_095701.jpg",
     "adresse": "SE52",
-    "text_clean": "Installation of anti-freeze layer, prevention in road construction of disasters",
-    "note": "Installation of anti-freeze layer, prevention in road construction of disasters",
-    "text_tokens": "installation of anti-freeze layer prevention in road construction of disasters"
+    "text_clean": "Installation of FSS, prevention in road construction of disasters",
+    "note": "Installation of FSS, prevention in road construction of disasters",
+    "text_tokens": "installation of fss prevention in road construction of disasters"
   },
   {
     "row": 51,
@@ -699,8 +699,8 @@
     "id": "58",
     "bild": "Worshop scan/20261007_095800.jpg",
     "adresse": "MC51",
-    "text_clean": "with low prices and easy or quick service e.g. using drone",
-    "note": "with low prices and easy or quick service e.g. using drone",
+    "text_clean": "with low prices and easy or quick service (using drone!)",
+    "note": "with low prices and easy or quick service (using drone!)",
     "text_tokens": "with low prices and easy or quick service using drone"
   },
   {
@@ -710,8 +710,8 @@
     "id": "59",
     "bild": "Worshop scan/20261007_095810.jpg",
     "adresse": "UC12",
-    "text_clean": "Houses are expensive leads to exclusive",
-    "note": "Houses are expensive leads to exclusive",
+    "text_clean": "Houses are expensive leads to Exclusive!",
+    "note": "Houses are expensive leads to Exclusive!",
     "text_tokens": "houses are expensive exclusive"
   },
   {
@@ -776,8 +776,8 @@
     "id": "65",
     "bild": "Worshop scan/20261007_095852.jpg",
     "adresse": "SA31",
-    "text_clean": "Freight Infrastructure goes irrelevant when drone delivery becomes the norm",
-    "note": "Freight Infrastructure goes irrelevant when drone delivery becomes the norm",
+    "text_clean": "Freight Infrastructure goes irrelevant when drone delivery becomes the norm!",
+    "note": "Freight Infrastructure goes irrelevant when drone delivery becomes the norm!",
     "text_tokens": "freight infrastructure goes irrelevant when drone delivery becomes the norm"
   },
   {
@@ -787,8 +787,8 @@
     "id": "66",
     "bild": "Worshop scan/20261007_095900.jpg",
     "adresse": "SA21",
-    "text_clean": "Autonomous driving with communication between all cars in the system",
-    "note": "Autonomous driving with communication between all cars in the system",
+    "text_clean": "Autonomous driving with communication between all cars in the system!",
+    "note": "Autonomous driving with communication between all cars in the system!",
     "text_tokens": "autonomous driving with communication between all cars in the system"
   },
   {
@@ -919,8 +919,8 @@
     "id": "78",
     "bild": "Worshop scan/20261007_100047.jpg",
     "adresse": "UA11",
-    "text_clean": "Living more remotely e.g. Working from home, Delivery services, Online shopping",
-    "note": "Living more remotely e.g. Working from home, Delivery services, Online shopping",
+    "text_clean": "Living more remotely Working from home, Delivery services, Online shopping",
+    "note": "Living more remotely Working from home, Delivery services, Online shopping",
     "text_tokens": "living more remotely working from home delivery services online shopping"
   },
   {
@@ -1029,9 +1029,9 @@
     "id": "88",
     "bild": "Worshop scan/20261007_100148.jpg",
     "adresse": "MC11",
-    "text_clean": "Subsidies e.g. Deutschland-Ticket",
-    "note": "Subsidies e.g. Deutschland-Ticket",
-    "text_tokens": "subsidies deutschland-ticket"
+    "text_clean": "D-Ticket",
+    "note": "D-Ticket",
+    "text_tokens": "d-ticket"
   },
   {
     "row": 89,
@@ -1084,8 +1084,8 @@
     "id": "93",
     "bild": "Worshop scan/20261007_100216.jpg",
     "adresse": "ME41",
-    "text_clean": "Sabotage e.g. Deutsche Bahn railway",
-    "note": "Sabotage e.g. Deutsche Bahn railway",
+    "text_clean": "Sabotage (Deutsche Bahn railway)",
+    "note": "Sabotage (Deutsche Bahn railway)",
     "text_tokens": "sabotage deutsche bahn railway"
   },
   {
@@ -1151,7 +1151,7 @@
     "bild": "Worshop scan/20261007_100255.jpg",
     "adresse": "SE22",
     "text_clean": "Protection against hacker attacks",
-    "note": "Protection against hacker attacks ; natural disasters",
+    "note": "Protection against hacker attacks, natural disasters",
     "text_tokens": "protection against hacker attacks"
   },
   {
@@ -1162,7 +1162,7 @@
     "bild": "Worshop scan/20261007_100255.jpg",
     "adresse": "SE22",
     "text_clean": "natural disasters",
-    "note": "Protection against hacker attacks ; natural disasters",
+    "note": "Protection against hacker attacks, natural disasters",
     "text_tokens": "natural disasters"
   },
   {
@@ -1194,8 +1194,8 @@
     "id": "102",
     "bild": "Worshop scan/20261007_100314.jpg",
     "adresse": "MC22",
-    "text_clean": "Expensive locality or private garden or parks",
-    "note": "Expensive locality or private garden or parks",
+    "text_clean": "Expensive locality or private garden or parks!",
+    "note": "Expensive locality or private garden or parks!",
     "text_tokens": "expensive locality or private garden or parks"
   },
   {
@@ -1205,9 +1205,9 @@
     "id": "103",
     "bild": "Worshop scan/20261007_100320.jpg",
     "adresse": "MF51",
-    "text_clean": "increase in online shopping",
-    "note": "increase in online shopping",
-    "text_tokens": "increase in online shopping"
+    "text_clean": "due increase in online shopping",
+    "note": "due increase in online shopping",
+    "text_tokens": "due increase in online shopping"
   },
   {
     "row": 104,
@@ -1271,9 +1271,9 @@
     "id": "109",
     "bild": "Worshop scan/20261007_100357.jpg",
     "adresse": "SF22",
-    "text_clean": "Decrease in private car traffic through automation, autonomous driving",
-    "note": "Decrease in private car traffic through automation, autonomous driving",
-    "text_tokens": "decrease in private car traffic through automation autonomous driving"
+    "text_clean": "Decrease in private car traffic, automation, autonomous driving",
+    "note": "Decrease in private car traffic, automation, autonomous driving",
+    "text_tokens": "decrease in private car traffic automation autonomous driving"
   },
   {
     "row": 110,
@@ -1293,8 +1293,8 @@
     "id": "111",
     "bild": "Worshop scan/20261007_100409.jpg",
     "adresse": "MB41",
-    "text_clean": "cycle everywhere with better cycles or infrastructures e.g. e-bike, roads",
-    "note": "cycle everywhere with better cycles or infrastructures e.g. e-bike, roads",
+    "text_clean": "cycle everywhere with better cycles or infrastructures. (e-bike, roads!)",
+    "note": "cycle everywhere with better cycles or infrastructures. (e-bike, roads!)",
     "text_tokens": "cycle everywhere with better cycles or infrastructures e-bike roads"
   },
   {
@@ -1304,9 +1304,9 @@
     "id": "112",
     "bild": "Worshop scan/20261007_100415.jpg",
     "adresse": "MB21",
-    "text_clean": "no Public Transport anymore due to political instability",
-    "note": "no Public Transport anymore due to political instability",
-    "text_tokens": "no public transport anymore due political instability"
+    "text_clean": "no Public Transport anymore political instability",
+    "note": "no Public Transport anymore political instability",
+    "text_tokens": "no public transport anymore political instability"
   },
   {
     "row": 113,
@@ -1315,8 +1315,8 @@
     "id": "113.1",
     "bild": "Worshop scan/20261007_100422.jpg",
     "adresse": "MB42",
-    "text_clean": "Bad cycle hardware (difficult to pedal longer)",
-    "note": "Bad cycle hardware (difficult to pedal longer); No infrastructure to ride bike",
+    "text_clean": "Bad cycle hardware (difficult to pedal longer!)",
+    "note": "Bad cycle hardware (difficult to pedal longer!); No infrastructure to ride bike!",
     "text_tokens": "bad cycle hardware difficult pedal longer"
   },
   {
@@ -1326,8 +1326,8 @@
     "id": "113.2",
     "bild": "Worshop scan/20261007_100422.jpg",
     "adresse": "MB42",
-    "text_clean": "No infrastructure to ride bike",
-    "note": "Bad cycle hardware (difficult to pedal longer); No infrastructure to ride bike",
+    "text_clean": "No infrastructure to ride bike!",
+    "note": "Bad cycle hardware (difficult to pedal longer!); No infrastructure to ride bike!",
     "text_tokens": "no infrastructure ride bike"
   },
   {
@@ -1414,8 +1414,8 @@
     "id": "121",
     "bild": "Worshop scan/20261007_100510.jpg",
     "adresse": "UD22",
-    "text_clean": "materialistic Mindset e.g. who can't afford private property is dumb",
-    "note": "materialistic Mindset e.g. who can't afford private property is dumb",
+    "text_clean": "materialistic Mindset: who can't afford private property is dumb",
+    "note": "materialistic Mindset: who can't afford private property is dumb",
     "text_tokens": "materialistic mindset who can't afford private property is dumb"
   },
   {
@@ -1425,8 +1425,8 @@
     "id": "122",
     "bild": "Worshop scan/20261007_100517.jpg",
     "adresse": "SE32",
-    "text_clean": "independent Supply Chains e.g. USA, Iran, etc.",
-    "note": "independent Supply Chains e.g. USA, Iran, etc.",
+    "text_clean": "independent Supply Chains (USA, Iran, etc.)",
+    "note": "independent Supply Chains (USA, Iran, etc.)",
     "text_tokens": "independent supply chains usa iran etc"
   },
   {
@@ -1447,8 +1447,8 @@
     "id": "124",
     "bild": "Worshop scan/20261007_100539.jpg",
     "adresse": "MB11",
-    "text_clean": "Autonomous UAMs no infrastructure needed can work anywhere in the world",
-    "note": "Autonomous UAMs no infrastructure needed can work anywhere in the world",
+    "text_clean": "Autonomous UAMs no infrastructure needed can work anywhere in the world!",
+    "note": "Autonomous UAMs no infrastructure needed can work anywhere in the world!",
     "text_tokens": "autonomous uams no infrastructure needed can work anywhere in the world"
   },
   {
@@ -1678,8 +1678,8 @@
     "id": "145",
     "bild": "Worshop scan/20261007_100757.jpg",
     "adresse": "ME22",
-    "text_clean": "autonomous driving leads to less accidents",
-    "note": "autonomous driving leads to less accidents",
+    "text_clean": "autonomous driving (less accidents)",
+    "note": "autonomous driving (less accidents)",
     "text_tokens": "autonomous driving less accidents"
   },
   {
@@ -1723,7 +1723,7 @@
     "bild": "Worshop scan/20261007_100827.jpg",
     "adresse": "SE52",
     "text_clean": "coordinated traffic signal control",
-    "note": "coordinated traffic signal control ; Backup for routes",
+    "note": "coordinated traffic signal control leads to Backup for routes",
     "text_tokens": "coordinated traffic signal control"
   },
   {
@@ -1734,7 +1734,7 @@
     "bild": "Worshop scan/20261007_100827.jpg",
     "adresse": "SE52",
     "text_clean": "Backup for routes",
-    "note": "coordinated traffic signal control ; Backup for routes",
+    "note": "coordinated traffic signal control leads to Backup for routes",
     "text_tokens": "backup for routes"
   },
   {
@@ -1766,9 +1766,9 @@
     "id": "152",
     "bild": "Worshop scan/20261007_100844.jpg",
     "adresse": "MC21",
-    "text_clean": "no need to drive e.g. new services such as Uber",
-    "note": "no need to drive e.g. new services such as Uber",
-    "text_tokens": "no need drive new services such as uber"
+    "text_clean": "new services such as Uber (no need to drive)",
+    "note": "new services such as Uber (no need to drive)",
+    "text_tokens": "new services such as uber no need drive"
   },
   {
     "row": 153,
@@ -1821,8 +1821,8 @@
     "id": "157",
     "bild": "Worshop scan/20261007_100913.jpg",
     "adresse": "SB12",
-    "text_clean": "Rural or sparsely populated areas are expensive to operate leads to less profitability",
-    "note": "Rural or sparsely populated areas are expensive to operate leads to less profitability",
+    "text_clean": "Rural or sparsely populated areas are expensive to operate. (less profitability)",
+    "note": "Rural or sparsely populated areas are expensive to operate. (less profitability)",
     "text_tokens": "rural or sparsely populated areas are expensive operate less profitability"
   },
   {
@@ -1843,8 +1843,8 @@
     "id": "159",
     "bild": "Worshop scan/20261007_100924.jpg",
     "adresse": "ME11",
-    "text_clean": "for street congestions e.g. buses",
-    "note": "for street congestions e.g. buses",
+    "text_clean": "for street congestions (buses)",
+    "note": "for street congestions (buses)",
     "text_tokens": "for street congestions buses"
   },
   {
@@ -1876,8 +1876,8 @@
     "id": "162",
     "bild": "Worshop scan/20261007_100942.jpg",
     "adresse": "SB51",
-    "text_clean": "Present everywhere: not physically then through network e.g. IT",
-    "note": "Present everywhere: not physically then through network e.g. IT",
+    "text_clean": "Present everywhere: not physically then through network (IT)",
+    "note": "Present everywhere: not physically then through network (IT)",
     "text_tokens": "present everywhere not physically then through network it"
   },
   {
@@ -1887,9 +1887,9 @@
     "id": "163",
     "bild": "Worshop scan/20261007_100947.jpg",
     "adresse": "UF32",
-    "text_clean": "15 min Town no or less commuting",
-    "note": "15 min Town no or less commuting",
-    "text_tokens": "15 min town no or less commuting"
+    "text_clean": "15 min Town no commuting (less)",
+    "note": "15 min Town no commuting (less)",
+    "text_tokens": "15 min town no commuting less"
   },
   {
     "row": 164,
@@ -1909,9 +1909,9 @@
     "id": "165",
     "bild": "Worshop scan/20261007_101005.jpg",
     "adresse": "SA22",
-    "text_clean": "better traffic management leads to easy and quick movement within city leads to quality of life improvement leads to demand for public transport rises",
-    "note": "better traffic management leads to easy and quick movement within city leads to quality of life improvement leads to demand for public transport rises",
-    "text_tokens": "better traffic management easy and quick movement within city quality of life improvement demand for public transport rises"
+    "text_clean": "Goals for future city: better traffic management leads to easy and quick movement within city; quality of life improvement; demand for public transport rises",
+    "note": "Goals for future city: better traffic management leads to easy and quick movement within city; quality of life improvement; demand for public transport rises",
+    "text_tokens": "goals for future city better traffic management easy and quick movement within city quality of life improvement demand for public transport rises"
   },
   {
     "row": 166,
@@ -1931,8 +1931,8 @@
     "id": "167",
     "bild": "Worshop scan/20261007_101015.jpg",
     "adresse": "SD22",
-    "text_clean": "modern technologies e.g. AVs do not require management (outdated)",
-    "note": "modern technologies e.g. AVs do not require management (outdated)",
+    "text_clean": "modern technologies (AVs) do not require management (outdated)",
+    "note": "modern technologies (AVs) do not require management (outdated)",
     "text_tokens": "modern technologies avs do not require management outdated"
   },
   {
@@ -1953,9 +1953,9 @@
     "id": "169",
     "bild": "Worshop scan/20261007_101028.jpg",
     "adresse": "UE12",
-    "text_clean": "private energy production e.g. PV etc.",
-    "note": "private energy production e.g. PV etc.",
-    "text_tokens": "private energy production pv etc"
+    "text_clean": "private energy production with PV etc.",
+    "note": "private energy production with PV etc.",
+    "text_tokens": "private energy production with pv etc"
   },
   {
     "row": 170,
@@ -1964,8 +1964,8 @@
     "id": "170",
     "bild": "Worshop scan/20261007_101034.jpg",
     "adresse": "UD32",
-    "text_clean": "lower paid workplaces e.g. McDonalds",
-    "note": "lower paid workplaces e.g. McDonalds",
+    "text_clean": "lower paid workplaces (e.g. McDonalds)",
+    "note": "lower paid workplaces (e.g. McDonalds)",
     "text_tokens": "lower paid workplaces mcdonalds"
   },
   {
@@ -1997,8 +1997,8 @@
     "id": "173",
     "bild": "Worshop scan/20261007_101052.jpg",
     "adresse": "MC22",
-    "text_clean": "only for climate motivated people e.g. Social Score",
-    "note": "only for climate motivated people e.g. Social Score",
+    "text_clean": "only for climate motivated people (Social Score)",
+    "note": "only for climate motivated people (Social Score)",
     "text_tokens": "only for climate motivated people social score"
   },
   {
@@ -2031,7 +2031,7 @@
     "bild": "Worshop scan/20261007_101108.jpg",
     "adresse": "UD21",
     "text_clean": "Eco-friendly public spaces",
-    "note": "Eco-friendly public spaces ; Eco-friendly mindset from everyone",
+    "note": "Eco-friendly public spaces and Eco-friendly mindset from everyone",
     "text_tokens": "eco-friendly public spaces"
   },
   {
@@ -2042,7 +2042,7 @@
     "bild": "Worshop scan/20261007_101108.jpg",
     "adresse": "UD21",
     "text_clean": "Eco-friendly mindset from everyone",
-    "note": "Eco-friendly public spaces ; Eco-friendly mindset from everyone",
+    "note": "Eco-friendly public spaces and Eco-friendly mindset from everyone",
     "text_tokens": "eco-friendly mindset from everyone"
   },
   {
@@ -2074,9 +2074,9 @@
     "id": "179",
     "bild": "Worshop scan/20261007_101125.jpg",
     "adresse": "UB22",
-    "text_clean": "good city concepts",
-    "note": "good city concepts",
-    "text_tokens": "good city concepts"
+    "text_clean": "with good city concepts",
+    "note": "with good city concepts",
+    "text_tokens": "with good city concepts"
   },
   {
     "row": 180,
@@ -2195,8 +2195,8 @@
     "id": "190",
     "bild": "Worshop scan/20261007_101229.jpg",
     "adresse": "SD11",
-    "text_clean": "Anti-nuclear becomes anti-coal",
-    "note": "Anti-nuclear becomes anti-coal",
+    "text_clean": "Anti-nuclear becomes anti-coal e.g.",
+    "note": "Anti-nuclear becomes anti-coal e.g.",
     "text_tokens": "anti-nuclear becomes anti-coal"
   },
   {
@@ -2206,9 +2206,9 @@
     "id": "191",
     "bild": "Worshop scan/20261007_101236.jpg",
     "adresse": "MA52",
-    "text_clean": "Need of products delivered at home",
-    "note": "Need of products delivered at home",
-    "text_tokens": "need of products delivered at home"
+    "text_clean": "Need products delivered at home!",
+    "note": "Need products delivered at home!",
+    "text_tokens": "need products delivered at home"
   },
   {
     "row": 192,
@@ -2272,8 +2272,8 @@
     "id": "197",
     "bild": "Worshop scan/20261007_101325.jpg",
     "adresse": "ME31",
-    "text_clean": "mobility impaired e.g. people who can't walk on all surfaces",
-    "note": "mobility impaired e.g. people who can't walk on all surfaces",
+    "text_clean": "mobility impaired people who can't walk on all surfaces",
+    "note": "mobility impaired people who can't walk on all surfaces",
     "text_tokens": "mobility impaired people who can't walk on all surfaces"
   },
   {
@@ -2327,8 +2327,8 @@
     "id": "202",
     "bild": "Worshop scan/20261007_101354.jpg",
     "adresse": "UC52",
-    "text_clean": "Class Separation e.g. rich versus poor",
-    "note": "Class Separation e.g. rich versus poor",
+    "text_clean": "Class Separation: rich versus poor",
+    "note": "Class Separation: rich versus poor",
     "text_tokens": "class separation rich versus poor"
   },
   {
@@ -2338,9 +2338,9 @@
     "id": "203",
     "bild": "Worshop scan/20261007_101400.jpg",
     "adresse": "MA42",
-    "text_clean": "benefits like health, time used, safety",
-    "note": "benefits like health, time used, safety",
-    "text_tokens": "benefits like health time used safety"
+    "text_clean": "benefits (health, time used, safety)",
+    "note": "benefits (health, time used, safety)",
+    "text_tokens": "benefits health time used safety"
   },
   {
     "row": 204,
@@ -2393,9 +2393,9 @@
     "id": "208",
     "bild": "Worshop scan/20261007_101429.jpg",
     "adresse": "MC21",
-    "text_clean": "public carsharing because it is cheap",
-    "note": "public carsharing because it is cheap",
-    "text_tokens": "public carsharing it is cheap"
+    "text_clean": "public carsharing (cheap)",
+    "note": "public carsharing (cheap)",
+    "text_tokens": "public carsharing cheap"
   },
   {
     "row": 209,
@@ -2426,9 +2426,9 @@
     "id": "211",
     "bild": "Worshop scan/20261007_101451.jpg",
     "adresse": "UA21",
-    "text_clean": "individual houses with big open spaces",
-    "note": "individual houses with big open spaces",
-    "text_tokens": "individual houses with big open spaces"
+    "text_clean": "Public space is irrelevant because individual houses with big open spaces!",
+    "note": "Public space is irrelevant because individual houses with big open spaces!",
+    "text_tokens": "public space is irrelevant individual houses with big open spaces"
   },
   {
     "row": 212,
@@ -2470,8 +2470,8 @@
     "id": "215",
     "bild": "Worshop scan/20261007_101513.jpg",
     "adresse": "MB31",
-    "text_clean": "Mixed land use e.g. Workplace and housing close",
-    "note": "Mixed land use e.g. Workplace and housing close",
+    "text_clean": "Mixed land use Workplace and housing close",
+    "note": "Mixed land use Workplace and housing close",
     "text_tokens": "mixed land use workplace and housing close"
   },
   {
@@ -2613,9 +2613,9 @@
     "id": "228",
     "bild": "Worshop scan/20261007_101630.jpg",
     "adresse": "UD41",
-    "text_clean": "Self-care is not stigmatised in the society but appreciated",
-    "note": "Self-care is not stigmatised in the society but appreciated",
-    "text_tokens": "self-care is not stigmatised in the society but appreciated"
+    "text_clean": "Self-care is not stigmatised in the society! (appreciated!)",
+    "note": "Self-care is not stigmatised in the society! (appreciated!)",
+    "text_tokens": "self-care is not stigmatised in the society appreciated"
   },
   {
     "row": 229,
@@ -2646,8 +2646,8 @@
     "id": "231",
     "bild": "Worshop scan/20261007_101651.jpg",
     "adresse": "UD52",
-    "text_clean": "homeless people e.g. Main Station",
-    "note": "homeless people e.g. Main Station",
+    "text_clean": "homeless people (e.g. Main Station)",
+    "note": "homeless people (e.g. Main Station)",
     "text_tokens": "homeless people main station"
   },
   {
@@ -2668,9 +2668,9 @@
     "id": "233",
     "bild": "Worshop scan/20261007_101702.jpg",
     "adresse": "UD21",
-    "text_clean": "monuments e.g. Eiffel Tower",
-    "note": "monuments e.g. Eiffel Tower",
-    "text_tokens": "monuments eiffel tower"
+    "text_clean": "with monuments (e.g. Eiffel Tower)",
+    "note": "with monuments (e.g. Eiffel Tower)",
+    "text_tokens": "with monuments eiffel tower"
   },
   {
     "row": 234,
@@ -2701,8 +2701,8 @@
     "id": "236",
     "bild": "Worshop scan/20261007_101723.jpg",
     "adresse": "MF11",
-    "text_clean": "public air mobility e.g Planes",
-    "note": "public air mobility e.g Planes",
+    "text_clean": "public air mobility, Planes",
+    "note": "public air mobility, Planes",
     "text_tokens": "public air mobility planes"
   },
   {
@@ -2734,9 +2734,9 @@
     "id": "239",
     "bild": "Worshop scan/20261007_101741.jpg",
     "adresse": "MD31",
-    "text_clean": "inclusive",
-    "note": "inclusive",
-    "text_tokens": "inclusive"
+    "text_clean": "inclusive (accessible for everyone)",
+    "note": "inclusive (accessible for everyone)",
+    "text_tokens": "inclusive accessible for everyone"
   },
   {
     "row": 240,
@@ -2756,8 +2756,8 @@
     "id": "241",
     "bild": "Worshop scan/20261007_101754.jpg",
     "adresse": "UA11",
-    "text_clean": "working more leads to less time at home",
-    "note": "working more leads to less time at home",
+    "text_clean": "working more, less time at home",
+    "note": "working more, less time at home",
     "text_tokens": "working more less time at home"
   },
   {
@@ -2811,8 +2811,8 @@
     "id": "245",
     "bild": "Worshop scan/20261007_101817.jpg",
     "adresse": "MF22",
-    "text_clean": "15 min city leads to no traffic to Manage",
-    "note": "15 min city leads to no traffic to Manage",
+    "text_clean": "15 min city no traffic to Manage",
+    "note": "15 min city no traffic to Manage",
     "text_tokens": "15 min city no traffic manage"
   },
   {
@@ -2822,9 +2822,9 @@
     "id": "246",
     "bild": "Worshop scan/20261007_101822.jpg",
     "adresse": "UD51",
-    "text_clean": "monuments and places of identity",
-    "note": "monuments and places of identity",
-    "text_tokens": "monuments and places of identity"
+    "text_clean": "with monuments and places of identity",
+    "note": "with monuments and places of identity",
+    "text_tokens": "with monuments and places of identity"
   },
   {
     "row": 247,
@@ -2833,9 +2833,9 @@
     "id": "247",
     "bild": "Worshop scan/20261007_101827.jpg",
     "adresse": "SC51",
-    "text_clean": "Streetlights because of safety e.g. women",
-    "note": "Streetlights because of safety e.g. women",
-    "text_tokens": "streetlights of safety women"
+    "text_clean": "Streetlights because of safety (for e.g. women)",
+    "note": "Streetlights because of safety (for e.g. women)",
+    "text_tokens": "streetlights of safety for women"
   },
   {
     "row": 248,
@@ -2844,8 +2844,8 @@
     "id": "248",
     "bild": "Worshop scan/20261007_101833.jpg",
     "adresse": "UA52",
-    "text_clean": "to get all essential needs e.g. materials stuff",
-    "note": "to get all essential needs e.g. materials stuff",
+    "text_clean": "to get all essential needs (materials stuff)",
+    "note": "to get all essential needs (materials stuff)",
     "text_tokens": "get all essential needs materials stuff"
   },
   {
@@ -2888,9 +2888,9 @@
     "id": "252",
     "bild": "Worshop scan/20261007_101856.jpg",
     "adresse": "MB31",
-    "text_clean": "15-Min-Cities",
-    "note": "15-Min-Cities",
-    "text_tokens": "15-min-cities"
+    "text_clean": "in 15-Min-Cities",
+    "note": "in 15-Min-Cities",
+    "text_tokens": "in 15-min-cities"
   },
   {
     "row": 253,
@@ -2976,9 +2976,9 @@
     "id": "260",
     "bild": "Worshop scan/20261007_101936.jpg",
     "adresse": "SC52",
-    "text_clean": "Build with a lot of stairs imply no accessibility",
-    "note": "Build with a lot of stairs imply no accessibility",
-    "text_tokens": "build with a lot of stairs no accessibility"
+    "text_clean": "Build with a lot of stairs (accessibility)",
+    "note": "Build with a lot of stairs (accessibility)",
+    "text_tokens": "build with a lot of stairs accessibility"
   },
   {
     "row": 261,
@@ -3031,9 +3031,9 @@
     "id": "265",
     "bild": "Worshop scan/20261007_102005.jpg",
     "adresse": "SF41",
-    "text_clean": "polution e.g. forest fires, plastic in rivers",
-    "note": "polution e.g. forest fires, plastic in rivers",
-    "text_tokens": "polution forest fires plastic in rivers"
+    "text_clean": "forest fires plastic in rivers",
+    "note": "forest fires plastic in rivers",
+    "text_tokens": "forest fires plastic in rivers"
   },
   {
     "row": 266,
@@ -3064,8 +3064,8 @@
     "id": "268",
     "bild": "Worshop scan/20261007_102020.jpg",
     "adresse": "MA12",
-    "text_clean": "Extra Weather e.g. minus 30 Degrees and plus 40 Degrees",
-    "note": "Extra Weather e.g. minus 30 Degrees and plus 40 Degrees",
+    "text_clean": "Extra Weather minus 30 Degrees and plus 40 Degrees",
+    "note": "Extra Weather minus 30 Degrees and plus 40 Degrees",
     "text_tokens": "extra weather minus 30 degrees and plus 40 degrees"
   },
   {
@@ -3086,9 +3086,9 @@
     "id": "270",
     "bild": "Worshop scan/20261007_102038.jpg",
     "adresse": "ME41",
-    "text_clean": "Insufficient Power Production when is Cloudy or No Wind",
-    "note": "Insufficient Power Production when is Cloudy or No Wind",
-    "text_tokens": "insufficient power production when is cloudy or no wind"
+    "text_clean": "Insufficient Power Production (Cloudy or No Wind)",
+    "note": "Insufficient Power Production (Cloudy or No Wind)",
+    "text_tokens": "insufficient power production cloudy or no wind"
   },
   {
     "row": 271,
@@ -3108,8 +3108,8 @@
     "id": "272",
     "bild": "Worshop scan/20261007_102047.jpg",
     "adresse": "MF12",
-    "text_clean": "bundling of services e.g. passenger and freight",
-    "note": "bundling of services e.g. passenger and freight",
+    "text_clean": "bundling of services (passenger and freight e.g.)",
+    "note": "bundling of services (passenger and freight e.g.)",
     "text_tokens": "bundling of services passenger and freight"
   },
   {
@@ -3119,8 +3119,8 @@
     "id": "273",
     "bild": "Worshop scan/20261007_102052.jpg",
     "adresse": "MA21",
-    "text_clean": "car is irrelevant in good public transport environment because same performance as that of private car",
-    "note": "car is irrelevant in good public transport environment because same performance as that of private car",
+    "text_clean": "car is irrelevant in good public transport environment because same performance as that of private car!",
+    "note": "car is irrelevant in good public transport environment because same performance as that of private car!",
     "text_tokens": "car is irrelevant in good public transport environment same performance as that of private car"
   },
   {
@@ -3130,8 +3130,8 @@
     "id": "274",
     "bild": "Worshop scan/20261007_102057.jpg",
     "adresse": "MA21",
-    "text_clean": "environmental policies e.g. full life cycle emission for Evs",
-    "note": "environmental policies e.g. full life cycle emission for Evs",
+    "text_clean": "environmental policies (full life cycle emission for EVs!)",
+    "note": "environmental policies (full life cycle emission for EVs!)",
     "text_tokens": "environmental policies full life cycle emission for evs"
   },
   {
@@ -3174,8 +3174,8 @@
     "id": "278",
     "bild": "Worshop scan/20261007_102119.jpg",
     "adresse": "MD11",
-    "text_clean": "eco status e.g. DB100",
-    "note": "eco status e.g. DB100",
+    "text_clean": "eco status (DB100)",
+    "note": "eco status (DB100)",
     "text_tokens": "eco status db100"
   },
   {
@@ -3185,8 +3185,8 @@
     "id": "279",
     "bild": "Worshop scan/20261007_102125.jpg",
     "adresse": "MB52",
-    "text_clean": "drop off points, no home delivery",
-    "note": "drop off points, no home delivery",
+    "text_clean": "drop off points; no home delivery",
+    "note": "drop off points; no home delivery",
     "text_tokens": "drop off points no home delivery"
   },
   {
@@ -3219,7 +3219,7 @@
     "bild": "Worshop scan/20261007_102141.jpg",
     "adresse": "SA42",
     "text_clean": "cooking",
-    "note": "cooking ; climate change",
+    "note": "cooking or climate change",
     "text_tokens": "cooking"
   },
   {
@@ -3230,7 +3230,7 @@
     "bild": "Worshop scan/20261007_102141.jpg",
     "adresse": "SA42",
     "text_clean": "climate change",
-    "note": "cooking ; climate change",
+    "note": "cooking or climate change",
     "text_tokens": "climate change"
   },
   {
@@ -3251,8 +3251,8 @@
     "id": "284",
     "bild": "Worshop scan/20261007_102151.jpg",
     "adresse": "ME41",
-    "text_clean": "depends on the weather climate",
-    "note": "depends on the weather climate",
+    "text_clean": "depends on the weather (climate)",
+    "note": "depends on the weather (climate)",
     "text_tokens": "depends on the weather climate"
   },
   {
@@ -3262,9 +3262,9 @@
     "id": "285",
     "bild": "Worshop scan/20261007_102157.jpg",
     "adresse": "MD22",
-    "text_clean": "pollution leads to green transformation",
-    "note": "pollution leads to green transformation",
-    "text_tokens": "pollution green transformation"
+    "text_clean": "pollution and green transformation",
+    "note": "pollution and green transformation",
+    "text_tokens": "pollution and green transformation"
   },
   {
     "row": 286,
@@ -3284,8 +3284,8 @@
     "id": "287",
     "bild": "Worshop scan/20261007_102209.jpg",
     "adresse": "UE11",
-    "text_clean": "Climate Change e.g. floods, freak weather events",
-    "note": "Climate Change e.g. floods, freak weather events",
+    "text_clean": "Climate Change Floods Freak Weather Events",
+    "note": "Climate Change Floods Freak Weather Events",
     "text_tokens": "climate change floods freak weather events"
   },
   {
@@ -3339,9 +3339,9 @@
     "id": "290",
     "bild": "Worshop scan/20261007_102228.jpg",
     "adresse": "MA32",
-    "text_clean": "policy e.g. Zero emission City",
-    "note": "policy e.g. Zero emission City",
-    "text_tokens": "policy zero emission city"
+    "text_clean": "Zero emission City: policy",
+    "note": "Zero emission City: policy",
+    "text_tokens": "zero emission city policy"
   },
   {
     "row": 291,
@@ -3394,9 +3394,9 @@
     "id": "295",
     "bild": "Worshop scan/20261007_102257.jpg",
     "adresse": "UE11",
-    "text_clean": "riots, less political stability",
-    "note": "riots, less political stability",
-    "text_tokens": "riots less political stability"
+    "text_clean": "riots or less political stability",
+    "note": "riots or less political stability",
+    "text_tokens": "riots or less political stability"
   },
   {
     "row": 296,
@@ -3471,8 +3471,8 @@
     "id": "302",
     "bild": "Worshop scan/20261007_102337.jpg",
     "adresse": "MC22",
-    "text_clean": "policies e.g. number of vehicles gets limited, less parking spots",
-    "note": "policies e.g. number of vehicles gets limited, less parking spots",
+    "text_clean": "policies (e.g. number of vehicles gets limited) less parking spots",
+    "note": "policies (e.g. number of vehicles gets limited) less parking spots",
     "text_tokens": "policies number of vehicles gets limited less parking spots"
   },
   {
@@ -3482,8 +3482,8 @@
     "id": "303",
     "bild": "Worshop scan/20261007_102341.jpg",
     "adresse": "MB12",
-    "text_clean": "Planning, Political Grouping by x",
-    "note": "Planning, Political Grouping by x",
+    "text_clean": "Planning; Political Grouping by x",
+    "note": "Planning; Political Grouping by x",
     "text_tokens": "planning political grouping by x"
   },
   {
@@ -3493,9 +3493,9 @@
     "id": "304",
     "bild": "Worshop scan/20261007_102348.jpg",
     "adresse": "MB32",
-    "text_clean": "Planning is Political",
-    "note": "Planning is Political",
-    "text_tokens": "planning is political"
+    "text_clean": "Planning, Political",
+    "note": "Planning, Political",
+    "text_tokens": "planning political"
   },
   {
     "row": 305,
@@ -3504,9 +3504,9 @@
     "id": "305",
     "bild": "Worshop scan/20261007_102354.jpg",
     "adresse": "ME12",
-    "text_clean": "Power independent from fossils e.g. oil",
-    "note": "Power independent from fossils e.g. oil",
-    "text_tokens": "power independent from fossils oil"
+    "text_clean": "Power independent from fossils (oil etc)",
+    "note": "Power independent from fossils (oil etc)",
+    "text_tokens": "power independent from fossils oil etc"
   },
   {
     "row": 306,
@@ -3527,7 +3527,7 @@
     "bild": "Worshop scan/20261007_102402.jpg",
     "adresse": "UF42",
     "text_clean": "zero emission Care Spaces",
-    "note": "zero emission Care Spaces; Energy",
+    "note": "zero emission Care Spaces; Energy etc",
     "text_tokens": "zero emission care spaces"
   },
   {
@@ -3537,9 +3537,9 @@
     "id": "307.2",
     "bild": "Worshop scan/20261007_102402.jpg",
     "adresse": "UF42",
-    "text_clean": "Energy",
-    "note": "zero emission Care Spaces; Energy",
-    "text_tokens": "energy"
+    "text_clean": "Energy etc",
+    "note": "zero emission Care Spaces; Energy etc",
+    "text_tokens": "energy etc"
   },
   {
     "row": 308,
@@ -3647,9 +3647,9 @@
     "id": "317",
     "bild": "Worshop scan/20261007_102456.jpg",
     "adresse": "SF52",
-    "text_clean": "more focus on sustainability in urban road design e.g. trees",
-    "note": "more focus on sustainability in urban road design e.g. trees",
-    "text_tokens": "more focus on sustainability in urban road design trees"
+    "text_clean": "more focus on sustainability in urban road design (trees etc.)",
+    "note": "more focus on sustainability in urban road design (trees etc.)",
+    "text_tokens": "more focus on sustainability in urban road design trees etc"
   },
   {
     "row": 318,
@@ -3746,8 +3746,8 @@
     "id": "326",
     "bild": "Worshop scan/20261007_102545.jpg",
     "adresse": "MD21",
-    "text_clean": "Premium brands e.g. Mercedes",
-    "note": "Premium brands e.g. Mercedes",
+    "text_clean": "Premium brands (Mercedes)",
+    "note": "Premium brands (Mercedes)",
     "text_tokens": "premium brands mercedes"
   },
   {
@@ -3823,9 +3823,9 @@
     "id": "333",
     "bild": "Worshop scan/20261007_102623.jpg",
     "adresse": "SE31",
-    "text_clean": "Energy prices leads to no oil",
-    "note": "Energy prices leads to no oil",
-    "text_tokens": "energy prices no oil"
+    "text_clean": "Energy prices or no oil",
+    "note": "Energy prices or no oil",
+    "text_tokens": "energy prices or no oil"
   },
   {
     "row": 334,

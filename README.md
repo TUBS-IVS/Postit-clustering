@@ -10,10 +10,10 @@ WorkshopPostItScan/ the step before this project (own README): scan_postits.py r
                    The 336 scans are in "Worshop scan/"; each note's `bild` path is relative to this folder.
                    Linux/macOS only (it uses fcntl); its .venv is a macOS/Linux environment.
 data/raw/          source export, untouched (use the JSON, not the CSV; see docs);
-                   postits_clean.xlsx: the cleaned notes hand-edited by a colleague (`text_clean_edit`),
-                   ";" separates two ideas on one post-it
-data/processed/    postits_clean.json (cleaned notes), ideas.json (hand-edited notes split into ideas,
-                   input for clustering), spellcheck_report.csv,
+                   postits_clean.xlsx: the cleaned notes hand-edited by a colleague (`text_clean_edit`);
+                   only her splits are used: ";" separates two ideas on one post-it
+data/processed/    postits_clean.json (cleaned notes), ideas.json (cleaned notes split into ideas where
+                   she split them; input for clustering), spellcheck_report.csv,
                    clusters_<model>.csv (sorted by cluster), .xlsx (color-coded for review), .html (3D page)
 data/review/       LLM review: saved replies, the blind check, and the sheets to decide on
 docs/              text_cleaning_rules.md: the cleaning spec
@@ -23,7 +23,7 @@ src/spellcheck.py  report of words an English dictionary does not know
 src/llm_review.py  LLM suggestions for translations and arrow meanings, for manual review
 src/ki_toolbox.py  client for the KI-Toolbox chat API
 src/merge_review.py compares the model's review with the blind check; builds the sheets to decide on
-src/split_ideas.py splits the hand-edited notes at ";" into ideas -> data/processed/ideas.json
+src/split_ideas.py splits the cleaned notes into ideas where the colleague split them -> ideas.json
 src/embed_cluster.py SBERT embeddings -> UMAP 3D -> HDBSCAN clusters with theme words; writes CSV + page
 src/plot_html.py   the interactive 3D page (also redraws it from the saved CSVs)
 src/cluster_sheet.py color-coded review workbook clusters_<model>.xlsx: Overview, Clusters, Noise sheets
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 python src/clean_text.py
 python src/clean_basic.py   # optional: stage-1 output, postits_basic.json
 python src/spellcheck.py
-python src/split_ideas.py                       # hand-edited notes -> ideas.json
+python src/split_ideas.py                       # cleaned notes split into ideas -> ideas.json
 python src/embed_cluster.py                     # clusters CSV + 3D page (downloads the SBERT model once)
 python src/plot_html.py                         # redraw the page from the saved CSV, no re-embedding
 ```
@@ -45,7 +45,7 @@ python src/plot_html.py                         # redraw the page from the saved
 
 **[data/processed/clusters_all-mpnet-base-v2.html](data/processed/clusters_all-mpnet-base-v2.html)**:
 336 post-its = 350 ideas (13 post-its hold 2-3 ideas, numbered e.g. 19.1 / 19.2), SBERT `all-mpnet-base-v2`,
-28 clusters + 52 noise (HDBSCAN min_cluster_size 5, min_samples 2). GitHub shows HTML as source, so download
+28 clusters + 45 noise (HDBSCAN min_cluster_size 5, min_samples 2). GitHub shows HTML as source, so download
 the file (Raw → save, or clone the repo) and open it in a browser; it needs internet for plotly.js.
 
 - drag to rotate, scroll to zoom, hover a dot to read the note with its source (German original, post-it, scan)
