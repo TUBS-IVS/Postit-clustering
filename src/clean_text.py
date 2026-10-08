@@ -21,7 +21,6 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "raw" / "postits_geprueft (2).json"
 OUT_JSON = ROOT / "data" / "processed" / "postits_clean.json"
-OUT_XLSX = ROOT / "data" / "processed" / "postits_clean.xlsx"
 
 N_RECORDS = 336
 ARROW = "→"
@@ -368,12 +367,11 @@ def main():
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     df.reset_index().to_json(OUT_JSON, orient="records", force_ascii=False, indent=2)
-    df.to_excel(OUT_XLSX)
     print(f"{len(df)} notes cleaned, validation passed")
     print(f"  arrows: {df['n_arrows'].sum()} in {(df['n_arrows'] > 0).sum()} notes, "
           f"{df['starts_with_arrow'].sum()} notes start with one")
     print(f"  likely typos applied: {APPLY_LIKELY_TYPOS}")
-    print(f"  -> {OUT_JSON.relative_to(ROOT)}, {OUT_XLSX.relative_to(ROOT)}")
+    print(f"  -> {OUT_JSON.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

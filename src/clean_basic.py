@@ -23,7 +23,6 @@ from clean_text import (
 )
 
 OUT_JSON = ROOT / "data" / "processed" / "postits_basic.json"
-OUT_XLSX = ROOT / "data" / "processed" / "postits_basic.xlsx"
 
 # A. Row fixes (and the review's fixes) whose find text contains no arrow. The arrow ones
 # (rows 0, 34, 85, 160, 165, 167, 274, 279, 290, 326) are left for the arrow stage.
@@ -123,13 +122,12 @@ def main():
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)
     df.reset_index().to_json(OUT_JSON, orient="records", force_ascii=False, indent=2)
-    df.to_excel(OUT_XLSX)
     forms = Counter(a for t in basic for a in ARROW_RE.findall(t))
     print(f"{len(df)} notes cleaned (stage 1), validation passed")
     print(f"  arrows left for the arrow stage: {sum(forms.values())} in {(df['n_arrows'] > 0).sum()} notes, "
           + ", ".join(f"{a} {n}" for a, n in forms.most_common()))
     print(f"  likely typos applied: {APPLY_LIKELY_TYPOS}")
-    print(f"  -> {OUT_JSON.relative_to(ROOT)}, {OUT_XLSX.relative_to(ROOT)}")
+    print(f"  -> {OUT_JSON.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

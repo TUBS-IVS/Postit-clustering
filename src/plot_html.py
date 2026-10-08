@@ -1,7 +1,6 @@
-"""Turn a cluster table into interactive 3-D pages:
-  clusters_<name>.html         the plot, a clickable cluster list with theme words, a note reader
-                               with source details and a word search
-  clusters_<name>_simple.html  the same page with a short hover (text and note number) and short note cards
+"""Turn a cluster table into an interactive 3-D page (clusters_<name>.html): the plot, a clickable
+cluster list with theme words, a note reader with source details and a word search.
+plotly.js loads from its CDN, so the page is small (needs internet to open).
 
 Called by src/embed_cluster.py. You can also run it alone to redraw pages from the saved CSVs
 without embedding again:
@@ -63,7 +62,7 @@ SOURCE_RAW = json.load(open(RAW, encoding="utf-8-sig"))
 SOURCE_CLEAN = {r["row"]: r for r in json.load(open(OUT_DIR / "postits_clean.json", encoding="utf-8"))}
 
 
-def build(df, title, detail=True):
+def build(df, title):
     """The figure (one trace per cluster, noise last, then the label trace) and the data the page script needs."""
     ids = sorted(c for c in df["cluster"].unique() if c != -1) + ([-1] if (df["cluster"] == -1).any() else [])
     fig, clusters = go.Figure(), []
@@ -71,14 +70,12 @@ def build(df, title, detail=True):
         part = df[df["cluster"] == c]
         noise = bool(c == -1)
         color = NOISE_COLOR if noise else PALETTE[i % len(PALETTE)]
-        notes = [source(int(r)) if detail else {"row": int(r), "text": str(t), "where": "" if pd.isna(a) else str(a)}
-                 for r, t, a in zip(part["row"], part["text_clean"], part["adresse"])]
+        notes = [source(int(r)) for r in part["row"]]
         fig.add_trace(go.Scatter3d(
             x=part["x"], y=part["y"], z=part["z"], mode="markers",
             marker=dict(size=3 if noise else 5, color=color, opacity=0.35 if noise else 0.9,
                         line=dict(width=0.5, color="rgba(255,255,255,0.5)")),
-            customdata=[[hover(n) if detail else f"{wrap(n['text'])}<br><span style='color:#9aa3b8'>note {n['row']}</span>"]
-                        for n in notes],
+            customdata=[[hover(n)] for n in notes],
             hovertemplate=f"%{{customdata[0]}}<extra>{'noise' if noise else f'cluster {c}'}</extra>"))
         clusters.append({"id": int(c), "noise": noise, "color": color, "n": len(part),
                          "words": [] if noise else part["theme"].iloc[0].split(", "),
@@ -178,7 +175,7 @@ function highlight(text) {
   const safe = esc(text);
   return query ? safe.replace(new RegExp('(' + reEsc(esc(query)) + ')', 'gi'), '<mark>$1</mark>') : safe;
 }
-function matches(n) { return !query || (n.text + ' ' + (n.original || '') + ' ' + n.where).toLowerCase().includes(query); }
+function matches(n) { return !query || (n.text + ' ' + n.original + ' ' + n.where).toLowerCase().includes(query); }
 
 function renderList() {
   document.getElementById('list').innerHTML = C.map((c, i) => {
@@ -201,9 +198,6 @@ function renderNotes() {
 }
 function noteHtml(c, n, i, j) {
   const on = picked && picked[2] === i && picked[3] === j ? ' picked' : '';
-  if (n.original === undefined)  // short card (simple page)
-    return `<div class="note${on}" style="--c:${c.color}">${highlight(n.text)}
-            <div class="meta">note ${n.row}${n.where ? ' · ' + esc(n.where) : ''} · ${c.noise ? 'noise' : 'cluster ' + c.id}</div></div>`;
   const orig = n.original.trim() !== n.english.trim() ? `<div class="orig">${esc(n.original)}</div>` : '';
   const scan = n.scan_url ? `<a href="${n.scan_url}" target="_blank">open scan ↗</a>` : esc(n.scan);
   return `<div class="note${on}" style="--c:${c.color}">${highlight(n.text)}${orig}
@@ -243,11 +237,11 @@ renderList();
 """
 
 
-def write_page(df, title, path, detail=True, plotly_js=True):
-    fig, clusters = build(df, title, detail)
+def write_page(df, title, path):
+    fig, clusters = build(df, title)
     n_noise = int((df["cluster"] == -1).sum())
     stats = f"{len(df)} notes · {len(clusters) - (1 if n_noise else 0)} clusters · {n_noise} noise"
-    plot = fig.to_html(full_html=False, include_plotlyjs=plotly_js, div_id="plot",
+    plot = fig.to_html(full_html=False, include_plotlyjs="cdn", div_id="plot",
                        config={"displaylogo": False, "responsive": True,
                                "modeBarButtonsToRemove": ["toImage", "resetCameraLastSave3d"]})
     data = json.dumps(clusters, ensure_ascii=False).replace("</", "<\\/")
@@ -255,21 +249,13 @@ def write_page(df, title, path, detail=True, plotly_js=True):
     Path(path).write_text(page.replace("__PLOT__", plot), encoding="utf-8")
 
 
-def write_pages(df, title, path):
-    """Both views: the detailed page at `path` and the short-hover one next to it with a _simple suffix."""
-    path = Path(path)
-    write_page(df, title, path)
-    # plotly.js from its CDN keeps this one small enough for git (~0.2 MB instead of 4.6 MB); needs internet
-    write_page(df, title, path.with_name(path.stem + "_simple.html"), detail=False, plotly_js="cdn")
-
-
 def main():
     paths = [Path(p) for p in sys.argv[1:]] or sorted(OUT_DIR.glob("clusters_*.csv"))
     for csv in paths:
         df = pd.read_csv(csv, encoding="utf-8-sig")
         name = csv.stem.removeprefix("clusters_")
-        write_pages(df, f"Post-it clusters · {name.replace('_', ' · ')}", csv.with_suffix(".html"))
-        print(f"{csv.name} -> {csv.stem}.html + {csv.stem}_simple.html")
+        write_page(df, f"Post-it clusters · {name.replace('_', ' · ')}", csv.with_suffix(".html"))
+        print(f"{csv.name} -> {csv.stem}.html")
 
 
 if __name__ == "__main__":

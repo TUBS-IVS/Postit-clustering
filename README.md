@@ -10,7 +10,8 @@ WorkshopPostItScan/ the step before this project (own README): scan_postits.py r
                    The 336 scans are in "Worshop scan/"; each note's `bild` path is relative to this folder.
                    Linux/macOS only (it uses fcntl); its .venv is a macOS/Linux environment.
 data/raw/          source export, untouched (use the JSON, not the CSV; see docs)
-data/processed/    postits_clean.json (canonical), postits_clean.xlsx (for review), spellcheck_report.csv
+data/processed/    postits_clean.json (cleaned notes, input for clustering), spellcheck_report.csv,
+                   clusters_<model>.csv + .html (cluster results and 3D page)
 data/review/       LLM review: saved replies, the blind check, and the sheets to decide on
 docs/              text_cleaning_rules.md: the cleaning spec
 src/clean_text.py  cleaning, following the rules file; every rule asserts it matched
@@ -19,9 +20,8 @@ src/spellcheck.py  report of words an English dictionary does not know
 src/llm_review.py  LLM suggestions for translations and arrow meanings, for manual review
 src/ki_toolbox.py  client for the KI-Toolbox chat API
 src/merge_review.py compares the model's review with the blind check; builds the sheets to decide on
-src/embed_cluster.py SBERT embeddings -> UMAP 3D -> HDBSCAN clusters with theme words; writes CSV + pages
-src/plot_html.py   the interactive 3D pages (also redraws them from the saved CSVs)
-src/cluster_sheet.py color-coded review workbook clusters_<model>.xlsx: Overview, Clusters, Noise sheets
+src/embed_cluster.py SBERT embeddings -> UMAP 3D -> HDBSCAN clusters with theme words; writes CSV + page
+src/plot_html.py   the interactive 3D page (also redraws it from the saved CSVs)
 ```
 
 ## Run
@@ -31,24 +31,23 @@ pip install -r requirements.txt
 python src/clean_text.py
 python src/clean_basic.py   # optional: stage-1 output, postits_basic.json
 python src/spellcheck.py
-python src/embed_cluster.py                     # clusters + 3D pages (downloads the SBERT model once)
-python src/plot_html.py                         # redraw the pages from the saved CSVs, no re-embedding
+python src/embed_cluster.py                     # clusters CSV + 3D page (downloads the SBERT model once)
+python src/plot_html.py                         # redraw the page from the saved CSV, no re-embedding
 ```
 
 ## View the clusters
 
-**[data/processed/clusters_all-mpnet-base-v2_simple.html](data/processed/clusters_all-mpnet-base-v2_simple.html)**:
+**[data/processed/clusters_all-mpnet-base-v2.html](data/processed/clusters_all-mpnet-base-v2.html)**:
 336 notes, SBERT `all-mpnet-base-v2`, 24 clusters + 50 noise (HDBSCAN min_cluster_size 5, min_samples 2). GitHub shows HTML as source, so download
 the file (Raw → save, or clone the repo) and open it in a browser; it needs internet for plotly.js.
 
-- drag to rotate, scroll to zoom, hover a dot to read the note
+- drag to rotate, scroll to zoom, hover a dot to read the note with its source (German original, post-it, scan)
 - click a cluster in the sidebar to focus it and list its notes; click a theme word to search it
 - search box: highlights matching notes in the plot; toggles hide the noise and the labels
 
 Theme words are each cluster's most typical words (class-based TF-IDF), not hand-written names.
-Locally, `python src/embed_cluster.py` also writes `clusters_<model>.html`: the same page with source
-details in the hover (German original, post-it address, scan) and a link to the scan. It is not in git
-(4.6 MB, and the scans are not in the repo).
+The "open scan" links only work locally (the scans are not in the repo). The CSV next to it
+(`clusters_all-mpnet-base-v2.csv`, local only) has every note with its cluster and theme.
 
 ## LLM review (suggestions only)
 
