@@ -1,5 +1,7 @@
-"""Turn a cluster table into an interactive 3-D page: the plot, a clickable cluster list with
-theme words, a note reader and a word search.
+"""Turn a cluster table into interactive 3-D pages:
+  clusters_<name>.html         the plot, a clickable cluster list with theme words, a note reader
+                               with source details and a word search
+  clusters_<name>_simple.html  a plain plot with a legend and noise buttons, for a quick look
 
 Called by src/embed_cluster.py. You can also run it alone to redraw pages from the saved CSVs
 without embedding again:
@@ -248,13 +250,42 @@ def write_page(df, title, path):
     Path(path).write_text(page.replace("__PLOT__", plot), encoding="utf-8")
 
 
+def write_simple(df, title, path):
+    """The plain view: plotly legend (click to hide a cluster) and Show/Hide/Only noise buttons."""
+    labels = df["cluster"]
+    plot = df.assign(group=[f"{c}: {t} ({(labels == c).sum()})" if c != -1 else f"noise ({(labels == -1).sum()})"
+                            for c, t in zip(labels, df["theme"])])
+    order = sorted(plot["group"].unique(), key=lambda g: (g.startswith("noise"), int(g.split(":")[0]) if ":" in g else 0))
+    fig = px.scatter_3d(plot, x="x", y="y", z="z", color="group", category_orders={"group": order},
+                        hover_data={"row": True, "adresse": True, "text_clean": True, "x": False, "y": False, "z": False},
+                        title=f"{title} - click a legend entry to hide or show it")
+    fig.update_traces(marker_size=4)
+    for trace in fig.data:
+        if trace.name.startswith("noise"):
+            trace.marker.update(color="lightgrey", size=3, opacity=0.5)
+    noise = [t.name.startswith("noise") for t in fig.data]
+    fig.update_layout(legend_title_text="cluster: top words (notes)", updatemenus=[dict(
+        type="buttons", direction="right", x=0, y=1.08, xanchor="left",
+        buttons=[dict(label="Show noise", method="restyle", args=[{"visible": True}]),
+                 dict(label="Hide noise", method="restyle", args=[{"visible": [not n for n in noise]}]),
+                 dict(label="Only noise", method="restyle", args=[{"visible": noise}])])])
+    fig.write_html(path)
+
+
+def write_pages(df, title, path):
+    """Both views: the full page at `path` and the plain one next to it with a _simple suffix."""
+    path = Path(path)
+    write_page(df, title, path)
+    write_simple(df, title, path.with_name(path.stem + "_simple.html"))
+
+
 def main():
     paths = [Path(p) for p in sys.argv[1:]] or sorted(OUT_DIR.glob("clusters_*.csv"))
     for csv in paths:
         df = pd.read_csv(csv, encoding="utf-8-sig")
         name = csv.stem.removeprefix("clusters_")
-        write_page(df, f"Post-it clusters · {name.replace('_', ' · ')}", csv.with_suffix(".html"))
-        print(f"{csv.name} -> {csv.with_suffix('.html').name}")
+        write_pages(df, f"Post-it clusters · {name.replace('_', ' · ')}", csv.with_suffix(".html"))
+        print(f"{csv.name} -> {csv.stem}.html + {csv.stem}_simple.html")
 
 
 if __name__ == "__main__":

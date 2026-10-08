@@ -2,7 +2,7 @@
 
 Reads data/processed/postits_clean.json (`text_clean`) and writes, per model:
   data/processed/clusters_<model>.csv   row, cluster, x, y, z and the note text
-  data/processed/clusters_<model>.html  interactive 3D plot (hover shows the note)
+  data/processed/clusters_<model>.html  interactive 3D page (see src/plot_html.py), plus a _simple.html plain view
 
 Usage:
     python src/embed_cluster.py
@@ -24,7 +24,7 @@ import pandas as pd
 import umap
 from sentence_transformers import SentenceTransformer
 
-from plot_html import write_page
+from plot_html import write_pages
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "processed" / "postits_clean.json"
@@ -78,7 +78,7 @@ def main():
     out["theme"] = [themes.get(c, "noise (fits no cluster)") for c in labels]
     out.to_csv(OUT_DIR / f"clusters_{name}.csv", index=False, encoding="utf-8-sig")
 
-    write_page(out, f"Post-it clusters · {args.model} · {args.layout} layout", OUT_DIR / f"clusters_{name}.html")
+    write_pages(out, f"Post-it clusters · {args.model} · {args.layout} layout", OUT_DIR / f"clusters_{name}.html")
 
     n_clusters = len(set(labels) - {-1})
     print(f"{len(out)} notes, {n_clusters} clusters, {(labels == -1).sum()} noise -> clusters_{name}.csv/.html")
