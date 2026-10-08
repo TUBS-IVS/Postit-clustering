@@ -1,7 +1,7 @@
 """Turn a cluster table into interactive 3-D pages:
   clusters_<name>.html         the plot, a clickable cluster list with theme words, a note reader
                                with source details and a word search
-  clusters_<name>_simple.html  a plain plot with a legend and noise buttons, for a quick look
+  clusters_<name>_simple.html  the same page with a short hover (text and note number) and short note cards
 
 Called by src/embed_cluster.py. You can also run it alone to redraw pages from the saved CSVs
 without embedding again:
@@ -63,7 +63,7 @@ SOURCE_RAW = json.load(open(RAW, encoding="utf-8-sig"))
 SOURCE_CLEAN = {r["row"]: r for r in json.load(open(OUT_DIR / "postits_clean.json", encoding="utf-8"))}
 
 
-def build(df, title):
+def build(df, title, detail=True):
     """The figure (one trace per cluster, noise last, then the label trace) and the data the page script needs."""
     ids = sorted(c for c in df["cluster"].unique() if c != -1) + ([-1] if (df["cluster"] == -1).any() else [])
     fig, clusters = go.Figure(), []
@@ -71,12 +71,14 @@ def build(df, title):
         part = df[df["cluster"] == c]
         noise = bool(c == -1)
         color = NOISE_COLOR if noise else PALETTE[i % len(PALETTE)]
-        notes = [source(int(r)) for r in part["row"]]
+        notes = [source(int(r)) if detail else {"row": int(r), "text": str(t), "where": "" if pd.isna(a) else str(a)}
+                 for r, t, a in zip(part["row"], part["text_clean"], part["adresse"])]
         fig.add_trace(go.Scatter3d(
             x=part["x"], y=part["y"], z=part["z"], mode="markers",
             marker=dict(size=3 if noise else 5, color=color, opacity=0.35 if noise else 0.9,
                         line=dict(width=0.5, color="rgba(255,255,255,0.5)")),
-            customdata=[[hover(n)] for n in notes],
+            customdata=[[hover(n) if detail else f"{wrap(n['text'])}<br><span style='color:#9aa3b8'>note {n['row']}</span>"]
+                        for n in notes],
             hovertemplate=f"%{{customdata[0]}}<extra>{'noise' if noise else f'cluster {c}'}</extra>"))
         clusters.append({"id": int(c), "noise": noise, "color": color, "n": len(part),
                          "words": [] if noise else part["theme"].iloc[0].split(", "),
@@ -176,7 +178,7 @@ function highlight(text) {
   const safe = esc(text);
   return query ? safe.replace(new RegExp('(' + reEsc(esc(query)) + ')', 'gi'), '<mark>$1</mark>') : safe;
 }
-function matches(n) { return !query || (n.text + ' ' + n.original + ' ' + n.where).toLowerCase().includes(query); }
+function matches(n) { return !query || (n.text + ' ' + (n.original || '') + ' ' + n.where).toLowerCase().includes(query); }
 
 function renderList() {
   document.getElementById('list').innerHTML = C.map((c, i) => {
@@ -199,6 +201,9 @@ function renderNotes() {
 }
 function noteHtml(c, n, i, j) {
   const on = picked && picked[2] === i && picked[3] === j ? ' picked' : '';
+  if (n.original === undefined)  // short card (simple page)
+    return `<div class="note${on}" style="--c:${c.color}">${highlight(n.text)}
+            <div class="meta">note ${n.row}${n.where ? ' · ' + esc(n.where) : ''} · ${c.noise ? 'noise' : 'cluster ' + c.id}</div></div>`;
   const orig = n.original.trim() !== n.english.trim() ? `<div class="orig">${esc(n.original)}</div>` : '';
   const scan = n.scan_url ? `<a href="${n.scan_url}" target="_blank">open scan ↗</a>` : esc(n.scan);
   return `<div class="note${on}" style="--c:${c.color}">${highlight(n.text)}${orig}
@@ -238,8 +243,8 @@ renderList();
 """
 
 
-def write_page(df, title, path):
-    fig, clusters = build(df, title)
+def write_page(df, title, path, detail=True):
+    fig, clusters = build(df, title, detail)
     n_noise = int((df["cluster"] == -1).sum())
     stats = f"{len(df)} notes · {len(clusters) - (1 if n_noise else 0)} clusters · {n_noise} noise"
     plot = fig.to_html(full_html=False, include_plotlyjs=True, div_id="plot",
@@ -250,33 +255,11 @@ def write_page(df, title, path):
     Path(path).write_text(page.replace("__PLOT__", plot), encoding="utf-8")
 
 
-def write_simple(df, title, path):
-    """The plain view: plotly legend (click to hide a cluster) and Show/Hide/Only noise buttons."""
-    labels = df["cluster"]
-    plot = df.assign(group=[f"{c}: {t} ({(labels == c).sum()})" if c != -1 else f"noise ({(labels == -1).sum()})"
-                            for c, t in zip(labels, df["theme"])])
-    order = sorted(plot["group"].unique(), key=lambda g: (g.startswith("noise"), int(g.split(":")[0]) if ":" in g else 0))
-    fig = px.scatter_3d(plot, x="x", y="y", z="z", color="group", category_orders={"group": order},
-                        hover_data={"row": True, "adresse": True, "text_clean": True, "x": False, "y": False, "z": False},
-                        title=f"{title} - click a legend entry to hide or show it")
-    fig.update_traces(marker_size=4)
-    for trace in fig.data:
-        if trace.name.startswith("noise"):
-            trace.marker.update(color="lightgrey", size=3, opacity=0.5)
-    noise = [t.name.startswith("noise") for t in fig.data]
-    fig.update_layout(legend_title_text="cluster: top words (notes)", updatemenus=[dict(
-        type="buttons", direction="right", x=0, y=1.08, xanchor="left",
-        buttons=[dict(label="Show noise", method="restyle", args=[{"visible": True}]),
-                 dict(label="Hide noise", method="restyle", args=[{"visible": [not n for n in noise]}]),
-                 dict(label="Only noise", method="restyle", args=[{"visible": noise}])])])
-    fig.write_html(path)
-
-
 def write_pages(df, title, path):
-    """Both views: the full page at `path` and the plain one next to it with a _simple suffix."""
+    """Both views: the detailed page at `path` and the short-hover one next to it with a _simple suffix."""
     path = Path(path)
     write_page(df, title, path)
-    write_simple(df, title, path.with_name(path.stem + "_simple.html"))
+    write_page(df, title, path.with_name(path.stem + "_simple.html"), detail=False)
 
 
 def main():
