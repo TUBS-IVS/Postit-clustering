@@ -11,7 +11,7 @@ WorkshopPostItScan/ the step before this project (own README): scan_postits.py r
                    Linux/macOS only (it uses fcntl); its .venv is a macOS/Linux environment.
 data/raw/          source export, untouched (use the JSON, not the CSV; see docs)
 data/processed/    postits_clean.json (cleaned notes, input for clustering), spellcheck_report.csv,
-                   clusters_<model>.csv + .html (cluster results and 3D page)
+                   clusters_<model>.csv (sorted by cluster), .xlsx (color-coded for review), .html (3D page)
 data/review/       LLM review: saved replies, the blind check, and the sheets to decide on
 docs/              text_cleaning_rules.md: the cleaning spec
 src/clean_text.py  cleaning, following the rules file; every rule asserts it matched
@@ -22,6 +22,7 @@ src/ki_toolbox.py  client for the KI-Toolbox chat API
 src/merge_review.py compares the model's review with the blind check; builds the sheets to decide on
 src/embed_cluster.py SBERT embeddings -> UMAP 3D -> HDBSCAN clusters with theme words; writes CSV + page
 src/plot_html.py   the interactive 3D page (also redraws it from the saved CSVs)
+src/cluster_sheet.py color-coded review workbook clusters_<model>.xlsx: Overview, Clusters, Noise sheets
 ```
 
 ## Run
