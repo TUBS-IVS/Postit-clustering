@@ -8,24 +8,57 @@ without embedding again:
 """
 
 import json
+import os
 import sys
 import textwrap
 from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
-import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-OUT_DIR = Path(__file__).resolve().parents[1] / "data" / "processed"
+ROOT = Path(__file__).resolve().parents[1]
+OUT_DIR = ROOT / "data" / "processed"
+RAW = ROOT / "data" / "raw" / "postits_geprueft (2).json"
+SCAN_DIR = ROOT / "WorkshopPostItScan"
 PALETTE = px.colors.qualitative.Bold + px.colors.qualitative.Vivid + px.colors.qualitative.Prism
 NOISE_COLOR = "#8a93a6"
 BG = "#0f1222"
 
 
-def hover_text(text):
-    return "<br>".join(textwrap.wrap(escape(str(text)), 48))
+def wrap(text, width=52):
+    return "<br>".join("<br>".join(textwrap.wrap(escape(line), width)) for line in str(text).splitlines() if line.strip())
+
+
+def source(row):
+    """Where a note comes from: the checked scan record (data/raw) plus the cleaning record, by row number."""
+    raw, clean = SOURCE_RAW[row], SOURCE_CLEAN[row]
+    flags = (["checked"] if raw.get("geprueft") else ["not checked"]) + (["edited by hand"] if raw.get("manuell_geaendert") else [])
+    scan = SCAN_DIR / raw["bild"]
+    return {"row": row, "text": clean["text_clean"], "original": raw["text"], "english": raw["text_englisch"],
+            "where": raw["adresse"], "seite": raw["seite"], "zeile": raw["zeile"], "spalte": raw["spalte"],
+            "teil": raw["teilposition"], "scan": Path(raw["bild"]).name, "flags": ", ".join(flags),
+            "hint": raw.get("hinweis") or "",
+            "scan_url": quote(os.path.relpath(scan, OUT_DIR).replace(os.sep, "/")) if scan.exists() else ""}
+
+
+def hover(n):
+    dim = "<span style='color:#9aa3b8'>{}</span>"
+    lines = [f"<b>{wrap(n['text'])}</b>"]
+    if n["original"].strip() != n["english"].strip():
+        lines.append(dim.format("original:") + f" <i>{wrap(n['original'])}</i>")
+    if " ".join(n["english"].split()) != n["text"]:
+        lines.append(dim.format("before cleaning:") + f" {wrap(n['english'])}")
+    lines.append(dim.format(f"post-it {n['where']} · side {n['seite']} · row {n['zeile']} · column {n['spalte']}"
+                            f" · part {n['teil']}"))
+    lines.append(dim.format(f"scan {n['scan']} · note #{n['row']} · {n['flags']}"))
+    return "<br>".join(lines)
+
+
+SOURCE_RAW = json.load(open(RAW, encoding="utf-8-sig"))
+SOURCE_CLEAN = {r["row"]: r for r in json.load(open(OUT_DIR / "postits_clean.json", encoding="utf-8"))}
 
 
 def build(df, title):
@@ -36,18 +69,17 @@ def build(df, title):
         part = df[df["cluster"] == c]
         noise = bool(c == -1)
         color = NOISE_COLOR if noise else PALETTE[i % len(PALETTE)]
+        notes = [source(int(r)) for r in part["row"]]
         fig.add_trace(go.Scatter3d(
             x=part["x"], y=part["y"], z=part["z"], mode="markers",
             marker=dict(size=3 if noise else 5, color=color, opacity=0.35 if noise else 0.9,
                         line=dict(width=0.5, color="rgba(255,255,255,0.5)")),
-            customdata=np.stack([part["row"], [hover_text(t) for t in part["text_clean"]]], axis=-1),
-            hovertemplate="%{customdata[1]}<br><span style='color:#9aa3b8'>note %{customdata[0]}</span>"
-                          f"<extra>{'noise' if noise else f'cluster {c}'}</extra>"))
+            customdata=[[hover(n)] for n in notes],
+            hovertemplate=f"%{{customdata[0]}}<extra>{'noise' if noise else f'cluster {c}'}</extra>"))
         clusters.append({"id": int(c), "noise": noise, "color": color, "n": len(part),
                          "words": [] if noise else part["theme"].iloc[0].split(", "),
                          "size": 3 if noise else 5, "opacity": 0.35 if noise else 0.9,
-                         "notes": [{"row": int(r), "text": str(t), "where": "" if pd.isna(a) else str(a)}
-                                   for r, t, a in zip(part["row"], part["text_clean"], part["adresse"])]})
+                         "notes": notes})
     named = [c for c in clusters if not c["noise"]]
     centers = df[df["cluster"] != -1].groupby("cluster")[["x", "y", "z"]].mean().loc[[c["id"] for c in named]]
     fig.add_trace(go.Scatter3d(
@@ -100,6 +132,9 @@ PAGE = """<!doctype html>
   .count { margin-left:auto; color:var(--dim); font-size:12px; padding-top:2px; }
   .note { margin:8px 4px; padding:9px 12px; background:var(--card); border-radius:10px; border-left:4px solid var(--c); }
   .note .meta { color:var(--dim); font-size:11.5px; margin-top:4px; }
+  .note .orig { color:#c8cde0; font-style:italic; font-size:12.5px; margin-top:5px; white-space:pre-line; }
+  .note .hint2 { color:#e9b872; font-size:11.5px; margin-top:4px; }
+  .note a { color:#8fa2ff; text-decoration:none; } .note a:hover { text-decoration:underline; }
   .note.picked { outline:2px solid var(--c); }
   mark { background:#ffd54a; color:#111; border-radius:3px; padding:0 2px; }
   main { flex:1; position:relative; min-width:0; }
@@ -113,7 +148,7 @@ PAGE = """<!doctype html>
 <aside>
   <header><h1>__TITLE__</h1><div class="stats">__STATS__</div></header>
   <div class="tools">
-    <input type="search" id="q" placeholder="Search a word, e.g. bike, home, drone…">
+    <input type="search" id="q" placeholder="Search a word or post-it, e.g. bike, Wohnen, MA32…">
     <label class="toggle"><input type="checkbox" id="noise" checked> noise</label>
     <label class="toggle"><input type="checkbox" id="labels" checked> labels</label>
   </div>
@@ -139,7 +174,7 @@ function highlight(text) {
   const safe = esc(text);
   return query ? safe.replace(new RegExp('(' + reEsc(esc(query)) + ')', 'gi'), '<mark>$1</mark>') : safe;
 }
-function matches(n) { return !query || n.text.toLowerCase().includes(query); }
+function matches(n) { return !query || (n.text + ' ' + n.original + ' ' + n.where).toLowerCase().includes(query); }
 
 function renderList() {
   document.getElementById('list').innerHTML = C.map((c, i) => {
@@ -162,8 +197,12 @@ function renderNotes() {
 }
 function noteHtml(c, n, i, j) {
   const on = picked && picked[2] === i && picked[3] === j ? ' picked' : '';
-  return `<div class="note${on}" style="--c:${c.color}">${highlight(n.text)}
-          <div class="meta">note ${n.row}${n.where ? ' · ' + esc(n.where) : ''} · ${c.noise ? 'noise' : 'cluster ' + c.id}</div></div>`;
+  const orig = n.original.trim() !== n.english.trim() ? `<div class="orig">${esc(n.original)}</div>` : '';
+  const scan = n.scan_url ? `<a href="${n.scan_url}" target="_blank">open scan ↗</a>` : esc(n.scan);
+  return `<div class="note${on}" style="--c:${c.color}">${highlight(n.text)}${orig}
+          <div class="meta">post-it <b>${esc(n.where)}</b> · side ${esc(n.seite)} · row ${esc(n.zeile)} · column ${n.spalte} · part ${n.teil}<br>
+          ${scan} · note #${n.row} · ${esc(n.flags)} · ${c.noise ? 'noise' : 'cluster ' + c.id}</div>
+          ${n.hint ? `<div class="hint2">⚠ ${esc(n.hint)}</div>` : ''}</div>`;
 }
 
 function restyle() {
