@@ -1,7 +1,8 @@
-"""Embed the cleaned notes with SBERT, project them to 3D and cluster them.
+"""Embed the post-it ideas with SBERT, project them to 3D and cluster them.
 
-Reads data/processed/postits_clean.json (`text_clean`) and writes, per model:
-  data/processed/clusters_<model>.csv   row, cluster, x, y, z and the note text
+Reads data/processed/ideas.json (`text_clean`, one record per idea; made by src/split_ideas.py from
+the hand-edited notes) and writes, per model:
+  data/processed/clusters_<model>.csv   id, row, idea, cluster, theme, x, y, z and the idea text
   data/processed/clusters_<model>.xlsx  the same, color-coded for review (see src/cluster_sheet.py)
   data/processed/clusters_<model>.html  interactive 3D page with source details (see src/plot_html.py)
 
@@ -23,7 +24,7 @@ from cluster_sheet import write_sheet
 from plot_html import write_page
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "data" / "processed" / "postits_clean.json"
+SOURCE = ROOT / "data" / "processed" / "ideas.json"
 OUT_DIR = ROOT / "data" / "processed"
 SEED = 42
 
@@ -59,7 +60,7 @@ def main():
                     random_state=SEED).fit_transform(vectors)
     labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size, min_samples=args.min_samples).fit_predict(xyz)
 
-    out = df[["row", "bild", "adresse", "text_clean"]].copy()
+    out = df[["id", "row", "idea", "n_ideas", "bild", "adresse", "text_clean", "note"]].copy()
     out["cluster"] = labels  # -1 = noise, a note that fits no cluster
     out[["x", "y", "z"]] = xyz
     name = Path(args.model).name.replace("/", "_")
@@ -67,16 +68,16 @@ def main():
     themes = cluster_themes(df["text_tokens"], labels)
     out["theme"] = [themes.get(c, "noise (fits no cluster)") for c in labels]
     # sorted for reading: cluster by cluster, noise last
-    out = out.sort_values(["cluster", "row"], key=lambda col: col.replace(-1, 10**6) if col.name == "cluster" else col)
+    out = out.sort_values(["cluster", "row", "idea"], key=lambda col: col.replace(-1, 10**6) if col.name == "cluster" else col)
     out.to_csv(OUT_DIR / f"clusters_{name}.csv", index=False, encoding="utf-8-sig")
     write_sheet(out, OUT_DIR / f"clusters_{name}.xlsx")
 
     write_page(out, f"Post-it clusters · {args.model}", OUT_DIR / f"clusters_{name}.html")
 
     n_clusters = len(set(labels) - {-1})
-    print(f"{len(out)} notes, {n_clusters} clusters, {(labels == -1).sum()} noise -> clusters_{name}.csv/.html")
+    print(f"{len(out)} ideas, {n_clusters} clusters, {(labels == -1).sum()} noise -> clusters_{name}.csv/.html")
     for c in sorted(set(labels) - {-1}):
-        print(f"  cluster {c} ({(labels == c).sum()} notes): {themes[c]}")
+        print(f"  cluster {c} ({(labels == c).sum()} ideas): {themes[c]}")
 
 
 if __name__ == "__main__":

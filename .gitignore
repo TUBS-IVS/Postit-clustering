@@ -8,3 +8,5 @@ WorkshopPostItScan/Worshop scan/
 data/processed/*.html
 # except the cluster page, shared as the view (plotly.js from CDN, small)
 !data/processed/clusters_all-mpnet-base-v2.html
+# the hand-edited notes are a source input (small), keep them
+!data/raw/postits_clean.xlsx

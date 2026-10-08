@@ -2,7 +2,8 @@
 
 Sheets (colors match the 3D pages):
   Overview  one line per cluster: color, theme words, number of notes
-  Clusters  every clustered note, grouped by cluster, with its source (German original, post-it, scan)
+  Clusters  every clustered idea, grouped by cluster, with its source (German original, post-it, scan);
+            a post-it with two ideas has two lines (note # 19.1, 19.2)
   Noise     the notes that fit no cluster
 Each note sheet has an empty `comment` column for the reviewer.
 
@@ -26,7 +27,7 @@ HEADER_FONT = Font(bold=True, color="FFFFFF")
 THIN = Side(style="thin", color="D0D4E0")
 WRAP = Alignment(wrap_text=True, vertical="top")
 COLUMNS = [("cluster", 9), ("theme", 30), ("note", 52), ("original (German)", 42), ("post-it", 10),
-           ("side/row/col/part", 16), ("scan", 24), ("note #", 8), ("checked", 18), ("comment", 30)]
+           ("side/row/col/part", 16), ("scan", 24), ("note #", 8), ("whole post-it (if split)", 40), ("checked", 18), ("comment", 30)]
 
 
 def to_hex(color):
@@ -62,11 +63,11 @@ def header(ws, columns):
 def note_sheet(ws, df, colors):
     header(ws, COLUMNS)
     for r, (_, row) in enumerate(df.iterrows(), 2):
-        n = source(int(row["row"]))
+        n = source(row)
         original = n["original"] if n["original"].strip() != n["english"].strip() else ""
         values = ["noise" if row["cluster"] == -1 else int(row["cluster"]), row["theme"], n["text"], original,
-                  n["where"], f"{n['seite']} / {n['zeile']} / {n['spalte']} / {n['teil']}", n["scan"], n["row"],
-                  n["flags"], ""]
+                  n["where"], f"{n['seite']} / {n['zeile']} / {n['spalte']} / {n['teil']}", n["scan"], n["id"],
+                  n["note"] if n["idea"] else "", n["flags"], ""]
         fill = PatternFill("solid", fgColor=tint(colors[row["cluster"]]))
         for k, value in enumerate(values, 1):
             cell = ws.cell(row=r, column=k, value=value)
@@ -104,16 +105,16 @@ def write_sheet(df, path):
     ws.cell(row=total, column=2, value="total").font = Font(bold=True)
     ws.cell(row=total, column=3, value=len(df)).font = Font(bold=True)
 
-    clustered = df[df["cluster"] != -1].sort_values(["cluster", "row"])
+    clustered = df[df["cluster"] != -1].sort_values(["cluster", "row", "idea"])
     note_sheet(wb.create_sheet("Clusters"), clustered, colors)
-    note_sheet(wb.create_sheet("Noise"), df[df["cluster"] == -1].sort_values("row"), colors)
+    note_sheet(wb.create_sheet("Noise"), df[df["cluster"] == -1].sort_values(["row", "idea"]), colors)
     wb.save(path)
 
 
 def main():
     paths = [Path(p) for p in sys.argv[1:]] or sorted(OUT_DIR.glob("clusters_*.csv"))
     for csv in paths:
-        write_sheet(pd.read_csv(csv, encoding="utf-8-sig"), csv.with_suffix(".xlsx"))
+        write_sheet(pd.read_csv(csv, encoding="utf-8-sig", dtype={"id": str}), csv.with_suffix(".xlsx"))
         print(f"{csv.name} -> {csv.stem}.xlsx")
 
 

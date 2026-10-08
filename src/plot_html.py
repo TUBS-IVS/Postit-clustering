@@ -33,12 +33,15 @@ def wrap(text, width=52):
     return "<br>".join("<br>".join(textwrap.wrap(escape(line), width)) for line in str(text).splitlines() if line.strip())
 
 
-def source(row):
-    """Where a note comes from: the checked scan record (data/raw) plus the cleaning record, by row number."""
-    raw, clean = SOURCE_RAW[row], SOURCE_CLEAN[row]
+def source(r):
+    """Where an idea comes from: its line in the cluster table plus the checked scan record (data/raw)."""
+    row, n_ideas = int(r["row"]), int(r["n_ideas"])
+    raw = SOURCE_RAW[row]
     flags = (["checked"] if raw.get("geprueft") else ["not checked"]) + (["edited by hand"] if raw.get("manuell_geaendert") else [])
     scan = SCAN_DIR / raw["bild"]
-    return {"row": row, "text": clean["text_clean"], "original": raw["text"], "english": raw["text_englisch"],
+    return {"row": row, "id": str(r["id"]), "text": r["text_clean"], "note": r["note"],
+            "idea": f"idea {r['idea']} of {n_ideas}" if n_ideas > 1 else "",
+            "original": raw["text"], "english": raw["text_englisch"],
             "where": raw["adresse"], "seite": raw["seite"], "zeile": raw["zeile"], "spalte": raw["spalte"],
             "teil": raw["teilposition"], "scan": Path(raw["bild"]).name, "flags": ", ".join(flags),
             "hint": raw.get("hinweis") or "",
@@ -48,18 +51,19 @@ def source(row):
 def hover(n):
     dim = "<span style='color:#9aa3b8'>{}</span>"
     lines = [f"<b>{wrap(n['text'])}</b>"]
+    if n["idea"]:
+        lines.append(dim.format(f"{n['idea']} on this post-it:") + f" {wrap(n['note'])}")
     if n["original"].strip() != n["english"].strip():
         lines.append(dim.format("original:") + f" <i>{wrap(n['original'])}</i>")
-    if " ".join(n["english"].split()) != n["text"]:
+    if " ".join(n["english"].split()) != n["note"]:
         lines.append(dim.format("before cleaning:") + f" {wrap(n['english'])}")
     lines.append(dim.format(f"post-it {n['where']} · side {n['seite']} · row {n['zeile']} · column {n['spalte']}"
                             f" · part {n['teil']}"))
-    lines.append(dim.format(f"scan {n['scan']} · note #{n['row']} · {n['flags']}"))
+    lines.append(dim.format(f"scan {n['scan']} · note #{n['id']} · {n['flags']}"))
     return "<br>".join(lines)
 
 
 SOURCE_RAW = json.load(open(RAW, encoding="utf-8-sig"))
-SOURCE_CLEAN = {r["row"]: r for r in json.load(open(OUT_DIR / "postits_clean.json", encoding="utf-8"))}
 
 
 def build(df, title):
@@ -70,7 +74,7 @@ def build(df, title):
         part = df[df["cluster"] == c]
         noise = bool(c == -1)
         color = NOISE_COLOR if noise else PALETTE[i % len(PALETTE)]
-        notes = [source(int(r)) for r in part["row"]]
+        notes = [source(r) for _, r in part.iterrows()]
         fig.add_trace(go.Scatter3d(
             x=part["x"], y=part["y"], z=part["z"], mode="markers",
             marker=dict(size=3 if noise else 5, color=color, opacity=0.35 if noise else 0.9,
@@ -202,7 +206,7 @@ function noteHtml(c, n, i, j) {
   const scan = n.scan_url ? `<a href="${n.scan_url}" target="_blank">open scan ↗</a>` : esc(n.scan);
   return `<div class="note${on}" style="--c:${c.color}">${highlight(n.text)}${orig}
           <div class="meta">post-it <b>${esc(n.where)}</b> · side ${esc(n.seite)} · row ${esc(n.zeile)} · column ${n.spalte} · part ${n.teil}<br>
-          ${scan} · note #${n.row} · ${esc(n.flags)} · ${c.noise ? 'noise' : 'cluster ' + c.id}</div>
+          ${scan} · note #${esc(n.id)}${n.idea ? ' (' + n.idea + ')' : ''} · ${esc(n.flags)} · ${c.noise ? 'noise' : 'cluster ' + c.id}</div>
           ${n.hint ? `<div class="hint2">⚠ ${esc(n.hint)}</div>` : ''}</div>`;
 }
 
@@ -252,7 +256,7 @@ def write_page(df, title, path):
 def main():
     paths = [Path(p) for p in sys.argv[1:]] or sorted(OUT_DIR.glob("clusters_*.csv"))
     for csv in paths:
-        df = pd.read_csv(csv, encoding="utf-8-sig")
+        df = pd.read_csv(csv, encoding="utf-8-sig", dtype={"id": str})
         name = csv.stem.removeprefix("clusters_")
         write_page(df, f"Post-it clusters · {name.replace('_', ' · ')}", csv.with_suffix(".html"))
         print(f"{csv.name} -> {csv.stem}.html")
