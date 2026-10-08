@@ -21,9 +21,10 @@ from pathlib import Path
 
 import hdbscan
 import pandas as pd
-import plotly.express as px
 import umap
 from sentence_transformers import SentenceTransformer
+
+from plot_html import write_page
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "processed" / "postits_clean.json"
@@ -77,23 +78,7 @@ def main():
     out["theme"] = [themes.get(c, "noise (fits no cluster)") for c in labels]
     out.to_csv(OUT_DIR / f"clusters_{name}.csv", index=False, encoding="utf-8-sig")
 
-    plot = out.assign(group=[f"{c}: {themes[c]} ({(labels == c).sum()})" if c != -1 else f"noise ({(labels == -1).sum()})"
-                             for c in labels])
-    order = sorted(plot["group"].unique(), key=lambda g: (g.startswith("noise"), int(g.split(":")[0]) if ":" in g else 0))
-    fig = px.scatter_3d(plot, x="x", y="y", z="z", color="group", category_orders={"group": order},
-                        hover_data={"row": True, "adresse": True, "text_clean": True, "x": False, "y": False, "z": False},
-                        title=f"Post-it clusters ({args.model}, {args.layout} layout) - click a legend entry to hide or show it")
-    fig.update_traces(marker_size=4)
-    for trace in fig.data:
-        if trace.name.startswith("noise"):
-            trace.marker.update(color="lightgrey", size=3, opacity=0.5)
-    noise = [t.name.startswith("noise") for t in fig.data]
-    fig.update_layout(legend_title_text="cluster: top words (notes)", updatemenus=[dict(
-        type="buttons", direction="right", x=0, y=1.08, xanchor="left",
-        buttons=[dict(label="Show noise", method="restyle", args=[{"visible": True}]),
-                 dict(label="Hide noise", method="restyle", args=[{"visible": [not n for n in noise]}]),
-                 dict(label="Only noise", method="restyle", args=[{"visible": noise}])])])
-    fig.write_html(OUT_DIR / f"clusters_{name}.html")
+    write_page(out, f"Post-it clusters · {args.model} · {args.layout} layout", OUT_DIR / f"clusters_{name}.html")
 
     n_clusters = len(set(labels) - {-1})
     print(f"{len(out)} notes, {n_clusters} clusters, {(labels == -1).sum()} noise -> clusters_{name}.csv/.html")
