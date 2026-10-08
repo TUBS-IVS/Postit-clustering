@@ -243,11 +243,11 @@ renderList();
 """
 
 
-def write_page(df, title, path, detail=True):
+def write_page(df, title, path, detail=True, plotly_js=True):
     fig, clusters = build(df, title, detail)
     n_noise = int((df["cluster"] == -1).sum())
     stats = f"{len(df)} notes · {len(clusters) - (1 if n_noise else 0)} clusters · {n_noise} noise"
-    plot = fig.to_html(full_html=False, include_plotlyjs=True, div_id="plot",
+    plot = fig.to_html(full_html=False, include_plotlyjs=plotly_js, div_id="plot",
                        config={"displaylogo": False, "responsive": True,
                                "modeBarButtonsToRemove": ["toImage", "resetCameraLastSave3d"]})
     data = json.dumps(clusters, ensure_ascii=False).replace("</", "<\\/")
@@ -259,7 +259,8 @@ def write_pages(df, title, path):
     """Both views: the detailed page at `path` and the short-hover one next to it with a _simple suffix."""
     path = Path(path)
     write_page(df, title, path)
-    write_page(df, title, path.with_name(path.stem + "_simple.html"), detail=False)
+    # plotly.js from its CDN keeps this one small enough for git (~0.2 MB instead of 4.6 MB); needs internet
+    write_page(df, title, path.with_name(path.stem + "_simple.html"), detail=False, plotly_js="cdn")
 
 
 def main():

@@ -19,6 +19,8 @@ src/spellcheck.py  report of words an English dictionary does not know
 src/llm_review.py  LLM suggestions for translations and arrow meanings, for manual review
 src/ki_toolbox.py  client for the KI-Toolbox chat API
 src/merge_review.py compares the model's review with the blind check; builds the sheets to decide on
+src/embed_cluster.py SBERT embeddings -> UMAP 3D -> HDBSCAN clusters with theme words; writes CSV + pages
+src/plot_html.py   the interactive 3D pages (also redraws them from the saved CSVs)
 ```
 
 ## Run
@@ -28,7 +30,25 @@ pip install -r requirements.txt
 python src/clean_text.py
 python src/clean_basic.py   # optional: stage-1 output, postits_basic.json
 python src/spellcheck.py
+python src/embed_cluster.py                     # clusters + 3D pages (downloads the SBERT model once)
+python src/embed_cluster.py --layout supervised # cleaner picture, but distances are less faithful
+python src/plot_html.py                         # redraw the pages from the saved CSVs, no re-embedding
 ```
+
+## View the clusters
+
+**[data/processed/clusters_all-mpnet-base-v2_simple.html](data/processed/clusters_all-mpnet-base-v2_simple.html)**:
+336 notes, SBERT `all-mpnet-base-v2`, 21 clusters + noise. GitHub shows HTML as source, so download
+the file (Raw → save, or clone the repo) and open it in a browser; it needs internet for plotly.js.
+
+- drag to rotate, scroll to zoom, hover a dot to read the note
+- click a cluster in the sidebar to focus it and list its notes; click a theme word to search it
+- search box: highlights matching notes in the plot; toggles hide the noise and the labels
+
+Theme words are each cluster's most typical words (class-based TF-IDF), not hand-written names.
+Locally, `python src/embed_cluster.py` also writes `clusters_<model>.html`: the same page with source
+details in the hover (German original, post-it address, scan) and a link to the scan. It is not in git
+(4.6 MB, and the scans are not in the repo).
 
 ## LLM review (suggestions only)
 

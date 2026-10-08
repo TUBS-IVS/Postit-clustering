@@ -6,3 +6,5 @@ WorkshopPostItScan/Worshop scan/
 *.csv
 *.xlsx
 data/processed/*.html
+# except the one simple cluster page, shared as the view (plotly.js from CDN, small)
+!data/processed/clusters_all-mpnet-base-v2_simple.html
