@@ -21,6 +21,7 @@ src/ki_toolbox.py  client for the KI-Toolbox chat API
 src/merge_review.py compares the model's review with the blind check; builds the sheets to decide on
 src/embed_cluster.py SBERT embeddings -> UMAP 3D -> HDBSCAN clusters with theme words; writes CSV + pages
 src/plot_html.py   the interactive 3D pages (also redraws them from the saved CSVs)
+src/cluster_sheet.py color-coded review workbook clusters_<model>.xlsx: Overview, Clusters, Noise sheets
 ```
 
 ## Run

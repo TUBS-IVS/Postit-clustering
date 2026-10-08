@@ -2,6 +2,7 @@
 
 Reads data/processed/postits_clean.json (`text_clean`) and writes, per model:
   data/processed/clusters_<model>.csv   row, cluster, x, y, z and the note text
+  data/processed/clusters_<model>.xlsx  the same, color-coded for review (see src/cluster_sheet.py)
   data/processed/clusters_<model>.html  interactive 3D page with source details (see src/plot_html.py)
   data/processed/clusters_<model>_simple.html  the same page with a short hover
 
@@ -19,6 +20,7 @@ import pandas as pd
 import umap
 from sentence_transformers import SentenceTransformer
 
+from cluster_sheet import write_sheet
 from plot_html import write_pages
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -66,6 +68,7 @@ def main():
     themes = cluster_themes(df["text_tokens"], labels)
     out["theme"] = [themes.get(c, "noise (fits no cluster)") for c in labels]
     out.to_csv(OUT_DIR / f"clusters_{name}.csv", index=False, encoding="utf-8-sig")
+    write_sheet(out, OUT_DIR / f"clusters_{name}.xlsx")
 
     write_pages(out, f"Post-it clusters · {args.model}", OUT_DIR / f"clusters_{name}.html")
 
