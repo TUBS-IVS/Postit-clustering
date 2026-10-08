@@ -7,6 +7,12 @@ Reads data/processed/postits_clean.json (`text_clean`) and writes, per model:
 Usage:
     python src/embed_cluster.py
     python src/embed_cluster.py --model all-MiniLM-L6-v2 --min-cluster-size 4
+    python src/embed_cluster.py --layout supervised
+
+Layouts:
+  same        cluster on the 3-D map that is plotted (what you see is what was clustered)
+  supervised  cluster on a 10-D map (keeps more detail), then lay out 3-D with the cluster
+              labels as a guide, so each cluster sits together in the plot
 """
 
 import argparse
@@ -40,6 +46,7 @@ def main():
     parser.add_argument("--model", default="all-mpnet-base-v2", help="sentence-transformers model name or local folder")
     parser.add_argument("--min-cluster-size", type=int, default=5, help="HDBSCAN: smallest group that counts as a cluster")
     parser.add_argument("--neighbors", type=int, default=15, help="UMAP: local (small) vs global (large) structure")
+    parser.add_argument("--layout", choices=["same", "supervised"], default="same", help="see Layouts above")
     args = parser.parse_args()
 
     df = pd.DataFrame(json.load(open(SOURCE, encoding="utf-8")))
@@ -48,15 +55,23 @@ def main():
     # Normalized vectors, so Euclidean distance on them ranks like cosine similarity.
     vectors = SentenceTransformer(args.model).encode(texts, normalize_embeddings=True, show_progress_bar=True)
 
-    # One 3-D map for both clustering and plotting, so the plot shows exactly what was clustered.
-    xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
-                    random_state=SEED).fit_transform(vectors)
-    labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size).fit_predict(xyz)
+    if args.layout == "same":
+        # One 3-D map for both clustering and plotting, so the plot shows exactly what was clustered.
+        xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
+                        random_state=SEED).fit_transform(vectors)
+        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size).fit_predict(xyz)
+    else:
+        coords = umap.UMAP(n_components=10, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
+                           random_state=SEED).fit_transform(vectors)
+        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size).fit_predict(coords)
+        # UMAP reads label -1 as "unknown", so noise is placed by text similarity alone.
+        xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.1, metric="cosine",
+                        target_weight=0.5, random_state=SEED).fit_transform(vectors, y=labels)
 
     out = df[["row", "bild", "adresse", "text_clean"]].copy()
     out["cluster"] = labels  # -1 = noise, a note that fits no cluster
     out[["x", "y", "z"]] = xyz
-    name = Path(args.model).name.replace("/", "_")
+    name = Path(args.model).name.replace("/", "_") + ("_supervised" if args.layout == "supervised" else "")
 
     themes = cluster_themes(df["text_tokens"], labels)
     out["theme"] = [themes.get(c, "noise (fits no cluster)") for c in labels]
@@ -67,7 +82,7 @@ def main():
     order = sorted(plot["group"].unique(), key=lambda g: (g.startswith("noise"), int(g.split(":")[0]) if ":" in g else 0))
     fig = px.scatter_3d(plot, x="x", y="y", z="z", color="group", category_orders={"group": order},
                         hover_data={"row": True, "adresse": True, "text_clean": True, "x": False, "y": False, "z": False},
-                        title=f"Post-it clusters ({args.model}) - click a legend entry to hide or show it")
+                        title=f"Post-it clusters ({args.model}, {args.layout} layout) - click a legend entry to hide or show it")
     fig.update_traces(marker_size=4)
     for trace in fig.data:
         if trace.name.startswith("noise"):
