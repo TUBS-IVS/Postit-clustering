@@ -1,0 +1,350 @@
+openapi: 3.0.3
+info:
+  title: APIs for Chatbot
+  description: 'APIs for Chatbot'
+  version: 1.0.0
+  contact:
+    name: Gauß-IT Zentrum
+    url: 'https://www.tu-braunschweig.de/it'
+#servers:
+#  - url: '/'
+paths:
+  /api/v1/chat/send:
+    post:
+      security:
+        - bearerAuth: [ ]
+      description: Send a request to the chatbot. Use application/json for text only requests. Use multipart requests for requests that include images.
+      operationId: sendRequest
+      requestBody:
+        description: Please check the model attribute in the schema to get a list of allowed models. The default model is GPT 5.6 Luna.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ChatMultipartRequest'
+      responses:
+        '200':
+          description: A stream of chatbot responses. Although the example is wrapped in a JSON array, the actual API delivers them line by line to support streaming.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatStream'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/chat/{id}:
+    get:
+      security:
+        - bearerAuth: [ ]
+      description: Retrieve an existing thread by a given thread ID.
+      operationId: getThread
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+            example: 'GnhZ3PEFcuCl-Q0'
+          description: Thread ID.
+      responses:
+        '200':
+          description: A list of request and responses messages that have been exchanged as part of this thread.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreadMessages'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      security:
+        - bearerAuth: [ ]
+      description: Delete an old thread.
+      operationId: deleteThread
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+            example: 'GnhZ3PEFcuCl-Q0'
+          description: Thread ID.
+      responses:
+        '200':
+          description: The thread has been deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/localChat/send:
+    post:
+      security:
+        - bearerAuth: [ ]
+      description: Send a request to the on-premise chatbot. Use application/json for text only requests. Use multipart requests for requests that include images.
+      operationId: sendLocalRequest
+      requestBody:
+        description: Please check the model attribute in the schema to get a list of allowed models. The default model is mistralai/Mistral-Small-24B-Instruct-2501.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocalChatRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/LocalChatMultipartRequest'
+      responses:
+        '200':
+          description: A stream of chatbot responses. Although the example is wrapped in a JSON array, the actual API delivers them line by line to support streaming.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatStream'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/localChat/{id}:
+    get:
+      security:
+        - bearerAuth: [ ]
+      description: Retrieve an existing thread by a given thread ID.
+      operationId: getLocalThread
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+            example: 'GnhZ3PEFcuCl-Q0'
+          description: Thread ID.
+      responses:
+        '200':
+          description: A list of request and responses messages that have been exchanged as part of this thread.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThreadMessages'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      security:
+        - bearerAuth: [ ]
+      description: Delete an old thread.
+      operationId: deleteLocalThread
+      parameters:
+        - in: path
+          required: true
+          name: id
+          schema:
+            type: string
+            example: 'GnhZ3PEFcuCl-Q0'
+          description: Thread ID.
+      responses:
+        '200':
+          description: The thread has been deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      properties:
+        thread:
+          type: string
+          nullable: true
+          example: null
+        prompt:
+          type: string
+          example: "Hey, this is going to be shown on TV. Is there anything you want to say?"
+        customInstructions:
+          type: string
+          example: "Talk about the weather. Keep it short."
+        hideCustomInstructions:
+          type: boolean
+          example: true
+        model:
+          type: string
+          nullable: true
+          enum: ['gpt-3.5-turbo-0125', 'gpt-4', 'gpt-4-turbo', 'gpt-4o', 'gpt-4o-mini', 'o1', 'o1-mini', 'o3-mini', 'o4-mini', 'gpt-4.1', 'o3', 'gpt-5', 'gpt-5.1', 'gpt-5.2', 'gpt-5.4', 'gpt-5.4-mini', 'gpt-5.4-nano', 'gpt-5.6-luna', 'gpt-5.6-terra', 'gpt-6-astra']
+          example: 'gpt-4o'
+    ChatMultipartRequest:
+      type: object
+      properties:
+        jsonBody:
+          allOf:
+            - $ref: '#/components/schemas/ChatRequest'
+          description: jsonBody accepts the same schema as the 'application/json' format.
+        chatAttachment:
+          type: string
+          format: binary
+          description: The image file you want to upload. Supported file extensions are .png and .jpg
+    LocalChatRequest:
+      type: object
+      properties:
+        thread:
+          type: string
+          nullable: true
+          example: null
+        prompt:
+          type: string
+          example: "Hey, this is going to be shown on TV. Is there anything you want to say?"
+        customInstructions:
+          type: string
+          example: "Talk about the weather. Keep it short."
+        hideCustomInstructions:
+          type: boolean
+          example: true
+        model:
+          type: string
+          nullable: true
+          enum: [ 'microsoft/phi-4', 'mistralai/Mistral-Small-24B-Instruct-2501', 'Qwen/Qwen2.5-Coder-32B-Instruct', 'Qwen/QwQ-32B' ]
+          example: 'microsoft/phi-4'
+    LocalChatMultipartRequest:
+      type: object
+      properties:
+        jsonBody:
+          allOf:
+            - $ref: '#/components/schemas/LocalChatRequest'
+          description: jsonBody accepts the same schema as the 'application/json' format.
+        chatAttachment:
+          type: string
+          format: binary
+          description: The image file you want to upload. Supported file extensions are .png and .jpg
+    ChatStream:
+      properties:
+        type:
+          type: string
+          enum: [ 'start', 'chunk', 'done' ]
+        role:
+          type: string
+          nullable: true
+        thread:
+          type: object
+          nullable: true
+          properties:
+            id:
+              type: string
+            dateCreated:
+              type: string
+            lastReply:
+              type: string
+            deletionTimeLeft:
+              type: string
+            "tooltip":
+              type: string
+        conversationThread:
+          type: string
+          nullable: true
+          # 432
+        content:
+          type: string
+          nullable: true
+        response:
+          type: string
+          nullable: true
+        promptTokens:
+          type: integer
+          nullable: true
+        responseTokens:
+          type: integer
+          nullable: true
+        totalTokens:
+          type: integer
+          nullable: true
+        title:
+          type: string
+          nullable: true
+      example:
+        - { "type": "start","role": "assistant","thread": { "id": "GnhZ3PEFcuCl-Q0", "dateCreated": "2024-07-17","lastReply": "2024-07-17","deletionTimeLeft": "2024-07-17","tooltip": "Conversation started on Jul 17, 2024 <br/>Last reply on Jul 17, 2024 <br/>Thread to be deleted in 14 day(s)" },"conversationThread": "GnhZ3PEFcuCl-Q0" }
+        - { "type": "chunk","content": " Keep" }
+        - { "type": "chunk","content": " learning" }
+        - { "type": "chunk","content": "," }
+        - { "type": "chunk","content": " stay" }
+        - { "type": "chunk","content": " positive" }
+        - { "type": "chunk","content": "," }
+        - { "type": "chunk","content": " and" }
+        - { "type": "chunk","content": " spread" }
+        - { "type": "chunk","content": " love" }
+        - { "type": "chunk","content": " and" }
+        - { "type": "chunk","content": " kindness" }
+        - { "type": "chunk","content": " wherever" }
+        - { "type": "chunk","content": " you" }
+        - { "type": "chunk","content": " go" }
+        - { "type": "chunk","content": "." }
+        - { "type": "done","response": "Sure, thanks for the opportunity. I'd like to remind everyone watching to never stop pursuing their dreams. Keep learning, stay positive, and spread love and kindness wherever you go. Thank you.","conversationThread": "GnhZ3PEFcuCl-Q0" ,"thread": { "id": "GnhZ3PEFcuCl-Q0","dateCreated": "2024-07-17","lastReply": "2024-07-17","deletionTimeLeft": "2024-07-17","tooltip": "Conversation started on Jul 17, 2024 <br/>Last reply on Jul 17, 2024 <br/>Thread to be deleted in 14 day(s)" },"promptTokens": 26,"responseTokens": 39,"totalTokens": 65,"title": "Always spread positivity and kindness to others" }
+
+    ThreadMessages:
+      type: array
+      items:
+        type: object
+        properties:
+          role:
+            type: string
+            enum: [ 'user', 'assistant' ]
+          content:
+            type: string
+      example:
+        - role: "user"
+          content: "Hey, this is going to be shown on TV. Is there anything you want to say?"
+        - role: "assistant"
+          content: "As an artificial intelligence, I don't have personal sentiments to share. However, I am here to assist you with anything you need."
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          nullable: true
+        error:
+          type: boolean
+        message:
+          type: string
+      example:
+        code: "chatbot.sendRequest.error"
+        message: "There was an error with your request. Please try again."
+        "error": true
+  responses:
+    UnauthorizedError:
+      description: Access token is missing or invalid
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

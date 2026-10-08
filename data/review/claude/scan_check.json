@@ -1,0 +1,571 @@
+{
+ "scans": [
+  {
+   "row": 14,
+   "consensus": "desk",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 14,
+     "written": "desk",
+     "meaning": "desk, as in shared desks / desk sharing at work, leading to less identification with the workplace",
+     "replace": "desk",
+     "confidence": "high",
+     "note": "The final letter is a looped cursive k that resembles 'le' (hence the 'desle' misreading) and there is no plural s, so the writer wrote 'Shared desk', not 'desks'."
+    },
+    {
+     "reader": 2,
+     "row": 14,
+     "written": "desk (d-e-s-k; the k is a cursive loop-and-tail k that looks like 'le')",
+     "meaning": "Shared desks (desk sharing in the office) lead to less identification with the workplace.",
+     "replace": "desk",
+     "confidence": "high",
+     "note": "The last letter is a cursive k (a tall loop with a small closing loop, which looks like 'le') with no s after it, so the scan says 'Shared desk' in the singular and 'desks' would be a gloss rather than what is written."
+    },
+    {
+     "reader": 3,
+     "row": 14,
+     "written": "desk, written with the k formed like 'le' (so it looks like 'desle')",
+     "meaning": "Shared desk (desk sharing / hot-desking) leads to less identification with the workplace.",
+     "replace": "desk",
+     "confidence": "high",
+     "note": "The last strokes are a looped ascender followed by an e-shaped bow, which is how many German writers form 'k', so the word is 'desk' in the singular; there is no trailing s, so the current 'desks' adds a letter that is not on the note."
+    }
+   ]
+  },
+  {
+   "row": 109,
+   "consensus": "automation",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 109,
+     "written": "automization",
+     "meaning": "automation",
+     "replace": "automation",
+     "confidence": "high",
+     "note": "The scan clearly reads 'automization' (a-u-t-o-m-i-z-a-t-i-o-n), a non-standard form of 'automation'; 'autonimization' is a transcription misread."
+    },
+    {
+     "reader": 2,
+     "row": 109,
+     "written": "automization (a-u-t-o-m-i-z-a-t-i-o-n)",
+     "meaning": "Automation, listed next to autonomous driving as a factor in the decrease of private car traffic.",
+     "replace": "automation",
+     "confidence": "high",
+     "note": "The handwriting clearly reads 'automization' (auto-m-ization, with no 'n' or extra 'i' after 'auto'), which is a non-standard form of 'automation', so 'autonimization' was a misreading."
+    },
+    {
+     "reader": 3,
+     "row": 109,
+     "written": "automization",
+     "meaning": "automation",
+     "replace": "automation",
+     "confidence": "high",
+     "note": "The scan clearly reads 'automization,' (a-u-t-o-m-i-z-a-t-i-o-n), a non-standard form of 'automation', so 'autonimization' was a misreading; use 'automization' instead if you want to keep the writer's exact form."
+    }
+   ]
+  },
+  {
+   "row": 137,
+   "consensus": "insulation",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 137,
+     "written": "insulation",
+     "meaning": "thermal insulation of buildings (weak insulation plus AC and heating leads to fossil-fuel use)",
+     "replace": "insulation",
+     "confidence": "high",
+     "note": "The handwriting has 'insulation' (i-n-s-u-l-a-t-i-o-n with a cramped 'io'), not 'isolation', so the current correction to 'insulation' matches the scan."
+    },
+    {
+     "reader": 2,
+     "row": 137,
+     "written": "insulation (i-n-s-u-l-a-t-i-o-n, ending slightly scrawled)",
+     "meaning": "Weak thermal insulation, together with AC and heating, leads to fossil fuel use.",
+     "replace": "insulation",
+     "confidence": "high",
+     "note": "The writer clearly wrote 'insulation', not 'isolation', so the existing correction to 'insulation' is right."
+    },
+    {
+     "reader": 3,
+     "row": 137,
+     "written": "insulation",
+     "meaning": "insulation (thermal insulation of buildings)",
+     "replace": "insulation",
+     "confidence": "high",
+     "note": "The handwriting itself says 'weak insulation' (i-n-s-u-l-a-t-i-o-n), so 'isolation' was a transcription error and the current correction to 'insulation' is right."
+    }
+   ]
+  },
+  {
+   "row": 157,
+   "consensus": "expensive to",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 157,
+     "written": "expensive do",
+     "meaning": "expensive to (operate)",
+     "replace": "expensive to",
+     "confidence": "high",
+     "note": "The second word is a 'd' with a looped ascender (same form as the d in 'populated') followed by 'o', so the writer wrote 'do' for 'to' in 'expensive to operate'."
+    },
+    {
+     "reader": 2,
+     "row": 157,
+     "written": "expensive do",
+     "meaning": "Rural/sparsely populated areas are expensive to operate (less profitability).",
+     "replace": "expensive to",
+     "confidence": "high",
+     "note": "The second word has the same bowl-and-stem 'd' as in 'populated' and none of the crossbar this writer puts on every 't' (as in 'operate'), so the writer wrote 'do' while meaning 'to'."
+    },
+    {
+     "reader": 3,
+     "row": 157,
+     "written": "expensive do",
+     "meaning": "expensive to (operate)",
+     "replace": "expensive to",
+     "confidence": "high",
+     "note": "The word after 'expensive' really is written 'do' (a round bowl with an ascender, then an o, and no t-cross), a slip for 'to' in 'expensive to operate'."
+    }
+   ]
+  },
+  {
+   "row": 162,
+   "consensus": "through",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 162,
+     "written": "trought",
+     "meaning": "through (if not physically present, then through the network)",
+     "replace": "through",
+     "confidence": "high",
+     "note": "The word is written t-r-o-u-g-h-t, a misspelling of 'through' rather than 'though', and outside this span the first line on the scan reads 'Present everywhere', not 'anywhere'."
+    },
+    {
+     "reader": 2,
+     "row": 162,
+     "written": "trought (t-r-o-u-g-h-t)",
+     "meaning": "If not physically present, then present through the network (IT).",
+     "replace": "through",
+     "confidence": "high",
+     "note": "The word reads t-r-o-u-g-h-t (crossed t, short r, ending in a crossed t), which is a misspelling of 'through' rather than 'though'; outside this span, the scan also appears to read 'Present everywhere' and '(IT)', where the transcription has 'anywhere' and '(PT)'."
+    },
+    {
+     "reader": 3,
+     "row": 162,
+     "written": "trought (the final t is crossed by the tail of the y in 'physically' on the line above)",
+     "meaning": "through: if not physically present, then present through the network",
+     "replace": "through",
+     "confidence": "high",
+     "note": "The word is written 'trought' and clearly means 'through' in 'not physically then through network'; the same scan also reads 'everywhere' rather than 'anywhere', and the bracket looks more like '(IT)' than '(PT)'."
+    }
+   ]
+  },
+  {
+   "row": 255,
+   "consensus": "too much",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 255,
+     "written": "too much",
+     "meaning": "too much (traffic by cars)",
+     "replace": "too much",
+     "confidence": "high",
+     "note": "The scan clearly shows 'too' with a double o ('be too much traffic by cars'), so the single-o 'to much' came from the transcription, not the writer."
+    },
+    {
+     "reader": 2,
+     "row": 255,
+     "written": "too much",
+     "meaning": "In cities there would be too much car traffic.",
+     "replace": "too much",
+     "confidence": "high",
+     "note": "The scan clearly shows 'too' with two round o's, so the writer spelled it correctly and 'to much' was a transcription slip."
+    },
+    {
+     "reader": 3,
+     "row": 255,
+     "written": "too much",
+     "meaning": "too much",
+     "replace": "too much",
+     "confidence": "high",
+     "note": "The scan clearly shows 'too much' with a double o, so 'to much' was a transcription error, not the writer's."
+    }
+   ]
+  },
+  {
+   "row": 269,
+   "consensus": "to save",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 269,
+     "written": "to safe (with a struck-out word, probably 'have', between 'to' and 'safe')",
+     "meaning": "to save (protect) nature reserves",
+     "replace": "to save",
+     "confidence": "high",
+     "note": "The writer wrote 'to', crossed out a word (probably 'have'), then wrote 'safe', a common German-speaker slip for 'save', so the note means 'to save nature reserves'."
+    },
+    {
+     "reader": 2,
+     "row": 269,
+     "written": "to [heavily crossed-out word, probably 'have'] safe",
+     "meaning": "To save (protect) nature reserves.",
+     "replace": "to save",
+     "confidence": "high",
+     "note": "A struck-out word (probably 'have') between 'to' and 'safe' is rightly left out, and 'safe' is clearly spelled with an f, a common German-speaker mix-up for 'save'."
+    },
+    {
+     "reader": 3,
+     "row": 269,
+     "written": "to [crossed-out word, probably 'have'] safe",
+     "meaning": "to save (protect) nature reserves",
+     "replace": "to save",
+     "confidence": "high",
+     "note": "The writer wrote 'to', struck out a word (probably 'have'), then wrote 'safe', a common German-speaker slip for 'save'."
+    }
+   ]
+  },
+  {
+   "row": 283,
+   "consensus": "too hot",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 283,
+     "written": "to hot",
+     "meaning": "too hot (outside)",
+     "replace": "too hot",
+     "confidence": "high",
+     "note": "The scan shows a single-o 'to' before 'hot outside', so the writer misspelled 'too' and meant 'too hot outside'."
+    },
+    {
+     "reader": 2,
+     "row": 283,
+     "written": "to hot",
+     "meaning": "People go to indoor places because it is too hot outside.",
+     "replace": "too hot",
+     "confidence": "high",
+     "note": "The scan shows 'to' with a single o, so the transcription matches the handwriting and the writer simply misspelled 'too'."
+    },
+    {
+     "reader": 3,
+     "row": 283,
+     "written": "to hot",
+     "meaning": "too hot",
+     "replace": "too hot",
+     "confidence": "high",
+     "note": "The scan reads 'to hot' with a single o, a spelling slip for 'too hot' (people go to inside places because it is too hot outside)."
+    }
+   ]
+  },
+  {
+   "row": 288,
+   "consensus": "emission",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 288,
+     "written": "Emission",
+     "meaning": "zero-emission housing",
+     "replace": "emission",
+     "confidence": "high",
+     "note": "The line reads 'zeo Emission' then 'housing', with a capital E drawn like a '6', so 'cushion' is a misread and the note says 'green zero emission housing'."
+    },
+    {
+     "reader": 2,
+     "row": 288,
+     "written": "Emission (capital E, m, i, s, s, i, o, n)",
+     "meaning": "A green lifestyle leading to green, zero-emission housing.",
+     "replace": "emission",
+     "confidence": "high",
+     "note": "The word is a capitalised 'Emission' (looped E, two dotted i's, double s), so the line reads 'zero emission housing' and 'cushion' was a misreading."
+    },
+    {
+     "reader": 3,
+     "row": 288,
+     "written": "Emission (a cursive, epsilon-shaped capital E, after 'zeo' for 'zero')",
+     "meaning": "zero emission housing",
+     "replace": "emission",
+     "confidence": "high",
+     "note": "The word is 'Emission' with a cursive epsilon-shaped capital E, so 'cushion' was a misreading and the phrase is 'zero emission housing', matching the 'Zero Emission' wording on row 307."
+    }
+   ]
+  },
+  {
+   "row": 305,
+   "consensus": "oil etc",
+   "agree": 2,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 305,
+     "written": "oil+etc",
+     "meaning": "oil etc. (oil and other fossil fuels)",
+     "replace": "oil etc.",
+     "confidence": "high",
+     "note": "Inside the brackets the writer wrote 'oil', a plus-like cross, then 'etc' (the last letter is c, not e), meaning oil and other fossil fuels."
+    },
+    {
+     "reader": 2,
+     "row": 305,
+     "written": "oiltetc (o-i-l-t-e-t-c)",
+     "meaning": "Power independent from fossil fuels (oil etc.).",
+     "replace": "oil etc",
+     "confidence": "high",
+     "note": "Inside the brackets the letters are o-i-l, then a crossed t (or plus sign), then e-t-c ending in a c rather than an e, so the writer meant 'oil etc'."
+    },
+    {
+     "reader": 3,
+     "row": 305,
+     "written": "oiltetc: 'oil', a short t-like stroke (probably a '+' or the lead-in of the e), then 'etc'",
+     "meaning": "oil etc. (fossil fuels such as oil)",
+     "replace": "oil etc",
+     "confidence": "high",
+     "note": "The bracket reads '(oil' plus a short t-like stroke plus 'etc)', so 'oiltete' misread the connecting stroke and the final c, and the intended text is 'oil etc'."
+    }
+   ]
+  },
+  {
+   "row": 307,
+   "consensus": "Care Spaces",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 307,
+     "written": "Care Spaces",
+     "meaning": "zero-emission care facilities (health/care buildings), which in turn need clean energy",
+     "replace": "Care Spaces",
+     "confidence": "high",
+     "note": "The letters read C-a-r-e S-p-a-c-e-s (the final e is a short hooked stroke), and the note sits in the side-U column 4 cells with 'Telemedicine', 'no insurance' and 'Long distances between Doctoroffices', so 'Care Spaces' (care/health facilities) fits and stays unchanged."
+    },
+    {
+     "reader": 2,
+     "row": 307,
+     "written": "Care Spaces",
+     "meaning": "Zero-emission care spaces (presumably facilities or spaces for care), extending to energy etc.",
+     "replace": "Care Spaces",
+     "confidence": "medium",
+     "note": "The fourth letter of 'Care' is a compressed cursive e (entry stroke, collapsed loop, exit tail), not an s or t, so 'Care Spaces' matches the scan, though the phrase is unusual and its exact sense is unclear."
+    },
+    {
+     "reader": 3,
+     "row": 307,
+     "written": "Care Spaces",
+     "meaning": "Unclear: literally 'zero emission care spaces' (perhaps care facilities), or possibly 'car spaces' (parking or charging for zero-emission cars, which would fit '-> Energy etc').",
+     "replace": "Care Spaces",
+     "confidence": "medium",
+     "note": "The handwriting matches 'Care Spaces' (the e of 'Care' is narrow and could pass for a t), but I cannot tell what the writer meant by it, so I left it unchanged."
+    }
+   ]
+  },
+  {
+   "row": 335,
+   "consensus": "free entry",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 335,
+     "written": "entreefree",
+     "meaning": "free entry (no entrance fee, e.g. to parks)",
+     "replace": "free entry",
+     "confidence": "high",
+     "note": "The scan clearly reads e-n-t-r-e-e-f-r-e-e (not 'entriefree'), and the other half of the same board cell (UC22) holds 'Entry prices for Parks' and 'entry fee', so this is the opposite: free entry/admission."
+    },
+    {
+     "reader": 2,
+     "row": 335,
+     "written": "entreefree (e-n-t-r-e-e-f-r-e-e)",
+     "meaning": "Free entry, i.e. no admission fee (from German 'Entree'/'Eintritt frei'); a barrier-free entrance is a less likely alternative given the accessibility note in the same cell.",
+     "replace": "free entry",
+     "confidence": "medium",
+     "note": "The scan clearly reads 'entreefree' with a double e and no i, so 'entriefree' was a misreading, and 'free entry' is my best reading of this coined word."
+    },
+    {
+     "reader": 3,
+     "row": 335,
+     "written": "entreefree",
+     "meaning": "Free entry, i.e. no admission charge (German 'Eintritt frei', using the loanword 'Entree'); given the accessibility note in the same cell, it may also mean barrier-free entry.",
+     "replace": "free entry",
+     "confidence": "medium",
+     "note": "The scan clearly reads 'entreefree' (e-n-t-r-e-e-f-r-e-e, not 'entriefree'), a German-influenced coinage best rendered as 'free entry', which covers both the no-fee and the open-access readings."
+    }
+   ]
+  },
+  {
+   "row": 50,
+   "consensus": "FSS",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 50,
+     "written": "FSS",
+     "meaning": "probably 'Frostschutzschicht' (frost protection layer), the standard German road-construction abbreviation",
+     "replace": "FSS",
+     "confidence": "high",
+     "note": "'FSS' is clearly written, and the scan's first words are 'Einbau von' (installation of), not 'Einsatz von', so the English should begin 'Installation of' rather than 'Use of'."
+    },
+    {
+     "reader": 2,
+     "row": 50,
+     "written": "FSS",
+     "meaning": "An abbreviation, most likely 'Frostschutzschicht' (frost protection layer, standard German road-construction shorthand), i.e. installing FSS in road building to prevent disasters.",
+     "replace": "FSS",
+     "confidence": "high",
+     "note": "The three capitals are unmistakably F-S-S, so I left the writer's abbreviation unchanged; separately, 'Einbau von' means 'installation of' rather than 'use of'."
+    },
+    {
+     "reader": 3,
+     "row": 50,
+     "written": "FSS",
+     "meaning": "Most likely 'Frostschutzschicht' (frost protection layer), the standard German road-construction abbreviation: installing frost protection layers as disaster prevention in road building.",
+     "replace": "FSS",
+     "confidence": "high",
+     "note": "'FSS' is clearly written and correct as an abbreviation, but the first line of the scan reads 'Einbau von' (installation of), not 'Einsatz von' (use of), so the English should start 'Installation of' rather than 'Use of'."
+    }
+   ]
+  },
+  {
+   "row": 154,
+   "consensus": "",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 154,
+     "written": "MD11",
+     "meaning": "the board address code (side M, row D, column 1, position 1), not part of the note's text",
+     "replace": "",
+     "confidence": "high",
+     "note": "'HDM' is the top-left address label 'MD11' (the two flagged 1s look like an M), and address codes do not belong in the note text, so remove it and leave 'travel speed vs. car'."
+    },
+    {
+     "reader": 2,
+     "row": 154,
+     "written": "MD11 (possibly HD11), written small in the top-left corner",
+     "meaning": "Not part of the note's text: it is the note's ID label, and the note itself reads only 'travel speed vs. car'.",
+     "replace": "",
+     "confidence": "high",
+     "note": "'HDM' is the ID label in the top-left corner, which reads MD11 and matches the position and format of labels like SE52 and SB5/1 on other notes, so it should be deleted along with the leading line break it leaves, giving 'travel speed vs. car'."
+    },
+    {
+     "reader": 3,
+     "row": 154,
+     "written": "MD11",
+     "meaning": "The note's ID label (like SE52 or D1-1 on other notes), not part of its content; the note itself only says 'travel speed vs. car'.",
+     "replace": "",
+     "confidence": "high",
+     "note": "'HDM' is a misreading of the ID label 'MD11' in the top-left corner, and ID labels are left out of every other transcription, so delete it and its line break, leaving 'travel speed vs. car'."
+    }
+   ]
+  },
+  {
+   "row": 278,
+   "consensus": "DB100",
+   "agree": 3,
+   "readers": 3,
+   "reads": [
+    {
+     "reader": 1,
+     "row": 278,
+     "written": "DB100",
+     "meaning": "probably Deutsche Bahn's BahnCard 100 (unlimited rail pass) as an eco status symbol",
+     "replace": "DB100",
+     "confidence": "high",
+     "note": "The bracket reads '(DB100)': a D, a B, a flagged 1 that runs into the s of 'status', then 00, so the transcription is right, and next to public-transport notes it most likely means the DB BahnCard 100."
+    },
+    {
+     "reader": 2,
+     "row": 278,
+     "written": "DB100 (in brackets: D, B, a German-style 1, 0, 0)",
+     "meaning": "Most likely Deutsche Bahn's BahnCard 100 (unlimited annual rail pass) as an example of eco status.",
+     "replace": "DB100",
+     "confidence": "high",
+     "note": "The bracket clearly reads '(DB100)', so the code is transcribed correctly; I kept it unexpanded, and in this cell (pride in infrastructure, travel speed vs. car) it most likely means the BahnCard 100."
+    },
+    {
+     "reader": 3,
+     "row": 278,
+     "written": "DB100",
+     "meaning": "Most likely Deutsche Bahn's BahnCard 100 (the unlimited annual rail pass) as an eco status symbol.",
+     "replace": "DB100",
+     "confidence": "high",
+     "note": "The scan clearly reads '(DB100)' with a European-style 1 (the 'D1-1' at the bottom is the note ID), so the transcription is right and needs no change."
+    }
+   ]
+  }
+ ],
+ "arrows": [
+  {
+   "row": 47,
+   "number": 1,
+   "votes": [
+    {
+     "label": "heading",
+     "reason": "\"city\" is the topic and the arrow introduces the measure proposed for it, so it works like a colon (\"city: toll\", a city toll or congestion charge) rather than a consequence, a movement or a property."
+    },
+    {
+     "label": "heading",
+     "reason": "\"city\" is a topic word, and the arrow at the start of the next line introduces the measure proposed for it (a city toll), working like a colon (\"city: toll\") rather than marking a consequence or a property."
+    },
+    {
+     "label": "heading",
+     "reason": "The arrow links the topic 'city' to the measure proposed for it, so it works like a colon ('City: toll', meaning a city toll); it is not a consequence, a property, or one item in a list."
+    }
+   ],
+   "label": "heading",
+   "agree": 3
+  },
+  {
+   "row": 332,
+   "number": 1,
+   "votes": [
+    {
+     "label": "cause",
+     "reason": "The end of funding results in things being only self-financed, so the arrow marks a consequence (\"no more funding leads to only self financed\"), not an explanation of what comes before."
+    },
+    {
+     "label": "cause",
+     "reason": "The arrow gives the consequence of the first part: because funding stops, things can only be self-financed."
+    },
+    {
+     "label": "cause",
+     "reason": "Having no more funding results in being only self-financed, so what comes before the arrow leads to what comes after."
+    }
+   ],
+   "label": "cause",
+   "agree": 3
+  }
+ ]
+}

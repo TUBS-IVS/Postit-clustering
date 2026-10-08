@@ -1,0 +1,38 @@
+{
+  "row": 34,
+  "model": "gpt-6-astra",
+  "system": "You label the arrows in workshop notes. The notes are handwritten post-its from a workshop about the future of cities (mobility, delivery, housing, energy, work). They are short, fragmentary and informal.\n\nPeople use arrows (->, =>, →, ↓, ↘, ↳, ↪) for different things. For each numbered arrow, choose one label:\n- cause: what comes before leads to, causes or results in what comes after\n- explanation: what comes after explains or gives the reason for what comes before\n- direction: movement or flow from one place or actor to another\n- example: introduces examples of what comes before\n- list: marks a list item or sub-point rather than a consequence\n- attribute: marks a property of the thing before it\n- heading: introduces what follows, as a colon does\n- other: none of these; say what it means in the reason\n\nAn arrow at the very start of a note has nothing before it; label it by what it most likely means.\n\nReply with only a JSON object in this form, no other text, with one entry per numbered arrow:\n{\"arrows\": [{\"number\": <arrow number>, \"label\": \"<one label>\", \"reason\": \"<one sentence>\"}]}",
+  "user": "Note:\nsocial interaction\nmore important\n↳ since in \"real life\"\nless contact\n↓\nself-checkout, etc.\n\nThe same note with each arrow numbered:\nsocial interaction\nmore important\n[1 ↳] since in \"real life\"\nless contact\n[2 ↓]\nself-checkout, etc.",
+  "reply": "{\"arrows\":[{\"number\":1,\"label\":\"explanation\",\"reason\":\"Less contact in real life explains why social interaction is more important.\"},{\"number\":2,\"label\":\"example\",\"reason\":\"Self-checkout is an example of a situation with less real-life contact.\"}]}",
+  "result": {
+    "arrows": [
+      {
+        "number": 1,
+        "label": "explanation",
+        "reason": "Less contact in real life explains why social interaction is more important."
+      },
+      {
+        "number": 2,
+        "label": "example",
+        "reason": "Self-checkout is an example of a situation with less real-life contact."
+      }
+    ]
+  },
+  "done": {
+    "type": "done",
+    "conversationThread": "kAWJQQB5sajVEZM",
+    "thread": {
+      "id": "kAWJQQB5sajVEZM",
+      "dateCreated": "2026-10-08",
+      "lastReply": "2026-10-08",
+      "deletionTimeLeft": "2026-10-08",
+      "daysUntilDeletion": 14,
+      "tooltip": "Chat gestartet am 08.10.2026 <br/>Letzte Antwort vom 08.10.2026 <br/>Löschung in 14 Tag(en)"
+    },
+    "promptTokens": 460,
+    "responseTokens": 84,
+    "totalTokens": 544,
+    "title": "Less Real-Life Contact, More Social Interaction"
+  },
+  "tries": 1
+}

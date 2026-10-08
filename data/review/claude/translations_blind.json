@@ -1,0 +1,400 @@
+[
+ {
+  "row": 1,
+  "edits": []
+ },
+ {
+  "row": 3,
+  "edits": []
+ },
+ {
+  "row": 19,
+  "edits": []
+ },
+ {
+  "row": 20,
+  "edits": []
+ },
+ {
+  "row": 21,
+  "edits": []
+ },
+ {
+  "row": 22,
+  "edits": []
+ },
+ {
+  "row": 23,
+  "edits": []
+ },
+ {
+  "row": 24,
+  "edits": []
+ },
+ {
+  "row": 25,
+  "edits": []
+ },
+ {
+  "row": 26,
+  "edits": []
+ },
+ {
+  "row": 27,
+  "edits": []
+ },
+ {
+  "row": 28,
+  "edits": []
+ },
+ {
+  "row": 29,
+  "edits": [
+   {
+    "find": "remain",
+    "replace": "remain / become",
+    "reason": "The original 'bleiben / werden die Norn' means 'remain / become the norm'. The English dropped the 'become' alternative, so it loses part of the meaning."
+   }
+  ]
+ },
+ {
+  "row": 30,
+  "edits": []
+ },
+ {
+  "row": 31,
+  "edits": []
+ },
+ {
+  "row": 32,
+  "edits": []
+ },
+ {
+  "row": 33,
+  "edits": []
+ },
+ {
+  "row": 34,
+  "edits": []
+ },
+ {
+  "row": 36,
+  "edits": []
+ },
+ {
+  "row": 37,
+  "edits": []
+ },
+ {
+  "row": 38,
+  "edits": []
+ },
+ {
+  "row": 39,
+  "edits": [
+   {
+    "find": "data about traffic",
+    "replace": "traffic",
+    "reason": "'über Daten' means 'via/using data', not 'data about'. The AI detects jams from data; it does not capture data about them."
+   },
+   {
+    "find": "record",
+    "replace": "via data",
+    "reason": "'erfassen' is already translated as 'capture' on line 1, so 'record' repeats it. The misplaced 'über Daten' (via data) goes here."
+   },
+   {
+    "find": "LSA",
+    "replace": "traffic lights",
+    "reason": "LSA is the German abbreviation for Lichtsignalanlage (traffic signals). Left untranslated, it means nothing to an English reader."
+   }
+  ]
+ },
+ {
+  "row": 40,
+  "edits": []
+ },
+ {
+  "row": 41,
+  "edits": []
+ },
+ {
+  "row": 42,
+  "edits": []
+ },
+ {
+  "row": 43,
+  "edits": []
+ },
+ {
+  "row": 44,
+  "edits": []
+ },
+ {
+  "row": 45,
+  "edits": []
+ },
+ {
+  "row": 46,
+  "edits": []
+ },
+ {
+  "row": 47,
+  "edits": [
+   {
+    "find": "nice",
+    "replace": "toll",
+    "reason": "The note is most likely already in English. 'city' is an English word written in lowercase; a German note would normally say 'Stadt' or a capitalised 'City'. Read that way, 'city → toll' means a city toll or congestion charge, which is a mobility measure. Treating 'toll' as the German word for 'great' turns that measure into a vague compliment. My confidence here is moderate, because the German reading is possible."
+   }
+  ]
+ },
+ {
+  "row": 48,
+  "edits": [
+   {
+    "find": "autonomes",
+    "replace": "autonomous",
+    "reason": "'autonomes' is a leftover German or French adjective form, not an English word. 'autonomen Fahrzeugen' means autonomous vehicles."
+   }
+  ]
+ },
+ {
+  "row": 49,
+  "edits": []
+ },
+ {
+  "row": 50,
+  "edits": []
+ },
+ {
+  "row": 51,
+  "edits": []
+ },
+ {
+  "row": 52,
+  "edits": []
+ },
+ {
+  "row": 53,
+  "edits": []
+ },
+ {
+  "row": 54,
+  "edits": []
+ },
+ {
+  "row": 68,
+  "edits": []
+ },
+ {
+  "row": 72,
+  "edits": []
+ },
+ {
+  "row": 73,
+  "edits": []
+ },
+ {
+  "row": 74,
+  "edits": [
+   {
+    "find": "Anxiety room",
+    "replace": "Unsafe space",
+    "reason": "'Angstraum' is an urban-planning term for a public place where people feel afraid or unsafe, such as dark underpasses or unlit paths. The literal compound 'Anxiety room' suggests an indoor room for anxiety and loses that meaning."
+   }
+  ]
+ },
+ {
+  "row": 75,
+  "edits": []
+ },
+ {
+  "row": 76,
+  "edits": []
+ },
+ {
+  "row": 77,
+  "edits": []
+ },
+ {
+  "row": 78,
+  "edits": []
+ },
+ {
+  "row": 79,
+  "edits": []
+ },
+ {
+  "row": 80,
+  "edits": []
+ },
+ {
+  "row": 81,
+  "edits": []
+ },
+ {
+  "row": 83,
+  "edits": []
+ },
+ {
+  "row": 84,
+  "edits": [
+   {
+    "find": "lost",
+    "replace": "low",
+    "reason": "'günstigen' means inexpensive/low-cost; 'lost-cost' is a wrong word that does not convey this meaning."
+   }
+  ]
+ },
+ {
+  "row": 85,
+  "edits": []
+ },
+ {
+  "row": 86,
+  "edits": []
+ },
+ {
+  "row": 87,
+  "edits": [
+   {
+    "find": "adhesive",
+    "replace": "activists gluing themselves to roads",
+    "reason": "'Klimakleber' is a colloquial German term for climate activists who glue themselves to roads in protest; the literal 'climate adhesive' (a glue product) misleads."
+   }
+  ]
+ },
+ {
+  "row": 88,
+  "edits": []
+ },
+ {
+  "row": 89,
+  "edits": []
+ },
+ {
+  "row": 90,
+  "edits": []
+ },
+ {
+  "row": 91,
+  "edits": []
+ },
+ {
+  "row": 92,
+  "edits": [
+   {
+    "find": "Wheels",
+    "replace": "Bikes",
+    "reason": "In a city-mobility context, German \"Räder\" used on its own almost always means bikes (short for Fahrräder), not literal wheels. The literal \"Wheels\" hides that the note is about bicycles being prone to damage and needing repairs."
+   }
+  ]
+ },
+ {
+  "row": 94,
+  "edits": []
+ },
+ {
+  "row": 95,
+  "edits": []
+ },
+ {
+  "row": 96,
+  "edits": []
+ },
+ {
+  "row": 97,
+  "edits": []
+ },
+ {
+  "row": 98,
+  "edits": []
+ },
+ {
+  "row": 99,
+  "edits": []
+ },
+ {
+  "row": 103,
+  "edits": []
+ },
+ {
+  "row": 121,
+  "edits": []
+ },
+ {
+  "row": 144,
+  "edits": []
+ },
+ {
+  "row": 146,
+  "edits": []
+ },
+ {
+  "row": 149,
+  "edits": []
+ },
+ {
+  "row": 163,
+  "edits": []
+ },
+ {
+  "row": 166,
+  "edits": []
+ },
+ {
+  "row": 171,
+  "edits": []
+ },
+ {
+  "row": 187,
+  "edits": []
+ },
+ {
+  "row": 190,
+  "edits": []
+ },
+ {
+  "row": 191,
+  "edits": []
+ },
+ {
+  "row": 209,
+  "edits": []
+ },
+ {
+  "row": 275,
+  "edits": []
+ },
+ {
+  "row": 298,
+  "edits": [
+   {
+    "find": "Was",
+    "replace": "War",
+    "reason": "The original is already the English noun 'War' (armed conflict) leading to political instability. The translation read it as the German false friend 'war' (= 'was'), which loses the meaning."
+   }
+  ]
+ },
+ {
+  "row": 310,
+  "edits": []
+ },
+ {
+  "row": 324,
+  "edits": []
+ },
+ {
+  "row": 329,
+  "edits": []
+ },
+ {
+  "row": 332,
+  "edits": [
+   {
+    "find": "made",
+    "replace": "financed",
+    "reason": "'eigenwirtschaftlich' means self-financing, run on its own revenue without public subsidy (a standard term in German public transport). It does not mean 'self made'. With 'no more funding', the note means only self-financed operations remain."
+   }
+  ]
+ }
+]

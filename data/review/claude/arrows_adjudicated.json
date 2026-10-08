@@ -1,0 +1,266 @@
+[
+ {
+  "row": 8,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "The note describes an outcome (housing gets cheaper in some regions and dearer elsewhere), so the opening arrow most likely marks it as the result of an unstated trend rather than a bullet in a one-item list.",
+  "winner": "claude"
+ },
+ {
+  "row": 11,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "The items escalate from life online to VR to a full simulation, so this arrow marks VR as the next step that life online leads to, and both identically formatted arrows in the chain should get the same label.",
+  "winner": "claude"
+ },
+ {
+  "row": 11,
+  "number": 2,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "This arrow continues the same escalating chain as arrow 1, with VR in turn leading to living in a simulation (Matrix), so it is a further step rather than a parallel sub-point.",
+  "winner": "claude"
+ },
+ {
+  "row": 43,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "Surrogate androids are not a kind of VR but a further development of it, so the arrow says VR leads to or develops into surrogates rather than introducing an example.",
+  "winner": "claude"
+ },
+ {
+  "row": 69,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "The arrows form a chain in which skyways bring flying cars, which then remove the need to maintain streets, and a flying car is not an example of a skyway, so the arrow means 'leads to'.",
+  "winner": "claude"
+ },
+ {
+  "row": 121,
+  "number": 1,
+  "votes": [
+   "explanation",
+   "heading",
+   "heading"
+  ],
+  "label": "heading",
+  "reason": "The arrow works like a colon ('materialistic mindset: whoever can't afford private property is dumb') and introduces the belief that makes up the mindset, which is not a reason for it, so explanation fits less well.",
+  "winner": "gpt"
+ },
+ {
+  "row": 126,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "A single item after the arrow is unlikely to be a list, and the most plausible reading is that AI management leads to a need for (more) data centers.",
+  "winner": "claude"
+ },
+ {
+  "row": 137,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "'Fossil fuels' relates to the whole block above, including weak insulation, so the arrow marks the result: weak insulation plus AC and heating lead to burning fossil fuels.",
+  "winner": "claude"
+ },
+ {
+  "row": 160,
+  "number": 1,
+  "votes": [
+   "other",
+   "other",
+   "other"
+  ],
+  "label": "other",
+  "reason": "The arrow means '=' or 'is called', giving the name ruralisation for the idea described before it, so it names something rather than introducing content under a heading.",
+  "winner": "claude"
+ },
+ {
+  "row": 167,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "The bracketed arrow reads as 'hence': because AVs do not need management, management becomes outdated, so it marks a consequence rather than a fixed property.",
+  "winner": "claude"
+ },
+ {
+  "row": 168,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "Read as one phrase across the line break, 'automotive (automated) traffic management' is what AVs lead to, and it in turn leads to the second arrow's consequence, so the arrow is causal rather than naming a sector.",
+  "winner": "claude"
+ },
+ {
+  "row": 173,
+  "number": 1,
+  "votes": [
+   "cause",
+   "list",
+   "list"
+  ],
+  "label": "list",
+  "reason": "The opening arrow marks the note as a remark on the Social Score, which the note names itself, and 'only for climate motivated people' states a limit on its reach rather than an outcome, so it is a sub-point, not a consequence.",
+  "winner": "gpt"
+ },
+ {
+  "row": 184,
+  "number": 1,
+  "votes": [
+   "explanation",
+   "explanation",
+   "explanation"
+  ],
+  "label": "explanation",
+  "reason": "Unskilled jobs disappearing is the plausible reason education will be required for work, so the text after the arrow justifies the text before it rather than resulting from it.",
+  "winner": "claude"
+ },
+ {
+  "row": 190,
+  "number": 1,
+  "votes": [
+   "example",
+   "example",
+   "example"
+  ],
+  "label": "example",
+  "reason": "The trailing 'e.g.' marks the content as an example, so the leading arrow most likely introduces an instance (anti-nuclear sentiment turning anti-coal) of a broader idea.",
+  "winner": "claude"
+ },
+ {
+  "row": 205,
+  "number": 1,
+  "votes": [
+   "list",
+   "list",
+   "cause"
+  ],
+  "label": "list",
+  "reason": "The note is a self-contained scenario that gives its own rationale in parentheses and points to no antecedent, so the leading arrow most likely just marks it as a point.",
+  "winner": "gpt"
+ },
+ {
+  "row": 219,
+  "number": 1,
+  "votes": [
+   "heading",
+   "heading",
+   "heading"
+  ],
+  "label": "heading",
+  "reason": "'lifestyle' is a topic label and the arrow introduces the expected trend under it like a colon ('Lifestyle: usage of AI for everything'), rather than giving a property of a specific thing.",
+  "winner": "claude"
+ },
+ {
+  "row": 223,
+  "number": 1,
+  "votes": [
+   "cause",
+   "example",
+   "example"
+  ],
+  "label": "example",
+  "reason": "Education Zones are the 'school' part of the type-based separation just listed, so the arrow picks out one concrete instance of grouping by type rather than a further effect of it.",
+  "winner": "claude"
+ },
+ {
+  "row": 225,
+  "number": 1,
+  "votes": [
+   "heading",
+   "heading",
+   "heading"
+  ],
+  "label": "heading",
+  "reason": "Like the parallel lifestyle and demographics notes, 'Education' is a topic label and the arrow introduces the expected development within it ('Education: higher standards') rather than claiming education causes some other higher standard.",
+  "winner": "claude"
+ },
+ {
+  "row": 227,
+  "number": 1,
+  "votes": [
+   "heading",
+   "heading",
+   "heading"
+  ],
+  "label": "heading",
+  "reason": "'demographics' is a topic label and the arrow introduces the specific trend under it like a colon ('Demographics: more elderly people').",
+  "winner": "claude"
+ },
+ {
+  "row": 289,
+  "number": 1,
+  "votes": [
+   "cause",
+   "cause",
+   "cause"
+  ],
+  "label": "cause",
+  "reason": "Continued use of combustion engines plausibly affects fuel prices, and nothing on the note presents fuel prices as the reason, so the arrow reads as a forward consequence.",
+  "winner": "claude"
+ },
+ {
+  "row": 303,
+  "number": 1,
+  "votes": [
+   "list",
+   "list",
+   "attribute"
+  ],
+  "label": "list",
+  "reason": "'Planning' heads the note and the arrow marks 'Political' as a sub-point under it, alongside 'Grouping by x', rather than assigning planning a property.",
+  "winner": "gpt"
+ },
+ {
+  "row": 309,
+  "number": 1,
+  "votes": [
+   "attribute",
+   "attribute",
+   "attribute"
+  ],
+  "label": "attribute",
+  "reason": "Only a bare predicate follows the opening arrow, so it most likely attaches the property 'already eco-friendly' to a subject written elsewhere rather than marking a standalone point.",
+  "winner": "claude"
+ }
+]

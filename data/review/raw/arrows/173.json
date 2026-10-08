@@ -1,0 +1,33 @@
+{
+  "row": 173,
+  "model": "gpt-6-astra",
+  "system": "You label the arrows in workshop notes. The notes are handwritten post-its from a workshop about the future of cities (mobility, delivery, housing, energy, work). They are short, fragmentary and informal.\n\nPeople use arrows (->, =>, →, ↓, ↘, ↳, ↪) for different things. For each numbered arrow, choose one label:\n- cause: what comes before leads to, causes or results in what comes after\n- explanation: what comes after explains or gives the reason for what comes before\n- direction: movement or flow from one place or actor to another\n- example: introduces examples of what comes before\n- list: marks a list item or sub-point rather than a consequence\n- attribute: marks a property of the thing before it\n- heading: introduces what follows, as a colon does\n- other: none of these; say what it means in the reason\n\nAn arrow at the very start of a note has nothing before it; label it by what it most likely means.\n\nReply with only a JSON object in this form, no other text, with one entry per numbered arrow:\n{\"arrows\": [{\"number\": <arrow number>, \"label\": \"<one label>\", \"reason\": \"<one sentence>\"}]}",
+  "user": "Note:\n→ only for climate motivated\npeople\n(Social Score)\n\nThe same note with each arrow numbered:\n[1 →] only for climate motivated\npeople\n(Social Score)",
+  "reply": "{\"arrows\":[{\"number\":1,\"label\":\"list\",\"reason\":\"The opening arrow marks a standalone point that the Social Score is only for climate-motivated people.\"}]}",
+  "result": {
+    "arrows": [
+      {
+        "number": 1,
+        "label": "list",
+        "reason": "The opening arrow marks a standalone point that the Social Score is only for climate-motivated people."
+      }
+    ]
+  },
+  "done": {
+    "type": "done",
+    "conversationThread": "mGPlrHklryd1VwQ",
+    "thread": {
+      "id": "mGPlrHklryd1VwQ",
+      "dateCreated": "2026-10-08",
+      "lastReply": "2026-10-08",
+      "deletionTimeLeft": "2026-10-08",
+      "daysUntilDeletion": 14,
+      "tooltip": "Chat gestartet am 08.10.2026 <br/>Letzte Antwort vom 08.10.2026 <br/>Löschung in 14 Tag(en)"
+    },
+    "promptTokens": 432,
+    "responseTokens": 80,
+    "totalTokens": 512,
+    "title": "Climate Motivation: Social Score Note"
+  },
+  "tries": 1
+}

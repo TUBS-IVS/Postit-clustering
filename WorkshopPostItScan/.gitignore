@@ -1,0 +1,10 @@
+.env
+.env.*
+.venv/
+__pycache__/
+.scan_postits.lock
+*.json.lock
+postits*.json
+postits*.csv
+# Die gespeicherte Kontoseite kann den persönlichen API-Schlüssel enthalten.
+Show API key.html

@@ -1,0 +1,33 @@
+{
+  "row": 273,
+  "model": "gpt-6-astra",
+  "system": "You label the arrows in workshop notes. The notes are handwritten post-its from a workshop about the future of cities (mobility, delivery, housing, energy, work). They are short, fragmentary and informal.\n\nPeople use arrows (->, =>, →, ↓, ↘, ↳, ↪) for different things. For each numbered arrow, choose one label:\n- cause: what comes before leads to, causes or results in what comes after\n- explanation: what comes after explains or gives the reason for what comes before\n- direction: movement or flow from one place or actor to another\n- example: introduces examples of what comes before\n- list: marks a list item or sub-point rather than a consequence\n- attribute: marks a property of the thing before it\n- heading: introduces what follows, as a colon does\n- other: none of these; say what it means in the reason\n\nAn arrow at the very start of a note has nothing before it; label it by what it most likely means.\n\nReply with only a JSON object in this form, no other text, with one entry per numbered arrow:\n{\"arrows\": [{\"number\": <arrow number>, \"label\": \"<one label>\", \"reason\": \"<one sentence>\"}]}",
+  "user": "Note:\ncar is irrelevant in good PT\nenvironment \n-> same performance as that of private car!\n\nThe same note with each arrow numbered:\ncar is irrelevant in good PT\nenvironment \n[1 ->] same performance as that of private car!",
+  "reply": "{\"arrows\":[{\"number\":1,\"label\":\"explanation\",\"reason\":\"Matching the performance of a private car explains why a car is irrelevant in a good public transport environment.\"}]}",
+  "result": {
+    "arrows": [
+      {
+        "number": 1,
+        "label": "explanation",
+        "reason": "Matching the performance of a private car explains why a car is irrelevant in a good public transport environment."
+      }
+    ]
+  },
+  "done": {
+    "type": "done",
+    "conversationThread": "tZ62tJTejhqzakc",
+    "thread": {
+      "id": "tZ62tJTejhqzakc",
+      "dateCreated": "2026-10-08",
+      "lastReply": "2026-10-08",
+      "deletionTimeLeft": "2026-10-08",
+      "daysUntilDeletion": 14,
+      "tooltip": "Chat gestartet am 08.10.2026 <br/>Letzte Antwort vom 08.10.2026 <br/>Löschung in 14 Tag(en)"
+    },
+    "promptTokens": 444,
+    "responseTokens": 77,
+    "totalTokens": 521,
+    "title": "Good public transport makes cars irrelevant"
+  },
+  "tries": 1
+}

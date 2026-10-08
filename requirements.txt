@@ -1,0 +1,10 @@
+pandas
+openpyxl
+pyspellchecker
+requests
+jsonschema
+python-dotenv
+sentence-transformers
+umap-learn
+hdbscan
+plotly

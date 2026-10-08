@@ -1,0 +1,8 @@
+.env
+__pycache__/
+# 1.1 GB of scan images; keep them out of git
+WorkshopPostItScan/Worshop scan/
+# spreadsheets and generated plots stay local (rebuild them with the scripts)
+*.csv
+*.xlsx
+data/processed/*.html

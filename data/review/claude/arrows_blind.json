@@ -1,0 +1,947 @@
+[
+ {
+  "row": 0,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "direction",
+    "reason": "The arrow shows goods moving from the producer to the customer, which is a flow between two actors."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "Travelling the least means fewer resources are needed for delivery, as the 'so' after the arrow confirms."
+   }
+  ]
+ },
+ {
+  "row": 3,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "'Cheap' is a property the better public transport connection should have, not a separate consequence of it."
+   }
+  ]
+ },
+ {
+  "row": 4,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "'No social money' (no welfare) gives the reason why people must work to survive and make money."
+   }
+  ]
+ },
+ {
+  "row": 8,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "The arrow opens the note and most likely presents an outcome of the implied topic: housing becomes cheaper in some regions and more expensive elsewhere."
+   }
+  ]
+ },
+ {
+  "row": 9,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Expensive energy makes running and providing services expensive, as the word 'therefore' confirms."
+   }
+  ]
+ },
+ {
+  "row": 11,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Life online is shown leading to VR as the next step in an escalating progression."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "VR in turn leads to the further step of living in a simulation like the Matrix."
+   }
+  ]
+ },
+ {
+  "row": 14,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Shared desks lead to people identifying less with their workplace."
+   }
+  ]
+ },
+ {
+  "row": 18,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "example",
+    "reason": "Flying cars are given as a concrete example of travelling by air ways."
+   }
+  ]
+ },
+ {
+  "row": 21,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Urban densification means urban space has to be used for maintenance."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "That pressure on urban space in turn means public space has to be limited."
+   }
+  ]
+ },
+ {
+  "row": 30,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "Less automation, for example after hacking attacks or cyberwarfare, is the reason there is more manual work, so the text after the arrow explains the text before it."
+   }
+  ]
+ },
+ {
+  "row": 34,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "The 'since' clause gives the reason social interaction becomes more important: there is less contact in real life."
+   },
+   {
+    "number": 2,
+    "label": "example",
+    "reason": "Self-checkout and the things covered by 'etc.' are examples of the reduced real-life contact just mentioned."
+   }
+  ]
+ },
+ {
+  "row": 36,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Privatization leads to costs."
+   },
+   {
+    "number": 2,
+    "label": "example",
+    "reason": "The arrow, followed by 'e.g.', introduces 'no insurance' as an example of the costs that privatization brings."
+   }
+  ]
+ },
+ {
+  "row": 39,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Capturing and recording traffic data makes it possible to adjust the traffic lights (LSA); 'e.g.' marks this as just one example of the resulting action."
+   }
+  ]
+ },
+ {
+  "row": 43,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "VR is presented as leading to, or developing into, surrogates, meaning remotely controlled androids."
+   }
+  ]
+ },
+ {
+  "row": 47,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "The arrow gives the city the property 'nice'."
+   }
+  ]
+ },
+ {
+  "row": 53,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Climate warming makes houses too hot."
+   }
+  ]
+ },
+ {
+  "row": 59,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Because houses are expensive, housing becomes exclusive."
+   }
+  ]
+ },
+ {
+  "row": 60,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Having unlimited clean green energy means infrastructure costs less to run."
+   }
+  ]
+ },
+ {
+  "row": 62,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Expensive drone technology raises the price of the service."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "The higher service price leads to less usage."
+   }
+  ]
+ },
+ {
+  "row": 69,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Skyways are presented as making flying cars possible, which starts a chain of consequences."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "With flying cars on skyways, streets no longer need maintaining."
+   }
+  ]
+ },
+ {
+  "row": 75,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "heading",
+    "reason": "The arrow carries the unfinished phrase 'more funding for' over to its object and introduces what the funding is for, the way a colon would."
+   }
+  ]
+ },
+ {
+  "row": 77,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "The resources in brackets (electricity, water, land use) give the reason for the ban: the resources AI consumes."
+   }
+  ]
+ },
+ {
+  "row": 80,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Blending work and living leads to more walking."
+   }
+  ]
+ },
+ {
+  "row": 85,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "The branching arrow marks 'expensive' as a property of the zero-emission single-family house."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "Because such houses are expensive, everyone else ends up living in high-rise buildings."
+   }
+  ]
+ },
+ {
+  "row": 91,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "A more digitized life leads people to look for personal contacts."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "Looking for personal contacts leads to meetings with other people."
+   }
+  ]
+ },
+ {
+  "row": 94,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "The arrow opens the note with nothing before it, so it most likely works as a bullet marking a single point."
+   }
+  ]
+ },
+ {
+  "row": 106,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "A focus on just-in-time or instant deliveries leads to higher parcel volumes and higher infrastructure requirements."
+   }
+  ]
+ },
+ {
+  "row": 113,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "The leading arrow works as a bullet for the first of two parallel barriers to cycling (bad bike hardware)."
+   },
+   {
+    "number": 2,
+    "label": "list",
+    "reason": "The second leading arrow bullets another separate barrier (no cycling infrastructure), not a result of the first item."
+   }
+  ]
+ },
+ {
+  "row": 118,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Shops closing leads to their replacement (or the need to replace them), so the arrow marks a consequence."
+   }
+  ]
+ },
+ {
+  "row": 121,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "The text after the arrow spells out what the materialistic mindset is: the belief that anyone who cannot afford private property is dumb."
+   }
+  ]
+ },
+ {
+  "row": 126,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Most likely, having AI-managed systems leads to or requires data centres, so the arrow marks a consequence."
+   }
+  ]
+ },
+ {
+  "row": 127,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Growing AI consumption results in needing more energy and hardware to meet the demand."
+   }
+  ]
+ },
+ {
+  "row": 128,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "More pedelecs and e-bikes lead to more use for communities."
+   }
+  ]
+ },
+ {
+  "row": 129,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "Nothing comes before this arrow, so it most likely works as a bullet marking the note's single point about autonomous vehicles for everyone."
+   }
+  ]
+ },
+ {
+  "row": 137,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Weak insulation combined with AC and heating results in burning fossil fuels."
+   }
+  ]
+ },
+ {
+  "row": 149,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Coordinated traffic signal control results in, or provides, a backup for routes."
+   }
+  ]
+ },
+ {
+  "row": 158,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Developing remote areas leads to work and home being separated."
+   }
+  ]
+ },
+ {
+  "row": 160,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "other",
+    "reason": "The arrow means 'is called' or '=': it gives the name (ruralisation) for the idea described before it, which is a naming, not a cause or an explanation."
+   }
+  ]
+ },
+ {
+  "row": 161,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "More use of public transit leads to less street network being needed."
+   }
+  ]
+ },
+ {
+  "row": 162,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "The text after the down arrow spells out what 'present anywhere' means: present not physically but through a network."
+   }
+  ]
+ },
+ {
+  "row": 163,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "Nothing comes before this leading arrow, so it most likely works as a bullet that introduces the note's idea (the 15-minute town) rather than a consequence."
+   }
+  ]
+ },
+ {
+  "row": 165,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "The arrow bullets the first point under the heading 'Goals for future city' rather than presenting a consequence of the heading."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "Quality-of-life improvement is presented as the result of the easy and quick movement described on the line before."
+   },
+   {
+    "number": 3,
+    "label": "cause",
+    "reason": "Rising demand for public transport is phrased as an effect rather than a goal, a further result of easier and quicker movement in the city."
+   }
+  ]
+ },
+ {
+  "row": 167,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Because AVs do not need management, management becomes outdated, so the arrow marks a consequence."
+   }
+  ]
+ },
+ {
+  "row": 168,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Autonomous vehicles are said to lead to automated ('automotive') traffic management."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "Automated traffic management means the usual upfront management is no longer needed."
+   }
+  ]
+ },
+ {
+  "row": 173,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Nothing comes before this leading arrow, and it most likely presents a consequence or limitation of an idea on another note: it would only reach climate-motivated people."
+   }
+  ]
+ },
+ {
+  "row": 184,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "'No dumb labor jobs' gives the reason education will be needed for work, because unskilled jobs will no longer exist."
+   }
+  ]
+ },
+ {
+  "row": 188,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Being self-sufficient and offline leads to no need for infrastructure."
+   }
+  ]
+ },
+ {
+  "row": 190,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "example",
+    "reason": "The trailing 'e.g.' shows that this leading arrow introduces an example (anti-nuclear sentiment turning anti-coal) of an idea on another note."
+   }
+  ]
+ },
+ {
+  "row": 202,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "'Rich versus poor' spells out which groups the class separation divides."
+   }
+  ]
+ },
+ {
+  "row": 204,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "'Decentral' names a property of the local, per-traffic-light power setup described above it."
+   },
+   {
+    "number": 2,
+    "label": "attribute",
+    "reason": "'Redundant Power' names another property of that setup, restating its power backup as redundancy."
+   }
+  ]
+ },
+ {
+  "row": 205,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Nothing comes before this leading arrow, and it most likely presents a future scenario (shopping in the city becomes a lifestyle and everything else is ordered online) as the outcome of a development on another note."
+   }
+  ]
+ },
+ {
+  "row": 208,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "Nothing comes before this leading arrow, so it most likely works as a bullet that introduces the proposal of cheap public carsharing."
+   }
+  ]
+ },
+ {
+  "row": 209,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Good public transport service results in there being no cars, because people no longer need them."
+   }
+  ]
+ },
+ {
+  "row": 211,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "Individual houses with big private open spaces are the reason public space is irrelevant, since residents have their own open space."
+   }
+  ]
+ },
+ {
+  "row": 213,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "An unstable energy supply results in there being no power for the traffic lights."
+   }
+  ]
+ },
+ {
+  "row": 214,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "Having many centres is a defining property of a decentral city."
+   },
+   {
+    "number": 2,
+    "label": "attribute",
+    "reason": "Like arrow 1, it adds another property of the decentral city (its centres are distributed) rather than a consequence."
+   }
+  ]
+ },
+ {
+  "row": 219,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "heading",
+    "reason": "'lifestyle' is a topic label and the arrow introduces its content like a colon, as in 'Lifestyle: usage of AI for everything'."
+   }
+  ]
+ },
+ {
+  "row": 223,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "example",
+    "reason": "Education zones are a concrete instance of grouping and separating urban functions by type, here applied to schools."
+   }
+  ]
+ },
+ {
+  "row": 225,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "heading",
+    "reason": "'Education' is a topic label and the arrow introduces the expected development in it like a colon, as in 'Education: higher standards'."
+   }
+  ]
+ },
+ {
+  "row": 227,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "heading",
+    "reason": "'demographics' is a topic label and the arrow introduces the specific trend like a colon, as in 'Demographics: more elderly people'."
+   }
+  ]
+ },
+ {
+  "row": 232,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Everyone owning a car leads to there being no funding anymore, presumably for public transport."
+   }
+  ]
+ },
+ {
+  "row": 251,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "A car-based lifestyle results in public transport being left to poor people who cannot afford cars."
+   }
+  ]
+ },
+ {
+  "row": 264,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Mixed-use development makes local production possible, close to where people live."
+   }
+  ]
+ },
+ {
+  "row": 273,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "explanation",
+    "reason": "Public transport giving the same performance as a private car is the reason the car becomes irrelevant."
+   }
+  ]
+ },
+ {
+  "row": 274,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "example",
+    "reason": "The parenthetical arrow gives a concrete example of an environmental policy: counting the full life-cycle emissions of EVs."
+   }
+  ]
+ },
+ {
+  "row": 275,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "'new' is a lone adjective that describes the green policy itself, so the arrow marks a property of it."
+   },
+   {
+    "number": 2,
+    "label": "cause",
+    "reason": "Building a public space is presented as what the green policy leads to or requires, which makes it a consequence of the policy."
+   }
+  ]
+ },
+ {
+  "row": 277,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "Nothing comes before this arrow, so it most likely works as a bullet for the single point 'zero emission delivery'."
+   }
+  ]
+ },
+ {
+  "row": 279,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "The ↳ at the start of the note marks 'drop off points' as one bullet item of a delivery scenario."
+   },
+   {
+    "number": 2,
+    "label": "list",
+    "reason": "The matching ↳ on the next line marks 'no Home delivery' as a second bullet item at the same level as the first."
+   }
+  ]
+ },
+ {
+  "row": 288,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "The arrow marks 'life style' as a sub-point under the heading 'green' (green lifestyle)."
+   },
+   {
+    "number": 2,
+    "label": "list",
+    "reason": "The arrow marks 'green zero cushion (emission) housing' as a second sub-point under 'green', at the same level as the first."
+   }
+  ]
+ },
+ {
+  "row": 289,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Combustion engines staying in use leads to an effect on fuel prices, so the arrow points to a consequence."
+   }
+  ]
+ },
+ {
+  "row": 290,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "heading",
+    "reason": "The down arrow introduces the dash-bulleted item ('- policy') under the title 'Zero emission City' and works like a colon."
+   }
+  ]
+ },
+ {
+  "row": 291,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Trees give shade when it is warm, so the arrow points to an effect that trees produce."
+   }
+  ]
+ },
+ {
+  "row": 298,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "War leads to political instability, so the arrow points from a cause to its result."
+   }
+  ]
+ },
+ {
+  "row": 299,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "The ↳ links war to what it results in, political instability."
+   }
+  ]
+ },
+ {
+  "row": 303,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "The arrow marks planning as political, giving it a property or category, which fits the 'Grouping by x' note about classifying items."
+   }
+  ]
+ },
+ {
+  "row": 304,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "The arrow marks planning as political, a property of planning."
+   }
+  ]
+ },
+ {
+  "row": 307,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "Nothing comes before this arrow, so it acts as a bullet for the item 'zero emission Care Spaces'."
+   },
+   {
+    "number": 2,
+    "label": "list",
+    "reason": "The arrow marks 'Energy etc' as another item at the same level, and the 'etc' shows a list that continues."
+   }
+  ]
+ },
+ {
+  "row": 309,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "Only a predicate follows the opening arrow, so it most likely attaches the property 'already eco-friendly' to a subject that is not written on the note."
+   }
+  ]
+ },
+ {
+  "row": 319,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "attribute",
+    "reason": "The arrow says what public lighting runs on, electricity, which is a property of the lighting rather than something it causes."
+   }
+  ]
+ },
+ {
+  "row": 321,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "A climate shock leads people to switch to using the bike."
+   }
+  ]
+ },
+ {
+  "row": 322,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "The climate shock results in combustion engines being dropped or banned."
+   }
+  ]
+ },
+ {
+  "row": 326,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "example",
+    "reason": "Mercedes, in parentheses, is given as an example of a premium brand."
+   }
+  ]
+ },
+ {
+  "row": 332,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "cause",
+    "reason": "Losing funding means people have to rely only on self-made solutions."
+   }
+  ]
+ },
+ {
+  "row": 333,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "The arrow starts the note with nothing before it and works as a bullet for its one point (energy prices / no oil), not as a stated consequence."
+   }
+  ]
+ },
+ {
+  "row": 334,
+  "arrows": [
+   {
+    "number": 1,
+    "label": "list",
+    "reason": "The arrow starts the note with nothing before it and works as a bullet marking 'price' as a standalone point or sub-point."
+   }
+  ]
+ }
+]

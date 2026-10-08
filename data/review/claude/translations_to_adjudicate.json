@@ -1,0 +1,286 @@
+[
+ {
+  "row": 24,
+  "original": "- Auto weiterhin\nals Statussymbol\n(lifestyle)",
+  "english": "- Car still\nas a Statussymbol\n(Lifestyle)",
+  "proposal_a": [
+   {
+    "find": "Statussymbol",
+    "replace": "Status symbol",
+    "reason": "The German compound translates as “status symbol” in English."
+   }
+  ],
+  "proposal_b": [],
+  "a_is": "gpt"
+ },
+ {
+  "row": 28,
+  "original": "mehr public\nSpacing, mehr\n„Interaktion“\nmehr TAktivitäten\n„soziale“",
+  "english": "more public\nspacing, more\n\"interaction\"\nmore activities\n\"social\"",
+  "proposal_a": [
+   {
+    "find": "spacing",
+    "replace": "space",
+    "reason": "Here, “public Spacing” refers to public space, not the distances between things."
+   }
+  ],
+  "proposal_b": [],
+  "a_is": "gpt"
+ },
+ {
+  "row": 29,
+  "original": "Einfamilienhäuser\nbleiben / werden die\nNorn",
+  "english": "Single-family homes\nwill remain the\nStandard",
+  "proposal_a": [
+   {
+    "find": "remain",
+    "replace": "remain / become",
+    "reason": "The original 'bleiben / werden die Norn' means 'remain / become the norm'. The English dropped the 'become' alternative, so it loses part of the meaning."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "will remain",
+    "replace": "will remain / become",
+    "reason": "The original includes both remaining and becoming the norm."
+   }
+  ],
+  "a_is": "claude"
+ },
+ {
+  "row": 39,
+  "original": "KI kann über\nDaten Stau etc.\nerfassen\n(z.B. deutschland-\nweit)\n→ zB LSA\nanpassen",
+  "english": "AI can capture\ndata about traffic jam etc.\nrecord\n(e.g. nation-\nwide)\n→ e.g. LSA\nadjust",
+  "proposal_a": [
+   {
+    "find": "data about traffic",
+    "replace": "traffic",
+    "reason": "'über Daten' means 'via/using data', not 'data about'. The AI detects jams from data; it does not capture data about them."
+   },
+   {
+    "find": "record",
+    "replace": "via data",
+    "reason": "'erfassen' is already translated as 'capture' on line 1, so 'record' repeats it. The misplaced 'über Daten' (via data) goes here."
+   },
+   {
+    "find": "LSA",
+    "replace": "traffic lights",
+    "reason": "LSA is the German abbreviation for Lichtsignalanlage (traffic signals). Left untranslated, it means nothing to an English reader."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "capture\ndata about traffic jam etc.\nrecord",
+    "replace": "use\ndata to detect\ntraffic jam etc.",
+    "reason": "The original means detecting traffic jams using data, not capturing or recording data about them."
+   },
+   {
+    "find": "LSA",
+    "replace": "traffic lights",
+    "reason": "LSA is the German abbreviation for traffic light systems."
+   }
+  ],
+  "a_is": "claude"
+ },
+ {
+  "row": 47,
+  "original": "city\n→ toll",
+  "english": "city\n→ nice",
+  "proposal_a": [
+   {
+    "find": "nice",
+    "replace": "toll",
+    "reason": "The note is most likely already in English. 'city' is an English word written in lowercase; a German note would normally say 'Stadt' or a capitalised 'City'. Read that way, 'city → toll' means a city toll or congestion charge, which is a mobility measure. Treating 'toll' as the German word for 'great' turns that measure into a vague compliment. My confidence here is moderate, because the German reading is possible."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "nice",
+    "replace": "toll",
+    "reason": "The English replaces the original toll charge with an unrelated adjective."
+   }
+  ],
+  "a_is": "claude"
+ },
+ {
+  "row": 48,
+  "original": "kostengünstige/\nkostenlose\nAngebote von z.B.\nautonomen\nFahrzeugen",
+  "english": "cost-effective/\nfree\noffers from e.g.\nautonomes\nvehicles",
+  "proposal_a": [
+   {
+    "find": "cost-effective",
+    "replace": "low-cost",
+    "reason": "“kostengünstige” means inexpensive, not cost-effective."
+   },
+   {
+    "find": "offers from",
+    "replace": "offers of",
+    "reason": "The offers concern autonomous vehicles rather than coming from them."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "autonomes",
+    "replace": "autonomous",
+    "reason": "'autonomes' is a leftover German or French adjective form, not an English word. 'autonomen Fahrzeugen' means autonomous vehicles."
+   }
+  ],
+  "a_is": "gpt"
+ },
+ {
+  "row": 74,
+  "original": "Angstraum\nfür Frauen",
+  "english": "Anxiety room\nfor women",
+  "proposal_a": [
+   {
+    "find": "Anxiety room",
+    "replace": "Space that feels unsafe",
+    "reason": "“Angstraum” means a space perceived as unsafe, not a room for anxiety."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "Anxiety room",
+    "replace": "Unsafe space",
+    "reason": "'Angstraum' is an urban-planning term for a public place where people feel afraid or unsafe, such as dark underpasses or unlit paths. The literal compound 'Anxiety room' suggests an indoor room for anxiety and loses that meaning."
+   }
+  ],
+  "a_is": "gpt"
+ },
+ {
+  "row": 76,
+  "original": "Überalterung der Gesellschaft,\nmehr Hitzewellen",
+  "english": "Aging of society, \nmore heatwaves",
+  "proposal_a": [
+   {
+    "find": "Aging",
+    "replace": "Excessive aging",
+    "reason": "Überalterung means excessive demographic aging, not simply aging."
+   }
+  ],
+  "proposal_b": [],
+  "a_is": "gpt"
+ },
+ {
+  "row": 81,
+  "original": "Starke\nTrennung von\nArbeitsplatz &\nWohnung\n",
+  "english": "Clear\nseparation of\nworkplace &\nhome\n",
+  "proposal_a": [],
+  "proposal_b": [
+   {
+    "find": "Clear",
+    "replace": "Strong",
+    "reason": "“Starke” describes the degree of separation, not its clarity."
+   }
+  ],
+  "a_is": "claude"
+ },
+ {
+  "row": 84,
+  "original": "Verkehrskonzepte \nerschließen Städte, \nBallungsräume, Ländliche\nmit kostenlosen/\ngünstigen Angeboten",
+  "english": "Transport concepts connect cities, \nmetropolitan areas, and rural regions\nthrough free or lost-cost services",
+  "proposal_a": [],
+  "proposal_b": [
+   {
+    "find": "lost",
+    "replace": "low",
+    "reason": "'günstigen' means inexpensive/low-cost; 'lost-cost' is a wrong word that does not convey this meaning."
+   }
+  ],
+  "a_is": "gpt"
+ },
+ {
+  "row": 87,
+  "original": "Klimakleber",
+  "english": "climate adhesive",
+  "proposal_a": [
+   {
+    "find": "adhesive",
+    "replace": "activists gluing themselves to roads",
+    "reason": "'Klimakleber' is a colloquial German term for climate activists who glue themselves to roads in protest; the literal 'climate adhesive' (a glue product) misleads."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "climate adhesive",
+    "replace": "climate protesters who glue themselves down",
+    "reason": "“Klimakleber” refers to climate protesters who glue themselves down, not an adhesive."
+   }
+  ],
+  "a_is": "claude"
+ },
+ {
+  "row": 92,
+  "original": "Räder anfällig\nfür Schäden/\nReparaturen",
+  "english": "Wheels susceptible\nto damage/\nrepairs",
+  "proposal_a": [
+   {
+    "find": "Wheels",
+    "replace": "Bikes",
+    "reason": "“Räder” here refers to bicycles, not their wheels."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "Wheels",
+    "replace": "Bikes",
+    "reason": "In a city-mobility context, German \"Räder\" used on its own almost always means bikes (short for Fahrräder), not literal wheels. The literal \"Wheels\" hides that the note is about bicycles being prone to damage and needing repairs."
+   }
+  ],
+  "a_is": "gpt"
+ },
+ {
+  "row": 209,
+  "original": "- gute OEV-Anbindung\n↪ no cars",
+  "english": "- good pt-service\n↪ no cars",
+  "proposal_a": [],
+  "proposal_b": [
+   {
+    "find": "pt-service",
+    "replace": "pt connections",
+    "reason": "Anbindung means transport connections rather than the transport service itself."
+   }
+  ],
+  "a_is": "claude"
+ },
+ {
+  "row": 298,
+  "original": "War\n-> political instability",
+  "english": "Was\n-> political instability",
+  "proposal_a": [
+   {
+    "find": "Was",
+    "replace": "War",
+    "reason": "The original refers to war, not the verb \"was\"."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "Was",
+    "replace": "War",
+    "reason": "The original is already the English noun 'War' (armed conflict) leading to political instability. The translation read it as the German false friend 'war' (= 'was'), which loses the meaning."
+   }
+  ],
+  "a_is": "gpt"
+ },
+ {
+  "row": 332,
+  "original": "no more\nfunding\n→ nur eigenwirtschaftlichen",
+  "english": "no more\nfunding\n→ only self made",
+  "proposal_a": [
+   {
+    "find": "self made",
+    "replace": "self-financing",
+    "reason": "“Eigenwirtschaftlichen” means operating without external funding, not self-made."
+   }
+  ],
+  "proposal_b": [
+   {
+    "find": "made",
+    "replace": "financed",
+    "reason": "'eigenwirtschaftlich' means self-financing, run on its own revenue without public subsidy (a standard term in German public transport). It does not mean 'self made'. With 'no more funding', the note means only self-financed operations remain."
+   }
+  ],
+  "a_is": "gpt"
+ }
+]

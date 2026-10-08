@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post-its prüfen</title><link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+<header>
+  <div><h1>Post-its prüfen</h1><p>Foto vergleichen · Texte korrigieren · Prüfung speichern</p></div>
+  <nav aria-label="Export"><a href="/api/export/json" download>JSON exportieren</a><a href="/api/export/csv" download>CSV exportieren</a></nav>
+</header>
+<div id="warning" class="notice warning" role="status" hidden></div>
+<div id="message" class="notice" role="status" hidden></div>
+<section class="toolbar" aria-label="Auswahl">
+  <label>Suche<input id="search" type="search" placeholder="Adresse, Bildname oder Text"></label>
+  <label>Filter<select id="filter"><option value="all">Alle Zettel</option><option value="unreviewed">Ungeprüft</option><option value="reviewed">Geprüft</option><option value="issues">Scan: prüfen / Fehler</option></select></label>
+  <div class="counter"><strong id="count">Laden …</strong><span id="position"></span></div>
+</section>
+<main>
+  <aside><label for="items">Zettel auswählen</label><select id="items" size="16" aria-label="Zettelliste"></select></aside>
+  <section class="photo-panel" aria-label="Originalfoto">
+    <div class="photo-tools"><span id="filename"></span><button id="zoomOut" type="button" aria-label="Verkleinern">−</button><button id="zoomIn" type="button" aria-label="Vergrößern">+</button><button id="zoomReset" type="button">Einpassen</button></div>
+    <div class="photo-scroll" id="photoFrame"><img id="photo" alt="Foto des ausgewählten Post-its" hidden><p id="photoError" hidden>Bild konnte nicht geladen werden.</p></div>
+  </section>
+  <section class="editor" aria-label="Korrekturen">
+    <div class="badges"><span id="scanStatus" class="badge"></span><span id="reviewStatus" class="badge"></span><span id="dirty" class="badge" hidden>Ungespeichert</span></div>
+    <p id="hint" class="hint"></p>
+    <div id="stale" class="notice warning" hidden>Das Scan-Ergebnis wurde geändert. Korrekturen sind erhalten; bitte erneut prüfen.</div>
+    <div id="basisChanged" class="notice warning" hidden>Neue Scan-Daten liegen vor. Deine Eingaben bleiben erhalten. Vergleiche den aktuellen Scan unten, bevor du die neue Grundlage bestätigst.<button id="acceptBasis" type="button">Neue Scan-Daten geprüft</button></div>
+    <form id="editorForm">
+      <fieldset id="fields" disabled>
+        <label>Adresse<input id="address" type="text" placeholder="z. B. MA32 oder leer" autocomplete="off"></label>
+        <label>Originaltext<textarea id="original" rows="6" spellcheck="false"></textarea></label>
+        <label>Englischer Text<textarea id="english" rows="6" lang="en" spellcheck="true"></textarea></label>
+        <label class="checkbox"><input id="verified" type="checkbox"> Als geprüft markieren</label>
+        <div class="actions"><button id="save" type="submit" class="primary">Speichern</button><button id="saveNext" type="button">Speichern & nächster</button></div>
+      </fieldset>
+    </form>
+    <div class="navigation"><button id="previous" type="button">← Zurück</button><button id="next" type="button">Weiter →</button><button id="reload" type="button">Daten neu laden</button></div>
+    <details id="scanDetails"><summary>Aktueller Scan zum Vergleich</summary><pre id="scanOriginal"></pre></details>
+  </section>
+</main>
+<footer>Scan-Daten werden alle 5 Sekunden aktualisiert. Korrekturen werden separat gespeichert. Tastenkürzel: Strg/Cmd+S zum Speichern.</footer>
+</body>
+</html>

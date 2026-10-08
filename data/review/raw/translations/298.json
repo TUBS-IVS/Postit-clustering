@@ -1,0 +1,33 @@
+{
+  "row": 298,
+  "model": "gpt-6-astra",
+  "system": "You check English translations of workshop notes. The notes are handwritten post-its from a workshop about the future of cities (mobility, delivery, housing, energy, work). They are short, fragmentary and informal.\n\nPropose the smallest edits that restore meaning the English loses or distorts: mistranslated idioms and compound nouns, false friends, wrong words. Where a literal translation would mislead, translate the meaning.\n\nDo not fix style, grammar, capitalization or spelling, do not turn fragments into sentences, do not add information, and do not touch arrows (->, =>, →, ↓, ↘, ↳, ↪), dashes or line breaks.\n\nEach `find` must be copied exactly from the English text, including line breaks (written as \\n in JSON), and occur there only once. Keep it as short as possible.\n\nReply with only a JSON object in this form, no other text:\n{\"edits\": [{\"find\": \"<exact text from the English>\", \"replace\": \"<corrected text>\", \"reason\": \"<one sentence>\"}]}\nIf the English keeps the meaning, reply {\"edits\": []}.",
+  "user": "Original:\nWar\n-> political instability\n\nEnglish:\nWas\n-> political instability",
+  "reply": "{\"edits\":[{\"find\":\"Was\",\"replace\":\"War\",\"reason\":\"The original refers to war, not the verb \\\"was\\\".\"}]}",
+  "result": {
+    "edits": [
+      {
+        "find": "Was",
+        "replace": "War",
+        "reason": "The original refers to war, not the verb \"was\"."
+      }
+    ]
+  },
+  "done": {
+    "type": "done",
+    "conversationThread": "bMm4d8p3bSUcpFw",
+    "thread": {
+      "id": "bMm4d8p3bSUcpFw",
+      "dateCreated": "2026-10-08",
+      "lastReply": "2026-10-08",
+      "deletionTimeLeft": "2026-10-08",
+      "daysUntilDeletion": 14,
+      "tooltip": "Chat gestartet am 08.10.2026 <br/>Letzte Antwort vom 08.10.2026 <br/>Löschung in 14 Tag(en)"
+    },
+    "promptTokens": 384,
+    "responseTokens": 59,
+    "totalTokens": 443,
+    "title": "War Changed to Was"
+  },
+  "tries": 1
+}

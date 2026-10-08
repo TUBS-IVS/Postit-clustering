@@ -1,0 +1,38 @@
+{
+  "row": 39,
+  "model": "gpt-6-astra",
+  "system": "You check English translations of workshop notes. The notes are handwritten post-its from a workshop about the future of cities (mobility, delivery, housing, energy, work). They are short, fragmentary and informal.\n\nPropose the smallest edits that restore meaning the English loses or distorts: mistranslated idioms and compound nouns, false friends, wrong words. Where a literal translation would mislead, translate the meaning.\n\nDo not fix style, grammar, capitalization or spelling, do not turn fragments into sentences, do not add information, and do not touch arrows (->, =>, →, ↓, ↘, ↳, ↪), dashes or line breaks.\n\nEach `find` must be copied exactly from the English text, including line breaks (written as \\n in JSON), and occur there only once. Keep it as short as possible.\n\nReply with only a JSON object in this form, no other text:\n{\"edits\": [{\"find\": \"<exact text from the English>\", \"replace\": \"<corrected text>\", \"reason\": \"<one sentence>\"}]}\nIf the English keeps the meaning, reply {\"edits\": []}.",
+  "user": "Original:\nKI kann über\nDaten Stau etc.\nerfassen\n(z.B. deutschland-\nweit)\n→ zB LSA\nanpassen\n\nEnglish:\nAI can capture\ndata about traffic jam etc.\nrecord\n(e.g. nation-\nwide)\n→ e.g. LSA\nadjust",
+  "reply": "{\"edits\":[{\"find\":\"capture\\ndata about traffic jam etc.\\nrecord\",\"replace\":\"use\\ndata to detect\\ntraffic jam etc.\",\"reason\":\"The original means detecting traffic jams using data, not capturing or recording data about them.\"},{\"find\":\"LSA\",\"replace\":\"traffic lights\",\"reason\":\"LSA is the German abbreviation for traffic light systems.\"}]}",
+  "result": {
+    "edits": [
+      {
+        "find": "capture\ndata about traffic jam etc.\nrecord",
+        "replace": "use\ndata to detect\ntraffic jam etc.",
+        "reason": "The original means detecting traffic jams using data, not capturing or recording data about them."
+      },
+      {
+        "find": "LSA",
+        "replace": "traffic lights",
+        "reason": "LSA is the German abbreviation for traffic light systems."
+      }
+    ]
+  },
+  "done": {
+    "type": "done",
+    "conversationThread": "VbjTvNOJtg7CHG0",
+    "thread": {
+      "id": "VbjTvNOJtg7CHG0",
+      "dateCreated": "2026-10-08",
+      "lastReply": "2026-10-08",
+      "deletionTimeLeft": "2026-10-08",
+      "daysUntilDeletion": 14,
+      "tooltip": "Chat gestartet am 08.10.2026 <br/>Letzte Antwort vom 08.10.2026 <br/>Löschung in 14 Tag(en)"
+    },
+    "promptTokens": 430,
+    "responseTokens": 344,
+    "totalTokens": 774,
+    "title": "KI passt Ampeln mit Verkehrsdaten an"
+  },
+  "tries": 1
+}

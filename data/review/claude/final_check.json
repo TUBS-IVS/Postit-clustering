@@ -1,0 +1,565 @@
+{
+ "flagged": [
+  {
+   "row": 3,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "'PT' is left as an abbreviation. An embedding model will not reliably read it as public transport, which other notes spell out (rows 25-27), so this note may not cluster with them.",
+     "fix": "better public transport connection, cheap"
+    },
+    {
+     "checker": 2,
+     "problem": "\"PT\" is ambiguous to an embedding model (commonly physical therapy, personal trainer or part-time), so \"PT connection\" is unlikely to be matched with the \"Public transport connection\" notes (rows 25-27). The scan confirms \"PT connection\", and the German writer (\"billig\") means public transport (ÖPNV). The arrow label (attribute) is fine. If you expand it, do it in every note that uses \"PT\", for consistency.",
+     "fix": "better public transport connection, cheap"
+    }
+   ]
+  },
+  {
+   "row": 21,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Probable transcription error. 'maintenance' (Wartung) makes no sense in a chain about densification and overpopulation that ends with public space being limited. The handwritten word is most likely 'Wohnung' (housing), which looks similar, so the note is pulled toward an infrastructure-maintenance topic. Check the scan before applying; if it really says 'Wartung', leave the note as is.",
+     "fix": "Urban densification leads to Urban space must be used for housing (e.g., due to overpopulation) leads to Public space must be limited"
+    },
+    {
+     "checker": 2,
+     "problem": "Transcription error that changes the meaning. The scan (20261007_095334.jpg) reads \"für Wohnung genutzt werden\" (used for housing), not \"für Wartung\" (maintenance). The scan also has \"wg.\" (due to), which the clean already reflects. \"used for maintenance\" turns a housing/densification note into something about maintenance, so it would cluster wrongly.",
+     "fix": "Urban densification leads to Urban space must be used for housing (e.g., due to overpopulation) leads to Public space must be limited"
+    }
+   ]
+  },
+  {
+   "row": 35,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The bare acronym 'DRT' (in this mobility workshop, demand-responsive transport) gives a sentence-embedding model almost no meaning to work with, so the note will cluster almost at random instead of with the mobility notes.",
+     "fix": "DRT (demand-responsive transport)"
+    },
+    {
+     "checker": 2,
+     "problem": "The whole note is the bare acronym \"DRT\" (scan confirms the letters), which a sentence-embedding model cannot interpret, so the note will land arbitrarily in the clustering. It sits on the mobility board (cell MB11), where DRT almost certainly means demand-responsive transport (on-demand shuttles or ride pooling). Unlike FSS and DB100, it is not listed as an open item.",
+     "fix": "DRT (demand-responsive transport)"
+    }
+   ]
+  },
+  {
+   "row": 65,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Transcription dropped a syllable. On the scan, line 3 ends 'delivary be-' and line 4 continues 'comes the norm!', so the participant wrote 'becomes the norm'.",
+     "fix": "Freight Infrastructure goes irrelevant when drone delivery becomes the norm!"
+    },
+    {
+     "checker": 2,
+     "problem": "Transcription dropped a word. The scan shows 'drone delivary be-' at the end of one line and 'comes the norm!' on the next, so the participant wrote 'becomes the norm'. 'comes the norm' is a lost syllable, not the participant's grammar.",
+     "fix": "Freight Infrastructure goes irrelevant when drone delivery becomes the norm!"
+    }
+   ]
+  },
+  {
+   "row": 75,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The arrow only carries 'more funding for' down to its object, 'Barrierefreiheit'. It is not a heading, so the ':' splits the preposition from its object.",
+     "fix": "more funding for Accessibility"
+    },
+    {
+     "checker": 2,
+     "problem": "The ':' (heading) arrow word misstates the link. 'Barrierefreiheit' is just the object of 'für', so this is one phrase. The scan (100029) also shows no arrow at all; the transcription added the '↓' by mistake.",
+     "fix": "more funding for Accessibility"
+    }
+   ]
+  },
+  {
+   "row": 85,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The scan reads 'Rest in Hochhäusern': the rest of the people live in high-rise buildings, while zero-emission single-family houses are too expensive for them. In English, 'Rest in high-rise building' with no article reads as resting or relaxing, so the inequality meaning is lost. The scan also has the plural.",
+     "fix": "Zero emission Single-family house (expensive) leads to the rest in high-rise buildings"
+    },
+    {
+     "checker": 2,
+     "problem": "'Rest' is a false friend kept from German ('der Rest' = the remaining people). In English, 'leads to Rest in high-rise building' reads as resting or relaxing, which distorts the point that everyone else ends up in high-rise buildings. The scan says 'Hochhäusern', which is plural.",
+     "fix": "Zero emission Single-family house (expensive) leads to the rest in high-rise buildings"
+    }
+   ]
+  },
+  {
+   "row": 90,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Mistranslation: 'vermehrte Hackerangriffe' means increased or more frequent hacker attacks. 'increasingly hacker attacks' is an adverb with no verb.",
+     "fix": "increased hacker attacks"
+    },
+    {
+     "checker": 2,
+     "problem": "Mistranslation: 'vermehrte' is an adjective meaning increased or more frequent. 'increasingly hacker attacks' is broken English that the cleaning left in.",
+     "fix": "increased hacker attacks"
+    }
+   ]
+  },
+  {
+   "row": 93,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "'(DB)' is Deutsche Bahn. The scan shows '(DB)' as part of the note, not the cell code ME11, and the note sits on the mobility board. An English embedding model will most likely read 'DB' as 'database' and group the note with the hacker-attack notes instead of rail infrastructure.",
+     "fix": "Sabotage (Deutsche Bahn railway)"
+    },
+    {
+     "checker": 2,
+     "problem": "'DB' is an unexplained German abbreviation for Deutsche Bahn (the scan clearly reads '(DB)'). An English embedding model will likely read it as 'database', which pulls this rail-sabotage note towards the hacker-attack notes next to it.",
+     "fix": "Sabotage (Deutsche Bahn railway)"
+    }
+   ]
+  },
+  {
+   "row": 101,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "'PT' (public transport; the note is on the mobility board, and the scan confirms 'PT') is an ambiguous abbreviation for an embedding model, which may read it as part-time or physical therapy. The note's point is no public transport connection. Rows 3, 116, 165, 201, 273 and 292 use the same 'PT'.",
+     "fix": "no external influences (e.g. no public transport connection)"
+    },
+    {
+     "checker": 2,
+     "problem": "'PT' (public transport, confirmed on the scan) is an opaque abbreviation. The model cannot match it to notes that say 'public transport', so the note loses its mobility meaning. 'PT' also appears in several other notes in the dataset, so the expansion should be applied across the whole dataset.",
+     "fix": "no external influences (e.g. no public transport connection)"
+    }
+   ]
+  },
+  {
+   "row": 151,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The scan says 'hospitals and critical infrastructure'. The transcription misread 'and' as 'all', which leaves a garbled phrase.",
+     "fix": "hospitals and critical infrastructure"
+    },
+    {
+     "checker": 2,
+     "problem": "The scan reads 'hospitals and critical infrastructure'. The transcribed 'all' makes the note read as a claim that hospitals are all critical infrastructure.",
+     "fix": "hospitals and critical infrastructure"
+    }
+   ]
+  },
+  {
+   "row": 156,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The scan says '15 min town' (the 15-minute town idea). The transcription added 'in', which makes it read like time spent in town.",
+     "fix": "15 min town"
+    },
+    {
+     "checker": 2,
+     "problem": "The scan reads '15 min town' (the 15-minute city idea). The added 'in' turns it into a duration spent in town.",
+     "fix": "15 min town"
+    }
+   ]
+  },
+  {
+   "row": 158,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Here '/' joins the two things being separated (work and home); it does not mean a choice between them. The '/' to 'or' rule turned it into 'separation work or house', which distorts the meaning.",
+     "fix": "Developing remote areas leads to separation of work and house"
+    },
+    {
+     "checker": 2,
+     "problem": "'work/house' means the separation between work and home. Turning '/' into 'or' gives 'separation work or house', which loses that meaning.",
+     "fix": "Developing remote areas leads to separation of work and home"
+    }
+   ]
+  },
+  {
+   "row": 161,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The transcription has the words in the wrong order. The scan reads 'Increase in Public Transit -> Less street network needed', but the clean text says 'increase public in Transit', which is garbled.",
+     "fix": "increase in public Transit leads to Less street network needed"
+    },
+    {
+     "checker": 2,
+     "problem": "The lines were joined in the wrong order, giving the garbled 'increase public in Transit'. The intended phrase is 'increase in public transit'.",
+     "fix": "increase in public Transit leads to Less street network needed"
+    }
+   ]
+  },
+  {
+   "row": 165,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The arrows at the start of each line under the heading 'Goals for future city' are bullets, and the writer spelled out cause in words ('leads to'). Turning the 2nd and 3rd arrows into 'leads to' builds a false chain claiming that a better quality of life causes demand for PT to rise.",
+     "fix": "Goals for future city: better traffic management leads to easy and quick movement within city; quality of life improvement; demand for PT rises"
+    },
+    {
+     "checker": 2,
+     "problem": "The three arrows under the heading 'Goals for future city' start new lines and mark separate goals. Making the 2nd and 3rd arrows 'leads to' invents a causal chain (quality of life improvement leads to demand for PT rises).",
+     "fix": "Goals for future city: better traffic management leads to easy and quick movement within city; quality of life improvement; demand for PT rises"
+    }
+   ]
+  },
+  {
+   "row": 201,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "\"PT\" is an unexpanded abbreviation for public transport. The rest of the note, \"captive riders\", is transit jargon, so the embedding model has nothing that ties the note to public transport. It may read PT as part-time or physical therapy instead.",
+     "fix": "captive riders in public transport"
+    },
+    {
+     "checker": 2,
+     "problem": "'PT' is an unexpanded abbreviation. An embedding model is unlikely to read it as public transport, which leaves the jargon 'captive riders' without context. The pipeline already expanded similar jargon ('pax' to 'passenger').",
+     "fix": "captive riders in public transport"
+    }
+   ]
+  },
+  {
+   "row": 202,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The arrow names the two classes the city splits into, so it specifies what the separation is. It does not explain why. \"because rich versus poor\" wrongly makes the rich/poor divide sound like the cause of the separation.",
+     "fix": "Class Separation: rich versus poor"
+    },
+    {
+     "checker": 2,
+     "problem": "Wrong link word. In the scan the arrow just names the two classes, rich and poor. It doesn't give a reason, so 'because' adds a causal claim the note doesn't make. It works as a heading (':').",
+     "fix": "Class Separation: rich versus poor"
+    }
+   ]
+  },
+  {
+   "row": 209,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "\"pt-service\" is the translator's lowercase abbreviation for the German \"ÖV-Anbindung\". An embedding model is unlikely to read \"pt\" as public transport, and that is the core idea of the note. \"Anbindung\" also means connection or access, not service.",
+     "fix": "good public transport connection leads to no cars"
+    },
+    {
+     "checker": 2,
+     "problem": "'gute ÖV-Anbindung' means a good public transport connection. The translation reduced it to the abbreviation 'pt-service', and 'Anbindung' means connection, not service. An embedding model won't read 'pt' as public transport, so the note's main topic is lost.",
+     "fix": "good public transport connection leads to no cars"
+    }
+   ]
+  },
+  {
+   "row": 234,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Misspelling. The scan has an apostrophe ('can't'), but 'cant' is a different English word and weakens the negation. Row 263 keeps \"don't\", so apostrophes are allowed.",
+     "fix": "Cars can't Swim"
+    },
+    {
+     "checker": 2,
+     "problem": "'cant' is a misspelling of \"can't\". It is also a separate English word, so the negation the note depends on can get lost. Similar typos elsewhere in this batch were fixed.",
+     "fix": "Cars can't Swim"
+    }
+   ]
+  },
+  {
+   "row": 235,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Misspelling. The scan clearly reads \"Can't\". 'Cant' is a different word and weakens the negation.",
+     "fix": "Cars Can't fly"
+    },
+    {
+     "checker": 2,
+     "problem": "'Cant' is a misspelling of \"Can't\". It is also a separate English word, so the negation the note depends on can get lost.",
+     "fix": "Cars Can't fly"
+    }
+   ]
+  },
+  {
+   "row": 241,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Likely transcription error. In this writer's hand 'r' looks like 'v', and the scan reads 'Working more, less time at home'. 'working move' is meaningless and suggests relocation or mobility to the embedding model.",
+     "fix": "working more, less time at home"
+    },
+    {
+     "checker": 2,
+     "problem": "'working move' is very likely a misreading of 'working more' (r and v are easy to confuse in handwriting). 'working more, less time at home' is a clear trade-off between work and home time. 'move' pulls the note toward relocation or mobility instead. Check the scan before applying.",
+     "fix": "working more, less time at home"
+    }
+   ]
+  },
+  {
+   "row": 243,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The '/' to 'or' rule distorts the meaning. On the scan '/' separates two ideas ('...requires no management / focus on active mobility'). 'require no management or focus on active mobility' puts the focus on active mobility under 'no', which reverses it.",
+     "fix": "low traffic demand that require no management; focus on active mobility"
+    },
+    {
+     "checker": 2,
+     "problem": "Here '/' separates two points; it is not offering alternatives. As 'or' after 'no', it puts 'focus on active mobility' under the negation: 'require no management or focus on active mobility' reads as requiring neither one. That is the opposite of the participant's call to focus on active mobility.",
+     "fix": "low traffic demand that require no management; focus on active mobility"
+    }
+   ]
+  },
+  {
+   "row": 268,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Transcription error. The scan reads 'Extremer Weathe[r]', which means extreme weather, matching -30/+40 degrees. 'Extra Weather' loses that meaning. Note: the EXAMPLES entry in src/clean_text.py and the rules doc assert the old text, so they need updating too.",
+     "fix": "Extreme Weather minus 30 Degrees and plus 40 Degrees"
+    },
+    {
+     "checker": 2,
+     "problem": "'Extra Weather' should be 'Extreme Weather', since -30 and +40 degrees are extremes. 'Extra' means 'additional', so the note would match climate and extreme-weather notes less well.",
+     "fix": "Extreme Weather minus 30 Degrees and plus 40 Degrees"
+    }
+   ]
+  },
+  {
+   "row": 287,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Transcription misread. The scan (20261007_102209) reads 'Freak Wheater Events'. The cleaning fixed 'Weater' but kept the misread 'Fresh'. 'Fresh weather' means cool, pleasant weather, the opposite of the extreme weather the participant listed next to climate change and floods.",
+     "fix": "Climate Change Floods Freak Weather Events"
+    },
+    {
+     "checker": 2,
+     "problem": "The cleaner fixed 'Weater' to 'Weather' but kept 'Fresh'. 'Fresh weather' means cool, breezy weather, which does not fit a note listing climate change and floods. The handwriting was most likely 'Freak' (k/h and a/s are easy to mix up), meaning extreme weather. As it stands, the embedding is pulled toward mild weather. Check the scan; if it is unreadable, 'Extreme Weather Events' gives the intended meaning.",
+     "fix": "Climate Change Floods Freak Weather Events"
+    }
+   ]
+  },
+  {
+   "row": 292,
+   "both": true,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "'PT' stands for public transport, which the scan (20261007_102241) and the rural/semi-urban context support. A general sentence-embedding model will not expand it, and 'PT offer' can read as a part-time job offer, which would pull the note toward the work theme. The same abbreviation is also left in rows 3, 101, 116, 165, 201, 209 ('pt-service') and 273, so one rule could expand all of them.",
+     "fix": "public transport offer is too bad (non-urban or semi-urban)"
+    },
+    {
+     "checker": 2,
+     "problem": "'PT' is a transport-planning abbreviation for public transport. A general sentence-embedding model is unlikely to read it that way (it could take it as physical therapy, part-time or Portugal), so this note may not cluster with the other public-transport and mobility notes. Expanding it does not change the meaning. If 'PT' appears in other batches, it is worth expanding it everywhere.",
+     "fix": "public transport offer is too bad (non-urban or semi-urban)"
+    }
+   ]
+  },
+  {
+   "row": 28,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "'public spacing' carries over the participant's pseudo-English 'public Spacing', which means public space. 'spacing' suggests distance or distancing, which distorts the meaning. Also, the added word 'soziale' (the stray 'T' before 'Aktivitäten' looks like an insertion mark) belongs to 'activities' but is left dangling at the end.",
+     "fix": "more public space, more interaction, more social activities"
+    }
+   ]
+  },
+  {
+   "row": 38,
+   "both": false,
+   "flags": [
+    {
+     "checker": 2,
+     "problem": "Stray code: \"MA31\" is a workshop-board cell address (listed as an open item in the README). The embedding model cannot resolve it, and it makes up a large part of a 4-word note. Cell MA31 holds row 164, \"long ways between work, home, leisure activities\", which is what \"lange Wege (wie MA31)\" points to. The fix spells out that reference. If you prefer not to import wording from another note, the minimal alternative is just \"long journeys\".",
+     "fix": "long journeys (like between work, home, leisure activities)"
+    }
+   ]
+  },
+  {
+   "row": 88,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "'D-Ticket' is the German Deutschlandticket, a nationwide flat-rate public transport ticket. Left as is, it is an opaque German code, so the note embeds as almost meaningless instead of joining the public transport notes.",
+     "fix": "D-Ticket (Germany-wide flat-rate public transport ticket)"
+    }
+   ]
+  },
+  {
+   "row": 103,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The writer left out 'to' (the scan confirms 'due increase'). Without it, the reason ('due to') reads as 'due' meaning expected. This is the same kind of writer's slip already fixed in rows 157 and 283.",
+     "fix": "due to increase in online shopping"
+    }
+   ]
+  },
+  {
+   "row": 112,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "On the scan, an upward arrow points from 'political instability' to 'no pt anymore', so instability is the reason there is no public transport. The transcription left the arrow out, and the clean text runs the two phrases together without saying how they are linked.",
+     "fix": "no Public Transport anymore because political instability"
+    }
+   ]
+  },
+  {
+   "row": 128,
+   "both": false,
+   "flags": [
+    {
+     "checker": 2,
+     "problem": "The scan reads 'more use for commuting', but the transcription says 'communities'. That changes the meaning from e-bikes for commuting to e-bikes used by communities.",
+     "fix": "More pedelecs or E-Bikes leads to more use for commuting"
+    }
+   ]
+  },
+  {
+   "row": 168,
+   "both": false,
+   "flags": [
+    {
+     "checker": 2,
+     "problem": "The text doesn't match the scan (20261007_101022.jpg). Line 1 says 'automated', not 'automotive'. The last line is most likely 'current infrastructure', not 'usual upfront': the second word is far too long to be 'upfront', and the first looks like 'current'. 'no need for usual upfront' means nothing and would mislead the embedding.",
+     "fix": "AVS leads to automated Traffic management leads to no need for current infrastructure"
+    }
+   ]
+  },
+  {
+   "row": 242,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "The scan reads 'Heavy Industri instead of Offices', a misspelling of 'industry'. 'Heavy industrial' is an adjective with no noun, and the noun is clearer for the embedding.",
+     "fix": "Going back to Heavy industry instead of offices"
+    }
+   ]
+  },
+  {
+   "row": 254,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Probable transcription error. On the scan the second line reads 'travel fast', not 'travel far' (a final 't', no 'r'). This changes the point from distance to speed (air travel). Worth a quick zoom on scan 20261007_101907 to confirm.",
+     "fix": "Only way to travel fast around the world"
+    }
+   ]
+  },
+  {
+   "row": 260,
+   "both": false,
+   "flags": [
+    {
+     "checker": 2,
+     "problem": "'Build' should be 'Built'. The note describes an existing accessibility barrier (places built with many stairs, next to 'Historical City Center'). 'Build' reads as an instruction to add stairs.",
+     "fix": "Built with a lot of stairs (accessibility)"
+    }
+   ]
+  },
+  {
+   "row": 273,
+   "both": false,
+   "flags": [
+    {
+     "checker": 2,
+     "problem": "'PT' is an ambiguous abbreviation for an embedding model (it can mean physical therapy, part-time, Portugal and more). The core of the note is that good public transport makes the car irrelevant, so 'PT' should be spelled out.",
+     "fix": "car is irrelevant in good public transport environment because same performance as that of private car!"
+    }
+   ]
+  },
+  {
+   "row": 275,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Transcription error. On the scan the middle line under 'green policy' is 'law', not 'new', so the chain is green policy, then law, then a public place must go there. 'new' drops the legal mandate and makes the sentence meaningless.",
+     "fix": "green policy, law leads to a public space needs to be built there"
+    }
+   ]
+  },
+  {
+   "row": 278,
+   "both": false,
+   "flags": [
+    {
+     "checker": 2,
+     "problem": "'DB100' is an opaque code to the embedding model. Here it most likely means Deutsche Bahn's BahnCard 100 (an unlimited annual rail pass), named as an eco status symbol, which fits the status notes in rows 251, 259 and 261. Spell it out, but check the scan first because the expansion is inferred.",
+     "fix": "eco status (BahnCard 100 rail pass)"
+    }
+   ]
+  },
+  {
+   "row": 282,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Transcription misread. The scan (20261007_102141) reads 'cooling / climate change', not 'cooking'. 'Cooking' moves the note into food and household topics. The participant meant the need for cooling under climate change, which fits the notes next to it ('too hot outside', 'AC everywhere').",
+     "fix": "cooling or climate change"
+    }
+   ]
+  },
+  {
+   "row": 286,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Minor transcription misread. The last word on the scan (20261007_102202) is 'Concret' (concrete, spelled the same way as in row 306), not 'cement'. The meaning is close, but the participant contrasted wood with concrete, not with cement.",
+     "fix": "More use of Natural Resource in Construction wood instead of concrete"
+    }
+   ]
+  },
+  {
+   "row": 310,
+   "both": false,
+   "flags": [
+    {
+     "checker": 1,
+     "problem": "Transcription misread. The scan (20261007_102416) reads '→ Alrady Eco-friendly', with the same wording and handwriting as row 309 ('Alredy'). 'Always' means permanently, while the participant wrote 'already' (it is eco-friendly now), so the meaning changes.",
+     "fix": "Already Eco-friendly"
+    }
+   ]
+  }
+ ],
+ "checkers_without_result": 0
+}

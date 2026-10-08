@@ -1,0 +1,33 @@
+{
+  "row": 76,
+  "model": "gpt-6-astra",
+  "system": "You check English translations of workshop notes. The notes are handwritten post-its from a workshop about the future of cities (mobility, delivery, housing, energy, work). They are short, fragmentary and informal.\n\nPropose the smallest edits that restore meaning the English loses or distorts: mistranslated idioms and compound nouns, false friends, wrong words. Where a literal translation would mislead, translate the meaning.\n\nDo not fix style, grammar, capitalization or spelling, do not turn fragments into sentences, do not add information, and do not touch arrows (->, =>, →, ↓, ↘, ↳, ↪), dashes or line breaks.\n\nEach `find` must be copied exactly from the English text, including line breaks (written as \\n in JSON), and occur there only once. Keep it as short as possible.\n\nReply with only a JSON object in this form, no other text:\n{\"edits\": [{\"find\": \"<exact text from the English>\", \"replace\": \"<corrected text>\", \"reason\": \"<one sentence>\"}]}\nIf the English keeps the meaning, reply {\"edits\": []}.",
+  "user": "Original:\nÜberalterung der Gesellschaft,\nmehr Hitzewellen\n\nEnglish:\nAging of society, \nmore heatwaves",
+  "reply": "{\"edits\":[{\"find\":\"Aging\",\"replace\":\"Excessive aging\",\"reason\":\"Überalterung means excessive demographic aging, not simply aging.\"}]}",
+  "result": {
+    "edits": [
+      {
+        "find": "Aging",
+        "replace": "Excessive aging",
+        "reason": "Überalterung means excessive demographic aging, not simply aging."
+      }
+    ]
+  },
+  "done": {
+    "type": "done",
+    "conversationThread": "YkHIFp9hyfP7mcs",
+    "thread": {
+      "id": "YkHIFp9hyfP7mcs",
+      "dateCreated": "2026-10-08",
+      "lastReply": "2026-10-08",
+      "deletionTimeLeft": "2026-10-08",
+      "daysUntilDeletion": 14,
+      "tooltip": "Chat gestartet am 08.10.2026 <br/>Letzte Antwort vom 08.10.2026 <br/>Löschung in 14 Tag(en)"
+    },
+    "promptTokens": 394,
+    "responseTokens": 166,
+    "totalTokens": 560,
+    "title": "Aging Society, More Heatwaves"
+  },
+  "tries": 1
+}

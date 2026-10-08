@@ -1,0 +1,27 @@
+{
+  "row": 187,
+  "model": "gpt-6-astra",
+  "system": "You check English translations of workshop notes. The notes are handwritten post-its from a workshop about the future of cities (mobility, delivery, housing, energy, work). They are short, fragmentary and informal.\n\nPropose the smallest edits that restore meaning the English loses or distorts: mistranslated idioms and compound nouns, false friends, wrong words. Where a literal translation would mislead, translate the meaning.\n\nDo not fix style, grammar, capitalization or spelling, do not turn fragments into sentences, do not add information, and do not touch arrows (->, =>, →, ↓, ↘, ↳, ↪), dashes or line breaks.\n\nEach `find` must be copied exactly from the English text, including line breaks (written as \\n in JSON), and occur there only once. Keep it as short as possible.\n\nReply with only a JSON object in this form, no other text:\n{\"edits\": [{\"find\": \"<exact text from the English>\", \"replace\": \"<corrected text>\", \"reason\": \"<one sentence>\"}]}\nIf the English keeps the meaning, reply {\"edits\": []}.",
+  "user": "Original:\nFight against \nWindcraftanlagen\n\nEnglish:\nFight against \nWind Turbines",
+  "reply": "{\"edits\": []}",
+  "result": {
+    "edits": []
+  },
+  "done": {
+    "type": "done",
+    "conversationThread": "wNJfV4HhkohFFbY",
+    "thread": {
+      "id": "wNJfV4HhkohFFbY",
+      "dateCreated": "2026-10-08",
+      "lastReply": "2026-10-08",
+      "deletionTimeLeft": "2026-10-08",
+      "daysUntilDeletion": 14,
+      "tooltip": "Chat gestartet am 08.10.2026 <br/>Letzte Antwort vom 08.10.2026 <br/>Löschung in 14 Tag(en)"
+    },
+    "promptTokens": 387,
+    "responseTokens": 30,
+    "totalTokens": 417,
+    "title": "Fight Against Wind Turbines"
+  },
+  "tries": 1
+}

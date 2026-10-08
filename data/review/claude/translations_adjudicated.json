@@ -1,0 +1,374 @@
+[
+ {
+  "row": 24,
+  "verdict": "a",
+  "edits": [
+   {
+    "find": "Statussymbol",
+    "replace": "Status symbol",
+    "reason": "'Statussymbol' is the German compound left untranslated; the English term is 'status symbol' (the existing capital S is kept)."
+   }
+  ],
+  "reason": "A is right that 'Statussymbol' is a German compound left untranslated, so it is a wrong word in the English rather than a spelling slip, and the one-word swap adds nothing. B is right that the meaning can be guessed, but its empty list leaves German in the translation.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"Car still as a Status symbol (Lifestyle)\" keeps the meaning of \"Auto weiterhin als Statussymbol (lifestyle)\"; the capital S and L only affect style."
+   },
+   {
+    "lens": "rules",
+    "ok": false,
+    "note": "The edit only splits 'Statussymbol' into 'Status symbol', which is a spelling fix: an English reader already reads it as 'status symbol', so it restores no lost meaning."
+   }
+  ],
+  "verdict_model": "gpt"
+ },
+ {
+  "row": 28,
+  "verdict": "neither",
+  "edits": [],
+  "reason": "'public Spacing' is the author's own English, and the translation keeps it as written, so nothing is lost. A's change to 'space' guesses what the author meant and so adds an interpretation; B is right to leave it.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "The scan shows the writer wrote \"public spacing\" in English, so keeping it is faithful, and the T is a caret inserting \"soziale\", which the English keeps as \"more activities / \\\"social\\\"\" (more social activities)."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "No edits."
+   }
+  ],
+  "verdict_model": "neither"
+ },
+ {
+  "row": 29,
+  "verdict": "a",
+  "edits": [
+   {
+    "find": "remain",
+    "replace": "remain / become",
+    "reason": "'bleiben / werden' gives two alternatives; the English dropped 'become'."
+   }
+  ],
+  "reason": "Both proposals correctly restore the dropped 'werden' (become) and produce the same text. A's find 'remain' is shorter than B's 'will remain', so A is the smaller edit.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"will remain / become the Standard\" carries \"bleiben / werden die Norm\" (the scan confirms Norm), because here \"the standard\" means the norm."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "A minimal one-word find puts back the 'become' alternative from 'bleiben / werden' that the English dropped, without adding information or touching any arrows, dashes or line breaks."
+   }
+  ],
+  "verdict_model": "claude"
+ },
+ {
+  "row": 39,
+  "verdict": "a",
+  "edits": [
+   {
+    "find": "data about traffic",
+    "replace": "traffic",
+    "reason": "'über Daten' means 'via data', not 'data about'; the AI detects jams from data rather than capturing data about them."
+   },
+   {
+    "find": "record",
+    "replace": "via data",
+    "reason": "'record' translates 'erfassen' a second time (it is already 'capture'); this line takes the displaced 'via data' instead."
+   },
+   {
+    "find": "LSA",
+    "replace": "traffic lights",
+    "reason": "LSA is the German abbreviation for Lichtsignalanlage (traffic signals) and means nothing to an English reader."
+   }
+  ],
+  "reason": "Both proposals correctly catch the 'data about' misreading of 'über Daten', the double translation of 'erfassen' and the opaque 'LSA'. A fixes them with small swaps that keep the note's own words, while B rewrites three lines ('use data to detect'), a larger edit than needed for the same meaning.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "The result reads \"AI can capture traffic jam etc. via data (e.g. nation-wide) → e.g. traffic lights adjust\", which carries the full meaning; the verb-last \"traffic lights adjust\" copies the German word order but still says the lights are adapted."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "Edits 1 and 2 fix the mistranslated 'über Daten' (via data, not data about) and replace the duplicate 'record', and edit 3 translates the abbreviation LSA, which an English reader would not understand; all finds are short and unique, and the arrow, the 'nation-' hyphen and the line breaks are unchanged."
+   }
+  ],
+  "verdict_model": "claude"
+ },
+ {
+  "row": 47,
+  "verdict": "both",
+  "edits": [
+   {
+    "find": "nice",
+    "replace": "toll",
+    "reason": "Read as English, the note points to a city toll (congestion charge); 'nice' assumes the German adjective 'toll' (great)."
+   }
+  ],
+  "reason": "Both propose the same edit: the lowercase 'city' (every German noun in these originals is capitalised) and the workshop's mobility theme favour the English reading 'city toll' over the German 'toll' (great). A rightly flags only moderate confidence, while B presents it as certain.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"city → toll\" is most likely already English (lowercase on the scan, filed in the all-English MA12 cell next to \"zero emission city zones\" and \"to much traffic by cars\"), so keeping \"toll\" as a city toll keeps its meaning."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "This one-word swap leaves the arrow and line break unchanged; it depends on reading 'toll' as the English word (a city toll), which is plausible but not certain."
+   }
+  ],
+  "verdict_model": "both"
+ },
+ {
+  "row": 48,
+  "verdict": "both",
+  "edits": [
+   {
+    "find": "cost-effective",
+    "replace": "low-cost",
+    "reason": "Paired with 'free', 'kostengünstig' means inexpensive, not good value for money."
+   },
+   {
+    "find": "autonomes",
+    "replace": "autonomous",
+    "reason": "'autonomes' is the German adjective form left untranslated; the English word is 'autonomous'."
+   }
+  ],
+  "reason": "This takes A's 'low-cost', because 'cost-effective' shifts the meaning from cheap to good value, and B's 'autonomous' for the untranslated German form. A's 'offers of' is dropped: 'offers from e.g. autonomous vehicles' already conveys services provided by such vehicles, so that change is a nuance, not restored meaning.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"low-cost/free offers from e.g. autonomous vehicles\" carries \"kostengünstige/kostenlose Angebote von z.B. autonomen Fahrzeugen\", and \"from\" is a fair reading of \"von\" (services the vehicles provide)."
+   },
+   {
+    "lens": "rules",
+    "ok": false,
+    "note": "The second edit, 'autonomes' -> 'autonomous', only fixes spelling, because 'autonomes vehicles' is already understood as autonomous vehicles (the first edit, cost-effective -> low-cost, is fine)."
+   }
+  ],
+  "verdict_model": "both"
+ },
+ {
+  "row": 74,
+  "verdict": "a",
+  "edits": [
+   {
+    "find": "Anxiety room",
+    "replace": "Space that feels unsafe",
+    "reason": "'Angstraum' is an urban-planning term for a place people perceive as frightening or unsafe, not a room for anxiety."
+   }
+  ],
+  "reason": "Both rightly replace the literal 'Anxiety room'. A keeps the sense of perceived fear that defines 'Angstraum', while B's 'Unsafe space' says the place is unsafe and drops the 'feel afraid' element that B's own reason describes.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"Space that feels unsafe for women\" correctly renders the planning term Angstraum."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "It replaces the mistranslated compound 'Anxiety room' with the meaning of Angstraum (a place that feels unsafe); the text stays a fragment and the line break is unchanged."
+   }
+  ],
+  "verdict_model": "gpt"
+ },
+ {
+  "row": 76,
+  "verdict": "neither",
+  "edits": [],
+  "reason": "'Überalterung der Gesellschaft' is the standard German term for population aging, and 'Aging of society' is its usual English equivalent, so nothing is lost. A's 'Excessive aging' is an unidiomatic calque that no longer reads as the demographic term; B is right.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"Aging of society\" is the standard English for \"Überalterung der Gesellschaft\" (population ageing), and \"more heatwaves\" is exact; the over- nuance is only softened, not distorted."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "No edits."
+   }
+  ],
+  "verdict_model": "neither"
+ },
+ {
+  "row": 81,
+  "verdict": "b",
+  "edits": [
+   {
+    "find": "Clear",
+    "replace": "Strong",
+    "reason": "'Starke' means strong (how much work and home are separated); 'clear' means distinct, which is a different word."
+   }
+  ],
+  "reason": "B is right: 'Clear' turns the strength of the separation into its clarity, and changing one word fixes it. A was wrong to find no loss.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"Strong separation of workplace & home\" matches \"Starke Trennung von Arbeitsplatz & Wohnung\"."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "The one-word fix restores the degree that 'Starke' carries ('Clear' means distinct, not strong), so it is a meaning fix rather than a style one, and it leaves the line breaks alone."
+   }
+  ],
+  "verdict_model": "gpt"
+ },
+ {
+  "row": 84,
+  "verdict": "b",
+  "edits": [
+   {
+    "find": "lost",
+    "replace": "low",
+    "reason": "'günstigen' means inexpensive; 'lost-cost' is a wrong word, not low-cost."
+   }
+  ],
+  "reason": "B correctly treats 'lost-cost' as a wrong word that hides 'günstigen' (low-cost), not just a spelling slip, and fixes it with one word. A missed it.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"free or low-cost services\" now renders \"kostenlosen/günstigen Angeboten\" correctly, and the rest of the sentence carries the original."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "This is a borderline typo case, but 'lost' is a correctly spelled wrong word that leaves 'günstigen' unconveyed, so the minimal one-word fix to 'low-cost' restores meaning rather than only fixing spelling, and the hyphen is untouched."
+   }
+  ],
+  "verdict_model": "claude"
+ },
+ {
+  "row": 87,
+  "verdict": "a",
+  "edits": [
+   {
+    "find": "adhesive",
+    "replace": "activists gluing themselves to roads",
+    "reason": "'Klimakleber' means climate activists who glue themselves to roads in protest, not a glue product."
+   }
+  ],
+  "reason": "Both correctly replace the misleading literal 'climate adhesive'. A changes less (only 'adhesive') and names the road-gluing protest the term refers to. B rewrites the whole phrase, and its 'glue themselves down' is vaguer.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"climate activists gluing themselves to roads\" conveys what the colloquial \"Klimakleber\" refers to, especially in this mobility context."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "The find is just 'adhesive' (keeping 'climate'), and the replacement gives the standard meaning of the idiom 'Klimakleber' as a noun phrase, not a sentence, without adding outside information."
+   }
+  ],
+  "verdict_model": "claude"
+ },
+ {
+  "row": 92,
+  "verdict": "both",
+  "edits": [
+   {
+    "find": "Wheels",
+    "replace": "Bikes",
+    "reason": "On its own, 'Räder' colloquially means bikes (short for Fahrräder), not wheels."
+   }
+  ],
+  "reason": "A and B propose the same correct fix: in this mobility note, 'Räder' means bicycles, and 'Wheels' hides that.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"Bikes susceptible to damage/repairs\" reflects the colloquial use of \"Räder\" for bicycles."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "In this mobility context, 'Räder' means bicycles, so the one-word fix corrects a wrong word, keeps the capitalization pattern and leaves the line breaks and slash untouched."
+   }
+  ],
+  "verdict_model": "both"
+ },
+ {
+  "row": 209,
+  "verdict": "neither",
+  "edits": [],
+  "reason": "A is right. 'good pt-service' already says the place is well served by public transport, which is what 'gute OEV-Anbindung' means here. B's connection-versus-service difference is a precision tweak rather than lost meaning, and its replacement also drops the hyphen.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"good pt-service\" for \"gute OEV-Anbindung\" says the same thing (good public transport for the place), and the abbreviation mirrors the original's."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "No edits."
+   }
+  ],
+  "verdict_model": "neither"
+ },
+ {
+  "row": 298,
+  "verdict": "both",
+  "edits": [
+   {
+    "find": "Was",
+    "replace": "War",
+    "reason": "The original is already English 'War'. It was misread as the German false friend 'war' (= was)."
+   }
+  ],
+  "reason": "A and B make the same correct one-word fix: 'War' in the original is the English noun (armed conflict), and the translation turned it into 'Was'.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"War -> political instability\" now matches the original, which was already in English."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "The one-word fix corrects a false-friend error, since the original is the English noun 'War' and not German 'war' (meaning 'was'), and it leaves the line break and '->' arrow untouched."
+   }
+  ],
+  "verdict_model": "both"
+ },
+ {
+  "row": 332,
+  "verdict": "b",
+  "edits": [
+   {
+    "find": "made",
+    "replace": "financed",
+    "reason": "'eigenwirtschaftlich' means running on its own revenue without subsidies (self-financed), not 'self made'."
+   }
+  ],
+  "reason": "Both correctly see that 'self made' gets 'eigenwirtschaftlichen' wrong and give the same meaning ('self-financing' vs 'self financed'). B does it by changing one word, so it is the smaller edit.",
+  "checks": [
+   {
+    "lens": "meaning",
+    "ok": true,
+    "note": "\"only self financed\" correctly renders \"nur eigenwirtschaftlichen\" (operating on own revenue without subsidy); writing it \"self-financed\" would be tidier but changes nothing in meaning."
+   },
+   {
+    "lens": "rules",
+    "ok": true,
+    "note": "Replacing only 'made' gives 'self financed', which conveys 'eigenwirtschaftlich' without adding a hyphen or other style fixes, and the arrow and line breaks are untouched."
+   }
+  ],
+  "verdict_model": "claude"
+ }
+]
