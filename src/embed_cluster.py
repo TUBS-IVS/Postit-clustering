@@ -46,6 +46,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--model", default="all-mpnet-base-v2", help="sentence-transformers model name or local folder")
     parser.add_argument("--min-cluster-size", type=int, default=5, help="HDBSCAN: smallest group that counts as a cluster")
+    parser.add_argument("--min-samples", type=int, default=2,
+                        help="HDBSCAN: how crowded an area must be to count as a cluster (higher = more noise; "
+                             "unset it means min-cluster-size, which gave 99 noise notes vs 50 with 2)")
     parser.add_argument("--neighbors", type=int, default=15, help="UMAP: local (small) vs global (large) structure")
     parser.add_argument("--layout", choices=["same", "supervised"], default="same", help="see Layouts above")
     args = parser.parse_args()
@@ -60,11 +63,11 @@ def main():
         # One 3-D map for both clustering and plotting, so the plot shows exactly what was clustered.
         xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
                         random_state=SEED).fit_transform(vectors)
-        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size).fit_predict(xyz)
+        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size, min_samples=args.min_samples).fit_predict(xyz)
     else:
         coords = umap.UMAP(n_components=10, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
                            random_state=SEED).fit_transform(vectors)
-        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size).fit_predict(coords)
+        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size, min_samples=args.min_samples).fit_predict(coords)
         # UMAP reads label -1 as "unknown", so noise is placed by text similarity alone.
         xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.1, metric="cosine",
                         target_weight=0.5, random_state=SEED).fit_transform(vectors, y=labels)

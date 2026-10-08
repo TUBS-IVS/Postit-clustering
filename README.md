@@ -38,7 +38,7 @@ python src/plot_html.py                         # redraw the pages from the save
 ## View the clusters
 
 **[data/processed/clusters_all-mpnet-base-v2_simple.html](data/processed/clusters_all-mpnet-base-v2_simple.html)**:
-336 notes, SBERT `all-mpnet-base-v2`, 21 clusters + noise. GitHub shows HTML as source, so download
+336 notes, SBERT `all-mpnet-base-v2`, 24 clusters + 50 noise (HDBSCAN min_cluster_size 5, min_samples 2). GitHub shows HTML as source, so download
 the file (Raw → save, or clone the repo) and open it in a browser; it needs internet for plotly.js.
 
 - drag to rotate, scroll to zoom, hover a dot to read the note
