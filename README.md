@@ -31,7 +31,6 @@ python src/clean_text.py
 python src/clean_basic.py   # optional: stage-1 output, postits_basic.json
 python src/spellcheck.py
 python src/embed_cluster.py                     # clusters + 3D pages (downloads the SBERT model once)
-python src/embed_cluster.py --layout supervised # cleaner picture, but distances are less faithful
 python src/plot_html.py                         # redraw the pages from the saved CSVs, no re-embedding
 ```
 

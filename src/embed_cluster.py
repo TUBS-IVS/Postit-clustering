@@ -2,17 +2,12 @@
 
 Reads data/processed/postits_clean.json (`text_clean`) and writes, per model:
   data/processed/clusters_<model>.csv   row, cluster, x, y, z and the note text
-  data/processed/clusters_<model>.html  interactive 3D page (see src/plot_html.py), plus a _simple.html plain view
+  data/processed/clusters_<model>.html  interactive 3D page with source details (see src/plot_html.py)
+  data/processed/clusters_<model>_simple.html  the same page with a short hover
 
 Usage:
     python src/embed_cluster.py
     python src/embed_cluster.py --model all-MiniLM-L6-v2 --min-cluster-size 4
-    python src/embed_cluster.py --layout supervised
-
-Layouts:
-  same        cluster on the 3-D map that is plotted (what you see is what was clustered)
-  supervised  cluster on a 10-D map (keeps more detail), then lay out 3-D with the cluster
-              labels as a guide, so each cluster sits together in the plot
 """
 
 import argparse
@@ -50,7 +45,6 @@ def main():
                         help="HDBSCAN: how crowded an area must be to count as a cluster (higher = more noise; "
                              "unset it means min-cluster-size, which gave 99 noise notes vs 50 with 2)")
     parser.add_argument("--neighbors", type=int, default=15, help="UMAP: local (small) vs global (large) structure")
-    parser.add_argument("--layout", choices=["same", "supervised"], default="same", help="see Layouts above")
     args = parser.parse_args()
 
     df = pd.DataFrame(json.load(open(SOURCE, encoding="utf-8")))
@@ -59,29 +53,21 @@ def main():
     # Normalized vectors, so Euclidean distance on them ranks like cosine similarity.
     vectors = SentenceTransformer(args.model).encode(texts, normalize_embeddings=True, show_progress_bar=True)
 
-    if args.layout == "same":
-        # One 3-D map for both clustering and plotting, so the plot shows exactly what was clustered.
-        xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
-                        random_state=SEED).fit_transform(vectors)
-        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size, min_samples=args.min_samples).fit_predict(xyz)
-    else:
-        coords = umap.UMAP(n_components=10, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
-                           random_state=SEED).fit_transform(vectors)
-        labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size, min_samples=args.min_samples).fit_predict(coords)
-        # UMAP reads label -1 as "unknown", so noise is placed by text similarity alone.
-        xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.1, metric="cosine",
-                        target_weight=0.5, random_state=SEED).fit_transform(vectors, y=labels)
+    # One 3-D map for both clustering and plotting, so the plot shows exactly what was clustered.
+    xyz = umap.UMAP(n_components=3, n_neighbors=args.neighbors, min_dist=0.0, metric="cosine",
+                    random_state=SEED).fit_transform(vectors)
+    labels = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster_size, min_samples=args.min_samples).fit_predict(xyz)
 
     out = df[["row", "bild", "adresse", "text_clean"]].copy()
     out["cluster"] = labels  # -1 = noise, a note that fits no cluster
     out[["x", "y", "z"]] = xyz
-    name = Path(args.model).name.replace("/", "_") + ("_supervised" if args.layout == "supervised" else "")
+    name = Path(args.model).name.replace("/", "_")
 
     themes = cluster_themes(df["text_tokens"], labels)
     out["theme"] = [themes.get(c, "noise (fits no cluster)") for c in labels]
     out.to_csv(OUT_DIR / f"clusters_{name}.csv", index=False, encoding="utf-8-sig")
 
-    write_pages(out, f"Post-it clusters · {args.model} · {args.layout} layout", OUT_DIR / f"clusters_{name}.html")
+    write_pages(out, f"Post-it clusters · {args.model}", OUT_DIR / f"clusters_{name}.html")
 
     n_clusters = len(set(labels) - {-1})
     print(f"{len(out)} notes, {n_clusters} clusters, {(labels == -1).sum()} noise -> clusters_{name}.csv/.html")
